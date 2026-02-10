@@ -7,9 +7,12 @@ import { RouterLink, RouterView } from 'vue-router'
   <div id="layout">
     <header>
       <div class="wrapper">
-        <nav>
-          <RouterLink to="/">Home</RouterLink> |
-          <RouterLink to="/about">About</RouterLink>
+        <nav class="links">
+          <RouterLink to="/">Parcourir</RouterLink>
+          <RouterLink to="#">Mes Ouvrages</RouterLink>
+          <RouterLink to="#">Ajouter</RouterLink>
+          <RouterLink to="#">Se connecter</RouterLink>
+          <RouterLink to="#">S'inscrire</RouterLink>
         </nav>
       </div>
     </header>
@@ -25,12 +28,21 @@ import { RouterLink, RouterView } from 'vue-router'
   text-align: center;
   color: #2c3e50;
 }
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  /*background-color: DodgerBlue;*/
+}
+
 nav {
   padding: 30px;
 }
 nav a {
+  font-size: 20px;
   font-weight: bold;
   color: #2c3e50;
+  margin: 0 10px;
 }
 nav a.router-link-exact-active {
   color: #42b983;
