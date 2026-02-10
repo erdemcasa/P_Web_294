@@ -2,8 +2,8 @@ import { defineConfig, globalIgnores } from 'eslint/config'
 import globals from 'globals'
 import js from '@eslint/js'
 import pluginVue from 'eslint-plugin-vue'
-import pluginOxlint from 'eslint-plugin-oxlint'
 import skipFormatting from 'eslint-config-prettier/flat'
+import pluginOxlint from 'eslint-plugin-oxlint'
 
 export default defineConfig([
   {
@@ -24,7 +24,7 @@ export default defineConfig([
   js.configs.recommended,
   ...pluginVue.configs['flat/essential'],
 
-  ...pluginOxlint.buildFromOxlintConfigFile('.oxlintrc.json'),
-
   skipFormatting,
+
+  ...pluginOxlint.configs['flat/recommended'],
 ])
