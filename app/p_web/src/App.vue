@@ -8,11 +8,11 @@ import { RouterLink, RouterView } from 'vue-router'
     <header>
       <div class="wrapper">
         <nav class="links">
-          <RouterLink to="/">Parcourir</RouterLink>
-          <RouterLink to="#">Mes Ouvrages</RouterLink>
-          <RouterLink to="#">Ajouter</RouterLink>
-          <RouterLink to="#">Se connecter</RouterLink>
-          <RouterLink to="#">S'inscrire</RouterLink>
+          <RouterLink to="/browse">Parcourir</RouterLink>
+          <RouterLink to="/mybooks">Mes Ouvrages</RouterLink>
+          <RouterLink to="/addboook">Ajouter</RouterLink>
+          <RouterLink to="/login">Se connecter</RouterLink>
+          <RouterLink to="/sign">S'inscrire</RouterLink>
         </nav>
       </div>
     </header>
