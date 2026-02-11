@@ -7,12 +7,18 @@ import { RouterLink, RouterView } from 'vue-router'
   <div id="layout">
     <header>
       <div class="wrapper">
+
+        <div class="logo-container">
+          <img src="../public/logo.png" alt="Logo" class="logo" />
+        </div>
+
         <nav class="links">
-          <RouterLink to="/">Parcourir</RouterLink>
-          <RouterLink to="#">Mes Ouvrages</RouterLink>
-          <RouterLink to="#">Ajouter</RouterLink>
-          <RouterLink to="#">Se connecter</RouterLink>
-          <RouterLink to="#">S'inscrire</RouterLink>
+          <RouterLink to="/">Accueil</RouterLink>
+          <RouterLink to="/browse">Parcourir</RouterLink>
+          <RouterLink to="/mybooks">Mes Ouvrages</RouterLink>
+          <RouterLink to="/addboook">Ajouter</RouterLink>
+          <RouterLink to="/login">Se connecter</RouterLink>
+          <RouterLink to="/sign">S'inscrire</RouterLink>
         </nav>
       </div>
     </header>
@@ -22,7 +28,15 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style>
 #layout {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  font-family:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -30,10 +44,33 @@ import { RouterLink, RouterView } from 'vue-router'
 }
 
 header {
-  display: flex;
-  justify-content: flex-end;
   background: #f5f5f5;
   border-bottom: 1px solid #eaeaea;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1350px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 70px;
+  width: auto;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.8;
 }
 
 nav {
@@ -62,8 +99,7 @@ nav a:hover {
 }
 
 nav a.router-link-exact-active {
-  background: #42b983;
-  color: white;
-  border-color: #42b983;
+  background: #f5f5f5;
+  color: #333;
 }
 </style>
