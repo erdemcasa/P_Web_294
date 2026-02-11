@@ -7,6 +7,11 @@ import { RouterLink, RouterView } from 'vue-router'
   <div id="layout">
     <header>
       <div class="wrapper">
+
+        <div class="logo-container">
+          <img src="../public/logo.png" alt="Logo" class="logo" />
+        </div>
+
         <nav class="links">
           <RouterLink to="/">Accueil</RouterLink>
           <RouterLink to="/browse">Parcourir</RouterLink>
@@ -31,10 +36,33 @@ import { RouterLink, RouterView } from 'vue-router'
 }
 
 header {
-  display: flex;
-  justify-content: flex-end;
   background: #f5f5f5;
   border-bottom: 1px solid #eaeaea;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1350px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 70px;
+  width: auto;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.logo:hover {
+  opacity: 0.8;
 }
 
 nav {
