@@ -43,7 +43,7 @@ const events = ref([
   <header class="section">
     <div class="Title">
       <h1>Livre Passion</h1>
-      <p>Zgeg</p>
+      <p>Un site vous permettant de consulter vos ouvrages favoris et laisser des reviews</p>
     </div>
   </header>
 
@@ -79,5 +79,8 @@ const events = ref([
 h1 {
   font-size: 5rem;
   font-weight: 800;
+}
+.Title p {
+  font-size: 2rem;
 }
 </style>
