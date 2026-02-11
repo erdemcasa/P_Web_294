@@ -1,7 +1,28 @@
 <script setup>
 import EventCard from '@/components/EventCard.vue'
+import Footer from '@/components/Footer.vue'
 import { ref } from 'vue'
 
+const contacts = ref([
+  {
+    id: 0,
+    Name: 'Snehan Gnanassorian',
+    Mail: 'snehan.gnanassorian@mail.com',
+    Tel: '+41 00 000 00 00',
+  },
+  {
+    id: 1,
+    Name: 'Zidane Sahraoui',
+    Mail: 'zidane.sahraoui@mail.com',
+    Tel: '+41 00 000 00 00',
+  },
+  {
+    id: 2,
+    Name: 'Ökkes Erdem Köse',
+    Mail: 'erdem.kose@mail.com',
+    Tel: '+41 00 000 00 00',
+  },
+])
 const events = ref([
   {
     id: 5928101,
@@ -36,13 +57,68 @@ const events = ref([
     petsAllowed: false,
     organizer: 'Carey Wales',
   },
+  {
+    id: 8419988,
+    category: 'sustainability',
+    title: 'Beach Cleanup',
+    description: 'Help pick up trash along the shore.',
+    location: 'Playa Del Carmen',
+    date: 'July 22, 2022',
+    time: '11:00',
+    petsAllowed: false,
+    organizer: 'Carey Wales',
+  },
+  {
+    id: 8419988,
+    category: 'sustainability',
+    title: 'Beach Cleanup',
+    description: 'Help pick up trash along the shore.',
+    location: 'Playa Del Carmen',
+    date: 'July 22, 2022',
+    time: '11:00',
+    petsAllowed: false,
+    organizer: 'Carey Wales',
+  },
+  {
+    id: 8419988,
+    category: 'sustainability',
+    title: 'Beach Cleanup',
+    description: 'Help pick up trash along the shore.',
+    location: 'Playa Del Carmen',
+    date: 'July 22, 2022',
+    time: '11:00',
+    petsAllowed: false,
+    organizer: 'Carey Wales',
+  },
+  {
+    id: 8419988,
+    category: 'sustainability',
+    title: 'Beach Cleanup',
+    description: 'Help pick up trash along the shore.',
+    location: 'Playa Del Carmen',
+    date: 'July 22, 2022',
+    time: '11:00',
+    petsAllowed: false,
+    organizer: 'Carey Wales',
+  },
+  {
+    id: 8419988,
+    category: 'sustainability',
+    title: 'Beach Cleanup',
+    description: 'Help pick up trash along the shore.',
+    location: 'Playa Del Carmen',
+    date: 'July 22, 2022',
+    time: '11:00',
+    petsAllowed: false,
+    organizer: 'Carey Wales',
+  },
 ])
 </script>
 
 <template>
   <header class="section">
     <div class="Title">
-      <h1>Livre Passion</h1>
+      <h1>Passion Lecture</h1>
       <p>Un site vous permettant de consulter vos ouvrages favoris et laisser des reviews</p>
     </div>
   </header>
@@ -51,6 +127,11 @@ const events = ref([
   <p>5 derniers ouvrages ajoutés</p>
   <div class="events">
     <EventCard v-for="event in events" :key="event.id" :event="event" />
+  </div>
+
+  <h2>Nous contacter</h2>
+  <div class="contacts">
+    <Footer v-for="contact in contacts" :key="contact.id" :contact="contact" />
   </div>
 </template>
 
@@ -72,6 +153,7 @@ const events = ref([
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .event-card {
   margin: 1vh;
@@ -82,5 +164,10 @@ h1 {
 }
 .Title p {
   font-size: 2rem;
+}
+.contacts {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 </style>
