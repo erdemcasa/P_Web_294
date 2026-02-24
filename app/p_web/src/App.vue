@@ -9,7 +9,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <div class="wrapper">
 
         <div class="logo-container">
-          <img src="../public/logo.png" alt="Logo" class="logo" />
+          <img src="/logo.png" alt="Logo" class="logo" />
         </div>
 
         <nav class="links">
@@ -17,8 +17,8 @@ import { RouterLink, RouterView } from 'vue-router'
           <RouterLink to="/browse">Parcourir</RouterLink>
           <RouterLink to="/mybooks">Mes Ouvrages</RouterLink>
           <RouterLink to="/addboook">Ajouter</RouterLink>
-          <RouterLink to="/login">Se connecter</RouterLink>
-          <RouterLink to="/sign">S'inscrire</RouterLink>
+          <RouterLink to="/login" class="login-route">Se connecter</RouterLink>
+          <RouterLink to="/sign" class="signin-route">S'inscrire</RouterLink>
         </nav>
       </div>
     </header>
@@ -44,62 +44,71 @@ import { RouterLink, RouterView } from 'vue-router'
 }
 
 header {
-  background: #f5f5f5;
-  border-bottom: 1px solid #eaeaea;
+  background: #ffffff;
+  border-bottom: 1px solid #f1f1f1;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.logo-container img {
+  width: 100px;
 }
 
 .wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1350px;
+  max-width: 1350px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 10px 20px;
 }
 
-.logo-container {
+nav {
   display: flex;
   align-items: center;
 }
 
-.logo {
-  height: 70px;
-  width: auto;
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-}
-
-.logo:hover {
-  opacity: 0.8;
-}
-
-nav {
-  padding: 20px;
-}
-
 nav a {
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 0 8px;
+  text-decoration: none;
+  color: #666;
   font-size: 15px;
   font-weight: 500;
-  color: #333;
-  background: white;
-  text-decoration: none;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  transition: all 0.2s ease;
-  cursor: pointer;
+  padding: 8px 15px;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+  border-radius: 6px;
 }
 
-nav a:hover {
-  background: #f0f0f0;
-  border-color: #ccc;
+nav a:hover:not(.login-route, .signin-route) {
+  color: #000;
+  background: #f8f8f8;
+}
+
+nav a.router-link-exact-active:not(.login-route, .signin-route) {
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.login-route {
+  margin-left: 40px ;
+  color: #2c3e50 ;
+  border: 1px solid #dcdcdc ;
+}
+
+.login-route:hover {
+  background: #fdfdfd;
+  border-color: #999 ;
+}
+
+.signin-route {
+  background-color: #2c3e50 ;
+  color: #ffffff ;
+  margin-left: 10px ;
+}
+
+.signin-route:hover {
+  background-color: #1a252f ;
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-nav a.router-link-exact-active {
-  background: #f5f5f5;
-  color: #333;
-}
 </style>
