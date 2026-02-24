@@ -23,7 +23,7 @@
       "auteur_id": 102,
       "editeur": "Glénat",
       "annee_edition": 1982,
-      "image_couverture": "https://picsum.photos/id/20/200/300",
+      "image_couverture": "public/Couvertures/Akira.jpg",
       "moyenne_appreciations": 4.8
     },
     {
@@ -36,7 +36,7 @@
       "auteur_id": 103,
       "editeur": "Christian Bourgois",
       "annee_edition": 1954,
-      "image_couverture": "https://picsum.photos/id/24/200/300",
+      "image_couverture": "public/Couvertures/LOTR.jpg",
       "moyenne_appreciations": 4.9
     },
     {
@@ -49,7 +49,7 @@
       "auteur_id": 104,
       "editeur": "Dargaud",
       "annee_edition": 1961,
-      "image_couverture": "https://picsum.photos/id/36/200/300",
+      "image_couverture": "public/Couvertures/Asterix.jpg",
       "moyenne_appreciations": 4.2
     },
     {
@@ -62,7 +62,7 @@
       "auteur_id": 105,
       "editeur": "Seuil",
       "annee_edition": 1949,
-      "image_couverture": "https://picsum.photos/id/42/200/300",
+      "image_couverture": "public/Couvertures/1984.jpg",
       "moyenne_appreciations": 4.7
     }
   ],
