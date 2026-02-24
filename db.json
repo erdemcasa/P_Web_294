@@ -1,0 +1,120 @@
+{
+  "ouvrages": [
+    {
+      "id": "1",
+      "titre": "L'Incal",
+      "categorie": "bande dessinée",
+      "nombre_pages": 312,
+      "extrait": "/assets/pdf/extrait-incal.pdf",
+      "resume": "Un détective de classe R déambule dans une cité-puits géante.",
+      "auteur_id": 101,
+      "editeur": "Les Humanoïdes Associés",
+      "annee_edition": 1981,
+      "image_couverture": "https://picsum.photos/id/10/200/300",
+      "moyenne_appreciations": 4.5
+    },
+    {
+      "id": "2",
+      "titre": "Akira",
+      "categorie": "manga",
+      "nombre_pages": 360,
+      "extrait": "/assets/pdf/extrait-akira.pdf",
+      "resume": "Dans un Neo-Tokyo post-apocalyptique, des adolescents font face à des pouvoirs psychiques.",
+      "auteur_id": 102,
+      "editeur": "Glénat",
+      "annee_edition": 1982,
+      "image_couverture": "https://picsum.photos/id/20/200/300",
+      "moyenne_appreciations": 4.8
+    },
+    {
+      "id": "3",
+      "titre": "Le Seigneur des Anneaux",
+      "categorie": "roman",
+      "nombre_pages": 1178,
+      "extrait": "/assets/pdf/extrait-sda.pdf",
+      "resume": "Un jeune hobbit doit détruire un anneau maléfique dans la Montagne du Destin.",
+      "auteur_id": 103,
+      "editeur": "Christian Bourgois",
+      "annee_edition": 1954,
+      "image_couverture": "https://picsum.photos/id/24/200/300",
+      "moyenne_appreciations": 4.9
+    },
+    {
+      "id": "4",
+      "titre": "Astérix le Gaulois",
+      "categorie": "bande dessinée",
+      "nombre_pages": 48,
+      "extrait": "/assets/pdf/extrait-asterix.pdf",
+      "resume": "Un petit village gaulois résiste encore et toujours à l'envahisseur romain.",
+      "auteur_id": 104,
+      "editeur": "Dargaud",
+      "annee_edition": 1961,
+      "image_couverture": "https://picsum.photos/id/36/200/300",
+      "moyenne_appreciations": 4.2
+    },
+    {
+      "id": "5",
+      "titre": "1984",
+      "categorie": "livre",
+      "nombre_pages": 328,
+      "extrait": "/assets/pdf/extrait-1984.pdf",
+      "resume": "Winston Smith tente de survivre dans un régime totalitaire surveillé par Big Brother.",
+      "auteur_id": 105,
+      "editeur": "Seuil",
+      "annee_edition": 1949,
+      "image_couverture": "https://picsum.photos/id/42/200/300",
+      "moyenne_appreciations": 4.7
+    }
+  ],
+  "auteurs": [
+    { "id": 101, "nom": "Moebius", "prenom": "Jean" },
+    { "id": 102, "nom": "Otomo", "prenom": "Katsuhiro" },
+    { "id": 103, "nom": "Tolkien", "prenom": "J.R.R." },
+    { "id": 104, "nom": "Goscinny", "prenom": "René" },
+    { "id": 105, "nom": "Orwell", "prenom": "George" }
+  ],
+  "utilisateurs": [
+    {
+      "id": "u1",
+      "pseudo": "BookWorm99",
+      "date_entree": "2024-01-15",
+      "nb_ouvrages_proposes": 5,
+      "nb_appreciations": 12,
+      "nb_commentaires": 8
+    },
+    {
+      "id": "u2",
+      "pseudo": "LecteurAnonyme",
+      "date_entree": "2024-02-10",
+      "nb_ouvrages_proposes": 0,
+      "nb_appreciations": 3,
+      "nb_commentaires": 1
+    }
+  ],
+  "commentaires": [
+    {
+      "id": 1,
+      "ouvrage_id": "1",
+      "utilisateur_pseudo": "BookWorm99",
+      "note": 5,
+      "texte": "Un chef-d'œuvre absolu de la SF.",
+      "date": "2024-02-20"
+    },
+    {
+      "id": 2,
+      "ouvrage_id": "3",
+      "utilisateur_pseudo": "LecteurAnonyme",
+      "note": 5,
+      "texte": "Le pilier de la fantasy, indispensable.",
+      "date": "2024-02-22"
+    },
+    {
+      "id": 3,
+      "ouvrage_id": "5",
+      "utilisateur_pseudo": "BookWorm99",
+      "note": 4,
+      "texte": "Toujours aussi actuel et terrifiant.",
+      "date": "2024-02-23"
+    }
+  ]
+}
