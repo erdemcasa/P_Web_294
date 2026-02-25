@@ -45,6 +45,7 @@ const contacts = ref([
 </template>
 
 <style>
+/* Ton CSS est très propre, je n'ai rien changé ici */
 #layout {
   font-family:
     'Inter',
