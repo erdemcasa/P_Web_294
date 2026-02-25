@@ -8,9 +8,9 @@ const ouvrages = ref([])
 
 onMounted(() => {
   axios
-    .get('https://my-json-server.typicode.com/erdemcasa/P_Web_294/ouvrages')
+    .get('http://localhost:3000/ouvrages')
     .then((response) => {
-      ouvrages.value = response.data.slice(-5).reverse()
+      ouvrages.value = response.data.reverse()
     })
     .catch((error) => {
       console.error('Erreur lors de la récupération des ouvrages:', error)
@@ -31,7 +31,7 @@ onMounted(() => {
     <p>Derniers ouvrages ajoutés</p>
 
     <div class="events">
-      <EventCard v-for="ouvrage in ouvrages" :key="ouvrage.id" :ouvrage="ouvrage" />
+      <EventCard v-for="ouvrage in ouvrages.slice(0, 4)" :key="ouvrage.id" :ouvrage="ouvrage" />
     </div>
   </main>
 </template>

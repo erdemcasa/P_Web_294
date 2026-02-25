@@ -46,10 +46,8 @@ const handleLogin = () => {
   if (username.value === 'BookWorm99' || username.value === 'admin') {
     console.log("Connexion réussie pour :", username.value)
 
-    // On stocke l'info dans le localStorage pour simuler une session
     localStorage.setItem('user', JSON.stringify({ pseudo: username.value, role: username.value === 'admin' ? 'admin' : 'user' }))
 
-    // Redirection vers la page d'accueil
     router.push('/')
   } else {
     error.value = "Utilisateur inconnu. Essayez 'BookWorm99' ou 'admin'."

@@ -8,7 +8,7 @@ const recherche = ref('')
 
 onMounted(() => {
   axios
-    .get('https://my-json-server.typicode.com/erdemcasa/P_Web_294/ouvrages')
+    .get('http://localhost:3000/ouvrages')
     .then((response) => {
       ouvrages.value = response.data.reverse()
     })
@@ -19,8 +19,11 @@ onMounted(() => {
 
 const filteredOuvrages = computed(() => {
   return ouvrages.value.filter((ouvrage) => {
-    return ouvrage.titre.toLowerCase().includes(recherche.value.toLowerCase()) ||
-           ouvrage.auteur.toLowerCase().includes(recherche.value.toLowerCase())
+    const titre = ouvrage.titre ? ouvrage.titre.toLowerCase() : ''
+    const auteur = ouvrage.auteur ? ouvrage.auteur.toLowerCase() : ''
+    const terme = recherche.value.toLowerCase()
+
+    return titre.includes(terme) || auteur.includes(terme)
   })
 })
 </script>
@@ -28,6 +31,7 @@ const filteredOuvrages = computed(() => {
 <template>
   <div class="browse">
     <h1>Parcourir les livres</h1>
+
     <div class="search-wrapper">
         <input
           v-model="recherche"
@@ -35,22 +39,42 @@ const filteredOuvrages = computed(() => {
           placeholder="Rechercher un livre ou un auteur..."
           class="search-bar"
         />
+    </div>
+
+    <div class="results-container">
+      <div v-if="filteredOuvrages.length > 0" class="events">
+        <EventCard
+          v-for="ouvrage in filteredOuvrages"
+          :key="ouvrage.id"
+          :ouvrage="ouvrage"
+        />
       </div>
+
+      <div v-else-if="ouvrages.length > 0" class="no-results">
+        <p>Aucun livre ne correspond à "<strong>{{ recherche }}</strong>"</p>
+      </div>
+
+      <div v-else class="loading">
+        Chargement des ouvrages...
+      </div>
+    </div>
   </div>
 </template>
 
-<style>
-/*@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}*/
+<style scoped>
+.browse {
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
 
 .search-wrapper {
   max-width: 500px;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
 }
 
 .search-bar {
@@ -69,4 +93,22 @@ const filteredOuvrages = computed(() => {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
+.events {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.no-results, .loading {
+  margin-top: 50px;
+  font-size: 1.2rem;
+  color: #828282;
+}
+
+.no-results strong {
+  color: #2c3e50;
+}
 </style>
