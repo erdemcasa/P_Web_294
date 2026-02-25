@@ -38,14 +38,14 @@ onMounted(() => {
 
 <style scoped>
 .section {
-  height: 50vh;
+  height: 30vh;
   background-color: #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .Title {
-  margin-bottom: 10%;
+  margin-bottom: 20px;
   text-align: center;
 }
 .events {

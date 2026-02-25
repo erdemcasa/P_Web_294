@@ -5,180 +5,210 @@
       "titre": "L'Incalee",
       "categorie": "bande dessinée",
       "nombre_pages": 312,
+      "extrait": "public/Extraits/L-incal.pdf",
       "resume": "Un détective de classe R dans une cité-puits géante.",
       "auteur_id": 101,
       "editeur": "Les Humanoïdes Associés",
       "annee_edition": 1981,
       "image_couverture": "public/Couvertures/L-incal.jpg",
-      "moyenne_appreciations": 4.5
+      "moyenne_appreciations": 4,
+      "user_id": 8
     },
     {
       "id": "2",
       "titre": "Akira",
       "categorie": "manga",
       "nombre_pages": 360,
+      "extrait": "public/Extraits/Akira.pdf",
       "resume": "Dans un Neo-Tokyo post-apocalyptique, des adolescents affrontent des pouvoirs psychiques.",
       "auteur_id": 102,
       "editeur": "Glénat",
       "annee_edition": 1982,
       "image_couverture": "public/Couvertures/Akira.jpg",
-      "moyenne_appreciations": 4.8
+      "moyenne_appreciations": 4,
+      "user_id": 8
     },
     {
       "id": "3",
       "titre": "Le Seigneur des Anneaux",
       "categorie": "roman",
       "nombre_pages": 1178,
+      "extrait": "public/Extraits/LOTR.pdf",
       "resume": "Un hobbit doit détruire un anneau maléfique dans la Montagne du Destin.",
       "auteur_id": 103,
       "editeur": "Christian Bourgois",
       "annee_edition": 1954,
       "image_couverture": "public/Couvertures/LOTR.jpg",
-      "moyenne_appreciations": 4.9
+      "moyenne_appreciations": 4,
+      "user_id": 3
     },
     {
       "id": "4",
       "titre": "Astérix le Gaulois",
       "categorie": "bande dessinée",
       "nombre_pages": 48,
+      "extrait": "public/Extraits/Asterix.pdf",
       "resume": "Un village gaulois résiste à l'envahisseur romain.",
       "auteur_id": 104,
       "editeur": "Dargaud",
       "annee_edition": 1961,
       "image_couverture": "public/Couvertures/Asterix.jpg",
-      "moyenne_appreciations": 4.2
+      "moyenne_appreciations": 4,
+      "user_id": 3
     },
     {
       "id": "5",
       "titre": "1984",
       "categorie": "roman",
       "nombre_pages": 328,
+      "extrait": "public/Extraits/1984.pdf",
       "resume": "Winston Smith survit dans un régime totalitaire surveillé par Big Brother.",
       "auteur_id": 105,
       "editeur": "Seuil",
       "annee_edition": 1949,
       "image_couverture": "public/Couvertures/1984.jpg",
-      "moyenne_appreciations": 4.7
+      "moyenne_appreciations": 4,
+      "user_id": 3
     },
     {
       "id": "6",
       "titre": "Dune",
       "categorie": "roman",
       "nombre_pages": 688,
+      "extrait": "public/Extraits/Dune.pdf",
       "resume": "Paul Atréides découvre sa destinée sur la planète désertique Arrakis.",
       "auteur_id": 106,
       "editeur": "Robert Laffont",
       "annee_edition": 1965,
       "image_couverture": "public/Couvertures/Dune.jpg",
-      "moyenne_appreciations": 4.7
+      "moyenne_appreciations": 4,
+      "user_id": 2
     },
     {
       "id": "7",
       "titre": "Watchmen",
       "categorie": "bande dessinée",
       "nombre_pages": 416,
+      "extrait": "public/Extraits/Watchmen.pdf",
       "resume": "D'anciens super-héros enquêtent sur le meurtre de l'un des leurs.",
       "auteur_id": 107,
       "editeur": "Panini Comics",
       "annee_edition": 1986,
       "image_couverture": "public/Couvertures/Watchmen.jpg",
-      "moyenne_appreciations": 4.6
+      "moyenne_appreciations": 4,
+      "user_id": 2
     },
     {
       "id": "8",
       "titre": "Naruto",
       "categorie": "manga",
       "nombre_pages": 192,
+      "extrait": "public/Extraits/Naruto.pdf",
       "resume": "Un jeune ninja rêve de devenir chef de son village.",
       "auteur_id": 108,
       "editeur": "Kana",
       "annee_edition": 1999,
       "image_couverture": "public/Couvertures/Naruto.jpg",
-      "moyenne_appreciations": 4.4
+      "moyenne_appreciations": 4,
+      "user_id": 7
     },
     {
       "id": "9",
       "titre": "Le Petit Prince",
       "categorie": "roman",
       "nombre_pages": 96,
+      "extrait": "public/Extraits/LePetitPrince.pdf",
       "resume": "Un aviateur dans le désert rencontre un prince venu d'une autre planète.",
       "auteur_id": 109,
       "editeur": "Gallimard",
       "annee_edition": 1943,
       "image_couverture": "public/Couvertures/LePetitPrince.jpg",
-      "moyenne_appreciations": 4.6
+      "moyenne_appreciations": 4,
+      "user_id": 7
     },
     {
       "id": "10",
       "titre": "Berserk",
       "categorie": "manga",
       "nombre_pages": 240,
+      "extrait": "public/Extraits/Berserk.pdf",
       "resume": "Guts, mercenaire solitaire, cherche à se venger de celui qui l'a trahi.",
       "auteur_id": 110,
       "editeur": "Glénat",
       "annee_edition": 1989,
       "image_couverture": "public/Couvertures/Berserk.png",
-      "moyenne_appreciations": 4.9
+      "moyenne_appreciations": 4,
+      "user_id": 4
     },
     {
       "id": "11",
       "titre": "Tintin au Tibet",
       "categorie": "bande dessinée",
       "nombre_pages": 62,
+      "extrait": "public/Extraits/TintinAuTibet.pdf",
       "resume": "Tintin cherche son ami Tchang dans l'Himalaya et croise la légende du Yéti.",
       "auteur_id": 111,
       "editeur": "Casterman",
       "annee_edition": 1960,
       "image_couverture": "public/Couvertures/TintinAuTibet.jpg",
-      "moyenne_appreciations": 4.5
+      "moyenne_appreciations": 4,
+      "user_id": 3
     },
     {
       "id": "12",
       "titre": "Fahrenheit 451",
       "categorie": "roman",
       "nombre_pages": 256,
+      "extrait": "public/Extraits/Fahrenheit451.pdf",
       "resume": "Dans un futur où les livres sont brûlés, un pompier commence à douter.",
       "auteur_id": 112,
       "editeur": "Denoël",
       "annee_edition": 1953,
       "image_couverture": "public/Couvertures/Fahrenheit451.jpg",
-      "moyenne_appreciations": 4.5
+      "moyenne_appreciations": 4,
+      "user_id": 1
     },
     {
       "id": "13",
       "titre": "One Piece",
       "categorie": "manga",
       "nombre_pages": 208,
+      "extrait": "public/Extraits/OnePiece.pdf",
       "resume": "Luffy part à la conquête du trésor One Piece pour devenir Roi des Pirates.",
       "auteur_id": 113,
       "editeur": "Glénat",
       "annee_edition": 1997,
       "image_couverture": "public/Couvertures/OnePiece.jpg",
-      "moyenne_appreciations": 4.8
+      "moyenne_appreciations": 4,
+      "user_id": 1
     },
     {
       "id": "14",
       "titre": "Dragon Ball",
       "categorie": "manga",
       "nombre_pages": 192,
+      "extrait": "public/Extraits/DragonBall.pdf",
       "resume": "Son Goku part à la recherche des sept boules de cristal aux vœux illimités.",
       "auteur_id": 114,
       "editeur": "Glénat",
       "annee_edition": 1984,
       "image_couverture": "public/Couvertures/DragonBall.png",
-      "moyenne_appreciations": 4.7
+      "moyenne_appreciations": 4,
+      "user_id": 5
     },
     {
       "id": "15",
       "titre": "Fullmetal Alchemist",
       "categorie": "manga",
       "nombre_pages": 192,
+      "extrait": "public/Extraits/FMA.pdf",
       "resume": "Deux frères alchimistes cherchent la Pierre Philosophale pour retrouver leurs corps.",
       "auteur_id": 115,
       "editeur": "Square Enix Manga",
       "annee_edition": 2001,
       "image_couverture": "public/Couvertures/FMA.jpg",
-      "moyenne_appreciations": 4.9
+      "moyenne_appreciations": 4,
+      "user_id": 5
     }
   ],
   "auteurs": [
