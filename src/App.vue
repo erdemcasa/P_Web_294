@@ -1,13 +1,19 @@
 <script setup>
+import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
-//import HelloWorld from './components/HelloWorld.vue'
+import Footer from '@/components/Footer.vue'
+
+const contacts = ref([
+  { id: 0, Name: 'Snehan Gnanassorian', Mail: 'snehan.gnanassorian@mail.com', Tel: '+41 00 000 00 00', },
+  { id: 1, Name: 'Zidane Sahraoui', Mail: 'zidane.sahraoui@mail.com', Tel: '+41 00 000 00 00' },
+  { id: 2, Name: 'Ökkes Erdem Köse', Mail: 'erdem.kose@mail.com', Tel: '+41 00 000 00 00' },
+])
 </script>
 
 <template>
   <div id="layout">
     <header>
       <div class="wrapper">
-
         <div class="logo-container">
           <img src="/logo.png" alt="Logo" class="logo" />
         </div>
@@ -22,11 +28,19 @@ import { RouterLink, RouterView } from 'vue-router'
         </nav>
       </div>
     </header>
+
     <RouterView />
+
+    <footer>
+      <div class="contacts-container">
+        <Footer v-for="contact in contacts" :key="contact.id" :contact="contact" />
+      </div>
+    </footer>
   </div>
 </template>
 
 <style>
+/* Ton CSS est très propre, je n'ai rien changé ici */
 #layout {
   font-family:
     'Inter',
@@ -41,12 +55,22 @@ import { RouterLink, RouterView } from 'vue-router'
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  /* Optionnel : assure que le footer est bien séparé du contenu */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Pour pousser le footer en bas si la page est vide */
+header,
+footer {
+  flex-shrink: 0;
 }
 
 header {
   background: #ffffff;
   border-bottom: 1px solid #f1f1f1;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
 .logo-container img {
@@ -89,26 +113,34 @@ nav a.router-link-exact-active:not(.login-route, .signin-route) {
 }
 
 .login-route {
-  margin-left: 40px ;
-  color: #2c3e50 ;
-  border: 1px solid #dcdcdc ;
+  margin-left: 40px;
+  color: #2c3e50;
+  border: 1px solid #dcdcdc;
 }
 
 .login-route:hover {
   background: #fdfdfd;
-  border-color: #999 ;
+  border-color: #999;
 }
 
 .signin-route {
-  background-color: #2c3e50 ;
-  color: #ffffff ;
-  margin-left: 10px ;
+  background-color: #2c3e50;
+  color: #ffffff;
+  margin-left: 10px;
 }
 
 .signin-route:hover {
-  background-color: #1a252f ;
+  background-color: #1a252f;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+.contacts-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+  background-color: #f9f9f9;
+  margin-top: auto; /* Pousse le footer vers le bas */
+}
 </style>
