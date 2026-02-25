@@ -55,7 +55,7 @@
     {
       "id": "5",
       "titre": "1984",
-      "categorie": "livre",
+      "categorie": "roman",
       "nombre_pages": 328,
       "extrait": "/assets/pdf/extrait-1984.pdf",
       "resume": "Winston Smith tente de survivre dans un régime totalitaire surveillé par Big Brother.",
@@ -64,14 +64,1023 @@
       "annee_edition": 1949,
       "image_couverture": "public/Couvertures/1984.jpg",
       "moyenne_appreciations": 4.7
+    },
+    {
+      "id": "6",
+      "titre": "Dune",
+      "categorie": "roman",
+      "nombre_pages": 688,
+      "extrait": "/assets/pdf/extrait-dune.pdf",
+      "resume": "Paul Atréides découvre sa destinée sur la planète désertique Arrakis, seule source de l'épice la plus précieuse de l'univers.",
+      "auteur_id": 106,
+      "editeur": "Robert Laffont",
+      "annee_edition": 1965,
+      "image_couverture": "public/Couvertures/Dune.jpg",
+      "moyenne_appreciations": 4.7
+    },
+    {
+      "id": "7",
+      "titre": "Watchmen",
+      "categorie": "bande dessinée",
+      "nombre_pages": 416,
+      "extrait": "/assets/pdf/extrait-watchmen.pdf",
+      "resume": "Dans une Amérique uchronique des années 80, d'anciens super-héros enquêtent sur le meurtre de l'un des leurs.",
+      "auteur_id": 107,
+      "editeur": "Panini Comics",
+      "annee_edition": 1986,
+      "image_couverture": "public/Couvertures/Watchmen.jpg",
+      "moyenne_appreciations": 4.6
+    },
+    {
+      "id": "8",
+      "titre": "Naruto",
+      "categorie": "manga",
+      "nombre_pages": 192,
+      "extrait": "/assets/pdf/extrait-naruto.pdf",
+      "resume": "Un jeune ninja espiègle rêve de devenir le chef de son village, portant en lui le sceau d'un démon renard.",
+      "auteur_id": 108,
+      "editeur": "Kana",
+      "annee_edition": 1999,
+      "image_couverture": "public/Couvertures/Naruto.jpg",
+      "moyenne_appreciations": 4.4
+    },
+    {
+      "id": "9",
+      "titre": "Le Petit Prince",
+      "categorie": "roman",
+      "nombre_pages": 96,
+      "extrait": "/assets/pdf/extrait-petit-prince.pdf",
+      "resume": "Un aviateur échoué dans le désert rencontre un mystérieux petit prince venu d'une autre planète.",
+      "auteur_id": 109,
+      "editeur": "Gallimard",
+      "annee_edition": 1943,
+      "image_couverture": "public/Couvertures/LePetitPrince.jpg",
+      "moyenne_appreciations": 4.6
+    },
+    {
+      "id": "10",
+      "titre": "Berserk",
+      "categorie": "manga",
+      "nombre_pages": 240,
+      "extrait": "/assets/pdf/extrait-berserk.pdf",
+      "resume": "Guts, un mercenaire solitaire portant une épée colossale, cherche à se venger de celui qui l'a trahi et condamné à être traqué par des démons.",
+      "auteur_id": 110,
+      "editeur": "Glénat",
+      "annee_edition": 1989,
+      "image_couverture": "public/Couvertures/Berserk.jpg",
+      "moyenne_appreciations": 4.9
+    },
+    {
+      "id": "11",
+      "titre": "Tintin au Tibet",
+      "categorie": "bande dessinée",
+      "nombre_pages": 62,
+      "extrait": "/assets/pdf/extrait-tintin-tibet.pdf",
+      "resume": "Tintin part à la recherche de son ami Tchang, seul survivant d'un crash aérien dans l'Himalaya, et croise la légende du Yéti.",
+      "auteur_id": 111,
+      "editeur": "Casterman",
+      "annee_edition": 1960,
+      "image_couverture": "public/Couvertures/TintinAuTibet.jpg",
+      "moyenne_appreciations": 4.5
+    },
+    {
+      "id": "12",
+      "titre": "Fahrenheit 451",
+      "categorie": "roman",
+      "nombre_pages": 256,
+      "extrait": "/assets/pdf/extrait-fahrenheit.pdf",
+      "resume": "Dans un futur où les livres sont interdits et brûlés par des pompiers, Guy Montag commence à douter du bien-fondé de sa mission.",
+      "auteur_id": 112,
+      "editeur": "Denoël",
+      "annee_edition": 1953,
+      "image_couverture": "public/Couvertures/Fahrenheit451.jpg",
+      "moyenne_appreciations": 4.5
+    },
+    {
+      "id": "13",
+      "titre": "One Piece",
+      "categorie": "manga",
+      "nombre_pages": 208,
+      "extrait": "/assets/pdf/extrait-onepiece.pdf",
+      "resume": "Monkey D. Luffy, un garçon dont le corps a acquis les propriétés du caoutchouc, part à la conquête du légendaire trésor One Piece pour devenir Roi des Pirates.",
+      "auteur_id": 113,
+      "editeur": "Glénat",
+      "annee_edition": 1997,
+      "image_couverture": "public/Couvertures/OnePiece.jpg",
+      "moyenne_appreciations": 4.8
+    },
+    {
+      "id": "14",
+      "titre": "Dragon Ball",
+      "categorie": "manga",
+      "nombre_pages": 192,
+      "extrait": "/assets/pdf/extrait-dragonball.pdf",
+      "resume": "Son Goku, un enfant doté d'une force surhumaine, part à la recherche des sept boules de cristal capables d'exaucer tous les vœux.",
+      "auteur_id": 114,
+      "editeur": "Glénat",
+      "annee_edition": 1984,
+      "image_couverture": "public/Couvertures/DragonBall.jpg",
+      "moyenne_appreciations": 4.7
+    },
+    {
+      "id": "15",
+      "titre": "Fullmetal Alchemist",
+      "categorie": "manga",
+      "nombre_pages": 192,
+      "extrait": "/assets/pdf/extrait-fma.pdf",
+      "resume": "Deux frères alchimistes cherchent la Pierre Philosophale pour retrouver leurs corps perdus après une transmutation interdite.",
+      "auteur_id": 115,
+      "editeur": "Square Enix Manga",
+      "annee_edition": 2001,
+      "image_couverture": "public/Couvertures/FMA.jpg",
+      "moyenne_appreciations": 4.9
+    },
+    {
+      "id": "16",
+      "titre": "Le Monde de Narnia",
+      "categorie": "roman",
+      "nombre_pages": 208,
+      "extrait": "/assets/pdf/extrait-narnia.pdf",
+      "resume": "Quatre enfants découvrent un monde fantastique au fond d'une armoire, gouverné par une sorcière maléfique et protégé par le lion Aslan.",
+      "auteur_id": 116,
+      "editeur": "Gallimard Jeunesse",
+      "annee_edition": 1950,
+      "image_couverture": "public/Couvertures/Narnia.jpg",
+      "moyenne_appreciations": 4.4
+    },
+    {
+      "id": "17",
+      "titre": "Harry Potter à l'école des sorciers",
+      "categorie": "roman",
+      "nombre_pages": 309,
+      "extrait": "/assets/pdf/extrait-hp1.pdf",
+      "resume": "Un jeune orphelin découvre qu'il est un sorcier et intègre l'école de magie Poudlard, où il apprendra ses origines et affrontera les forces du mal.",
+      "auteur_id": 117,
+      "editeur": "Gallimard Jeunesse",
+      "annee_edition": 1997,
+      "image_couverture": "public/Couvertures/HP1.jpg",
+      "moyenne_appreciations": 4.8
+    },
+    {
+      "id": "18",
+      "titre": "Sandman",
+      "categorie": "bande dessinée",
+      "nombre_pages": 240,
+      "extrait": "/assets/pdf/extrait-sandman.pdf",
+      "resume": "Morphée, le seigneur des rêves, est capturé pendant des décennies avant de s'échapper et de devoir reconstruire son royaume.",
+      "auteur_id": 118,
+      "editeur": "Urban Comics",
+      "annee_edition": 1989,
+      "image_couverture": "public/Couvertures/Sandman.jpg",
+      "moyenne_appreciations": 4.8
+    },
+    {
+      "id": "19",
+      "titre": "Blade Runner - Les androïdes rêvent-ils de moutons électriques ?",
+      "categorie": "roman",
+      "nombre_pages": 256,
+      "extrait": "/assets/pdf/extrait-bladerunner.pdf",
+      "resume": "Dans un monde post-nucléaire, un chasseur de primes traque des androïdes rebelles indiscernables des humains.",
+      "auteur_id": 119,
+      "editeur": "J'ai lu",
+      "annee_edition": 1968,
+      "image_couverture": "public/Couvertures/BladeRunner.jpg",
+      "moyenne_appreciations": 4.6
+    },
+    {
+      "id": "20",
+      "titre": "Spirou et Fantasio - La Vallée des Bannis",
+      "categorie": "bande dessinée",
+      "nombre_pages": 56,
+      "extrait": "/assets/pdf/extrait-spirou.pdf",
+      "resume": "Spirou et son ami Fantasio partent en aventure dans une vallée secrète peuplée de bannis dont personne ne connaît l'existence.",
+      "auteur_id": 120,
+      "editeur": "Dupuis",
+      "annee_edition": 1952,
+      "image_couverture": "public/Couvertures/Spirou.jpg",
+      "moyenne_appreciations": 4.1
+    },
+    {
+      "id": "21",
+      "titre": "Death Note",
+      "categorie": "manga",
+      "nombre_pages": 200,
+      "extrait": "/assets/pdf/extrait-deathnote.pdf",
+      "resume": "Un lycéen brillant trouve un carnet permettant de tuer quiconque dont il écrit le nom, et décide de purger le monde des criminels.",
+      "auteur_id": 121,
+      "editeur": "Kana",
+      "annee_edition": 2003,
+      "image_couverture": "public/Couvertures/DeathNote.jpg",
+      "moyenne_appreciations": 4.7
+    },
+    {
+      "id": "22",
+      "titre": "Le Hobbit",
+      "categorie": "roman",
+      "nombre_pages": 310,
+      "extrait": "/assets/pdf/extrait-hobbit.pdf",
+      "resume": "Bilbo Sacquet, un hobbit paisible, est entraîné dans une quête épique pour aider des nains à reprendre leur montagne à un dragon.",
+      "auteur_id": 103,
+      "editeur": "Christian Bourgois",
+      "annee_edition": 1937,
+      "image_couverture": "public/Couvertures/Hobbit.jpg",
+      "moyenne_appreciations": 4.7
+    },
+    {
+      "id": "23",
+      "titre": "Ghost in the Shell",
+      "categorie": "manga",
+      "nombre_pages": 352,
+      "extrait": "/assets/pdf/extrait-gits.pdf",
+      "resume": "Dans un futur cyberpunk, le Major Motoko Kusanagi, cyborg chef d'une unité spéciale, traque un pirate informatique fantôme.",
+      "auteur_id": 122,
+      "editeur": "Glénat",
+      "annee_edition": 1989,
+      "image_couverture": "public/Couvertures/GhostInTheShell.jpg",
+      "moyenne_appreciations": 4.7
+    },
+    {
+      "id": "24",
+      "titre": "V pour Vendetta",
+      "categorie": "bande dessinée",
+      "nombre_pages": 296,
+      "extrait": "/assets/pdf/extrait-v-vendetta.pdf",
+      "resume": "Dans une Angleterre fasciste du futur, un mystérieux anarchiste masqué combat le régime totalitaire avec pour seule arme son intelligence.",
+      "auteur_id": 107,
+      "editeur": "Panini Comics",
+      "annee_edition": 1982,
+      "image_couverture": "public/Couvertures/VVendetta.jpg",
+      "moyenne_appreciations": 4.6
+    },
+    {
+      "id": "25",
+      "titre": "Le Meilleur des mondes",
+      "categorie": "roman",
+      "nombre_pages": 288,
+      "extrait": "/assets/pdf/extrait-meilleur-mondes.pdf",
+      "resume": "Dans une société futuriste où les humains sont conditionnés dès la naissance, un Sauvage découvre les limites du bonheur fabriqué.",
+      "auteur_id": 123,
+      "editeur": "Pocket",
+      "annee_edition": 1932,
+      "image_couverture": "public/Couvertures/MeilleurMondes.jpg",
+      "moyenne_appreciations": 4.5
+    },
+    {
+      "id": "26",
+      "titre": "Vinland Saga",
+      "categorie": "manga",
+      "nombre_pages": 208,
+      "extrait": "/assets/pdf/extrait-vinland.pdf",
+      "resume": "Thorfinn, fils d'un grand guerrier viking, cherche à venger la mort de son père tout en questionnant le sens de la violence et de la guerre.",
+      "auteur_id": 124,
+      "editeur": "Kurokawa",
+      "annee_edition": 2005,
+      "image_couverture": "public/Couvertures/VinlandSaga.jpg",
+      "moyenne_appreciations": 4.8
+    },
+    {
+      "id": "27",
+      "titre": "Les Misérables",
+      "categorie": "roman",
+      "nombre_pages": 1900,
+      "extrait": "/assets/pdf/extrait-miserables.pdf",
+      "resume": "Jean Valjean, ancien forçat en quête de rédemption, navigue dans la France du XIXe siècle sous la traque incessante de l'inspecteur Javert.",
+      "auteur_id": 125,
+      "editeur": "Gallimard",
+      "annee_edition": 1862,
+      "image_couverture": "public/Couvertures/LesMiserables.jpg",
+      "moyenne_appreciations": 4.8
+    },
+    {
+      "id": "28",
+      "titre": "Slam Dunk",
+      "categorie": "manga",
+      "nombre_pages": 192,
+      "extrait": "/assets/pdf/extrait-slamdunk.pdf",
+      "resume": "Hanamichi Sakuragi, un délinquant impulsif, intègre l'équipe de basket de son lycée pour plaire à une fille et découvre sa passion pour le sport.",
+      "auteur_id": 126,
+      "editeur": "Kana",
+      "annee_edition": 1990,
+      "image_couverture": "public/Couvertures/SlamDunk.jpg",
+      "moyenne_appreciations": 4.8
+    },
+    {
+      "id": "29",
+      "titre": "Fondation",
+      "categorie": "roman",
+      "nombre_pages": 272,
+      "extrait": "/assets/pdf/extrait-fondation.pdf",
+      "resume": "Hari Seldon, mathématicien visionnaire, prédit l'effondrement de l'Empire Galactique et fonde une encyclopédie pour préserver la connaissance humaine.",
+      "auteur_id": 127,
+      "editeur": "Gallimard",
+      "annee_edition": 1951,
+      "image_couverture": "public/Couvertures/Fondation.jpg",
+      "moyenne_appreciations": 4.7
+    },
+    {
+      "id": "30",
+      "titre": "Blacksad",
+      "categorie": "bande dessinée",
+      "nombre_pages": 56,
+      "extrait": "/assets/pdf/extrait-blacksad.pdf",
+      "resume": "John Blacksad, détective privé à tête de chat noir, enquête dans le New York des années 50 sur des affaires sombres liées au racisme et à la corruption.",
+      "auteur_id": 128,
+      "editeur": "Dargaud",
+      "annee_edition": 2000,
+      "image_couverture": "public/Couvertures/Blacksad.jpg",
+      "moyenne_appreciations": 4.6
+    },
+    {
+      "id": "31",
+      "titre": "Neon Genesis Evangelion",
+      "categorie": "manga",
+      "nombre_pages": 192,
+      "extrait": "/assets/pdf/extrait-eva.pdf",
+      "resume": "Dans un monde menacé par d'immenses créatures appelées Anges, de jeunes pilotes contrôlent des robots géants pour défendre l'humanité.",
+      "auteur_id": 129,
+      "editeur": "Glénat",
+      "annee_edition": 1994,
+      "image_couverture": "public/Couvertures/Eva.jpg",
+      "moyenne_appreciations": 4.5
+    },
+    {
+      "id": "32",
+      "titre": "Crime et Châtiment",
+      "categorie": "roman",
+      "nombre_pages": 672,
+      "extrait": "/assets/pdf/extrait-crime-chatiment.pdf",
+      "resume": "Raskolnikov, un étudiant désargenté, commet un meurtre qu'il croit justifié par sa théorie du surhomme et doit vivre avec les conséquences de son acte.",
+      "auteur_id": 130,
+      "editeur": "Gallimard",
+      "annee_edition": 1866,
+      "image_couverture": "public/Couvertures/CrimeChatiment.jpg",
+      "moyenne_appreciations": 4.6
+    },
+    {
+      "id": "33",
+      "titre": "Lone Wolf and Cub",
+      "categorie": "manga",
+      "nombre_pages": 320,
+      "extrait": "/assets/pdf/extrait-lonewolf.pdf",
+      "resume": "Ogami Ittō, ancien bourreau du Shogun trahi et déchu, erre dans le Japon féodal avec son jeune fils en accomplissant des missions d'assassinat.",
+      "auteur_id": 131,
+      "editeur": "Panini Manga",
+      "annee_edition": 1970,
+      "image_couverture": "public/Couvertures/LoneWolf.jpg",
+      "moyenne_appreciations": 4.7
+    },
+    {
+      "id": "34",
+      "titre": "La Planète des Singes",
+      "categorie": "roman",
+      "nombre_pages": 248,
+      "extrait": "/assets/pdf/extrait-planete-singes.pdf",
+      "resume": "Des astronautes atterrissent sur une planète étrange où les singes sont civilisés et les humains sauvages.",
+      "auteur_id": 132,
+      "editeur": "Pocket",
+      "annee_edition": 1963,
+      "image_couverture": "public/Couvertures/PlaneteSinges.jpg",
+      "moyenne_appreciations": 4.3
+    },
+    {
+      "id": "35",
+      "titre": "Saga",
+      "categorie": "bande dessinée",
+      "nombre_pages": 160,
+      "extrait": "/assets/pdf/extrait-saga.pdf",
+      "resume": "Deux soldats ennemis tombent amoureux et fuient une guerre intergalactique pour protéger leur enfant nouveau-né dans une galaxie qui veut leur mort.",
+      "auteur_id": 133,
+      "editeur": "Urban Comics",
+      "annee_edition": 2012,
+      "image_couverture": "public/Couvertures/Saga.jpg",
+      "moyenne_appreciations": 4.7
+    },
+    {
+      "id": "36",
+      "titre": "Hunter x Hunter",
+      "categorie": "manga",
+      "nombre_pages": 200,
+      "extrait": "/assets/pdf/extrait-hxh.pdf",
+      "resume": "Gon Freecss rêve de devenir Hunter comme son père disparu, et passe l'épreuve d'un dangereux examen qui l'emmènera aux confins du monde.",
+      "auteur_id": 134,
+      "editeur": "Kana",
+      "annee_edition": 1998,
+      "image_couverture": "public/Couvertures/HxH.jpg",
+      "moyenne_appreciations": 4.9
+    },
+    {
+      "id": "37",
+      "titre": "La Métamorphose",
+      "categorie": "roman",
+      "nombre_pages": 128,
+      "extrait": "/assets/pdf/extrait-metamorphose.pdf",
+      "resume": "Gregor Samsa se réveille un matin transformé en insecte géant et observe l'effondrement de sa famille face à cette réalité insupportable.",
+      "auteur_id": 135,
+      "editeur": "Gallimard",
+      "annee_edition": 1915,
+      "image_couverture": "public/Couvertures/Metamorphose.jpg",
+      "moyenne_appreciations": 4.4
+    },
+    {
+      "id": "38",
+      "titre": "Maus",
+      "categorie": "bande dessinée",
+      "nombre_pages": 296,
+      "extrait": "/assets/pdf/extrait-maus.pdf",
+      "resume": "Art Spiegelman raconte la survie de son père pendant la Shoah, représentant les Juifs en souris et les Nazis en chats.",
+      "auteur_id": 136,
+      "editeur": "Flammarion",
+      "annee_edition": 1986,
+      "image_couverture": "public/Couvertures/Maus.jpg",
+      "moyenne_appreciations": 4.9
+    },
+    {
+      "id": "39",
+      "titre": "Demon Slayer",
+      "categorie": "manga",
+      "nombre_pages": 192,
+      "extrait": "/assets/pdf/extrait-demonslayer.pdf",
+      "resume": "Tanjiro Kamado devient tueur de démons pour sauver sa sœur transformée en démone après le massacre de sa famille.",
+      "auteur_id": 137,
+      "editeur": "Panini Manga",
+      "annee_edition": 2016,
+      "image_couverture": "public/Couvertures/DemonSlayer.jpg",
+      "moyenne_appreciations": 4.6
+    },
+    {
+      "id": "40",
+      "titre": "Germinal",
+      "categorie": "roman",
+      "nombre_pages": 592,
+      "extrait": "/assets/pdf/extrait-germinal.pdf",
+      "resume": "Dans les mines du nord de la France, Étienne Lantier arrive au Voreux et déclenche une grève qui embrasera toute la région.",
+      "auteur_id": 138,
+      "editeur": "Gallimard",
+      "annee_edition": 1885,
+      "image_couverture": "public/Couvertures/Germinal.jpg",
+      "moyenne_appreciations": 4.5
+    },
+    {
+      "id": "41",
+      "titre": "Planètes",
+      "categorie": "manga",
+      "nombre_pages": 232,
+      "extrait": "/assets/pdf/extrait-planetes.pdf",
+      "resume": "Des éboueurs de l'espace collectent les débris orbitaux au XXIe siècle, entre quotidien banal et aspirations à l'infini.",
+      "auteur_id": 139,
+      "editeur": "Pika",
+      "annee_edition": 1999,
+      "image_couverture": "public/Couvertures/Planetes.jpg",
+      "moyenne_appreciations": 4.6
+    },
+    {
+      "id": "42",
+      "titre": "Les Aventures de Blake et Mortimer - Le Secret de l'Espadon",
+      "categorie": "bande dessinée",
+      "nombre_pages": 128,
+      "extrait": "/assets/pdf/extrait-blake-mortimer.pdf",
+      "resume": "Le capitaine Blake et le professeur Mortimer affrontent l'Empire Jaune qui menace d'envahir l'Europe avec une arme secrète redoutable.",
+      "auteur_id": 140,
+      "editeur": "Le Lombard",
+      "annee_edition": 1950,
+      "image_couverture": "public/Couvertures/BlakeMortimer.jpg",
+      "moyenne_appreciations": 4.3
+    },
+    {
+      "id": "43",
+      "titre": "Attack on Titan",
+      "categorie": "manga",
+      "nombre_pages": 200,
+      "extrait": "/assets/pdf/extrait-aot.pdf",
+      "resume": "L'humanité survit retranchée derrière d'immenses murs pour se protéger de géants dévorant les humains, jusqu'au jour où les murs tombent.",
+      "auteur_id": 141,
+      "editeur": "Pika",
+      "annee_edition": 2009,
+      "image_couverture": "public/Couvertures/AOT.jpg",
+      "moyenne_appreciations": 4.8
+    },
+    {
+      "id": "44",
+      "titre": "Le Guide du voyageur galactique",
+      "categorie": "roman",
+      "nombre_pages": 224,
+      "extrait": "/assets/pdf/extrait-hitchhiker.pdf",
+      "resume": "Arthur Dent, un Anglais ordinaire, est arraché à la Terre quelques secondes avant sa destruction et entame un voyage absurde à travers l'univers.",
+      "auteur_id": 142,
+      "editeur": "Denoël",
+      "annee_edition": 1979,
+      "image_couverture": "public/Couvertures/HitchhikersGuide.jpg",
+      "moyenne_appreciations": 4.7
+    },
+    {
+      "id": "45",
+      "titre": "Persepolis",
+      "categorie": "bande dessinée",
+      "nombre_pages": 368,
+      "extrait": "/assets/pdf/extrait-persepolis.pdf",
+      "resume": "Marjane Satrapi raconte son enfance et son adolescence en Iran sous la Révolution islamique et son exil en Europe.",
+      "auteur_id": 143,
+      "editeur": "L'Association",
+      "annee_edition": 2000,
+      "image_couverture": "public/Couvertures/Persepolis.jpg",
+      "moyenne_appreciations": 4.7
+    },
+    {
+      "id": "46",
+      "titre": "Steins;Gate",
+      "categorie": "roman",
+      "nombre_pages": 320,
+      "extrait": "/assets/pdf/extrait-steinsgate.pdf",
+      "resume": "Un groupe d'étudiants invente accidentellement un appareil pour envoyer des messages dans le passé et doit affronter les conséquences terrifiantes de cette découverte.",
+      "auteur_id": 144,
+      "editeur": "Mana Books",
+      "annee_edition": 2009,
+      "image_couverture": "public/Couvertures/SteinsGate.jpg",
+      "moyenne_appreciations": 4.8
+    },
+    {
+      "id": "47",
+      "titre": "Vagabond",
+      "categorie": "manga",
+      "nombre_pages": 208,
+      "extrait": "/assets/pdf/extrait-vagabond.pdf",
+      "resume": "La vie romancée de Miyamoto Musashi, le plus grand samouraï du Japon, dans sa quête de l'invincibilité et de la sagesse.",
+      "auteur_id": 145,
+      "editeur": "Tonkam",
+      "annee_edition": 1998,
+      "image_couverture": "public/Couvertures/Vagabond.jpg",
+      "moyenne_appreciations": 4.9
+    },
+    {
+      "id": "48",
+      "titre": "Neuromancien",
+      "categorie": "roman",
+      "nombre_pages": 320,
+      "extrait": "/assets/pdf/extrait-neuromancien.pdf",
+      "resume": "Un pirate informatique désœuvré est engagé pour une mission mystérieuse dans le cyberespace, fondant le genre cyberpunk en littérature.",
+      "auteur_id": 146,
+      "editeur": "J'ai lu",
+      "annee_edition": 1984,
+      "image_couverture": "public/Couvertures/Neuromancien.jpg",
+      "moyenne_appreciations": 4.4
+    },
+    {
+      "id": "49",
+      "titre": "Gaston Lagaffe",
+      "categorie": "bande dessinée",
+      "nombre_pages": 48,
+      "extrait": "/assets/pdf/extrait-gaston.pdf",
+      "resume": "Gaston, employé de bureau fainéant et inventeur catastrophique, sème le chaos dans la rédaction du journal Spirou avec ses inventions loufoques.",
+      "auteur_id": 147,
+      "editeur": "Dupuis",
+      "annee_edition": 1957,
+      "image_couverture": "public/Couvertures/Gaston.jpg",
+      "moyenne_appreciations": 4.4
+    },
+    {
+      "id": "50",
+      "titre": "My Hero Academia",
+      "categorie": "manga",
+      "nombre_pages": 192,
+      "extrait": "/assets/pdf/extrait-mha.pdf",
+      "resume": "Dans un monde où la quasi-totalité de la population possède un super-pouvoir, Izuku Midoriya, né sans pouvoir, rêve de devenir le plus grand héros.",
+      "auteur_id": 148,
+      "editeur": "Ki-oon",
+      "annee_edition": 2014,
+      "image_couverture": "public/Couvertures/MHA.jpg",
+      "moyenne_appreciations": 4.5
+    },
+    {
+      "id": "51",
+      "titre": "Brave New World",
+      "categorie": "roman",
+      "nombre_pages": 311,
+      "extrait": "/assets/pdf/extrait-brave-new-world.pdf",
+      "resume": "Dans une société futuriste conditionnée au bonheur, Bernard Marx remet en question l'ordre établi après avoir rencontré un Sauvage.",
+      "auteur_id": 123,
+      "editeur": "Pocket",
+      "annee_edition": 1932,
+      "image_couverture": "public/Couvertures/BraveNewWorld.jpg",
+      "moyenne_appreciations": 4.5
+    },
+    {
+      "id": "52",
+      "titre": "Captain Tsubasa",
+      "categorie": "manga",
+      "nombre_pages": 192,
+      "extrait": "/assets/pdf/extrait-tsubasa.pdf",
+      "resume": "Oliver Atton, jeune prodige du football, rêve de conduire le Japon à la victoire lors de la Coupe du Monde.",
+      "auteur_id": 149,
+      "editeur": "Glénat",
+      "annee_edition": 1981,
+      "image_couverture": "public/Couvertures/CaptainTsubasa.jpg",
+      "moyenne_appreciations": 4.3
+    },
+    {
+      "id": "53",
+      "titre": "Le Château ambulant",
+      "categorie": "roman",
+      "nombre_pages": 384,
+      "extrait": "/assets/pdf/extrait-chateau-ambulant.pdf",
+      "resume": "Sophie, une jeune chapelière transformée en vieille femme par une sorcière, se réfugie dans le château en mouvement du mystérieux mage Hauru.",
+      "auteur_id": 150,
+      "editeur": "Ynnis Editions",
+      "annee_edition": 1986,
+      "image_couverture": "public/Couvertures/ChateauAmbulant.jpg",
+      "moyenne_appreciations": 4.6
+    },
+    {
+      "id": "54",
+      "titre": "Astro Boy",
+      "categorie": "manga",
+      "nombre_pages": 424,
+      "extrait": "/assets/pdf/extrait-astroboy.pdf",
+      "resume": "Un robot construit à l'image d'un enfant décédé utilise ses super-pouvoirs pour défendre l'humanité et lutter pour les droits des robots.",
+      "auteur_id": 151,
+      "editeur": "Kana",
+      "annee_edition": 1952,
+      "image_couverture": "public/Couvertures/AstroBoy.jpg",
+      "moyenne_appreciations": 4.3
+    },
+    {
+      "id": "55",
+      "titre": "Planète Hulk",
+      "categorie": "bande dessinée",
+      "nombre_pages": 416,
+      "extrait": "/assets/pdf/extrait-planete-hulk.pdf",
+      "resume": "Exilé de la Terre par ses alliés, Hulk atterrit sur une planète guerrière où il devient gladiateur et roi, avant de jurer vengeance.",
+      "auteur_id": 152,
+      "editeur": "Panini Comics",
+      "annee_edition": 2006,
+      "image_couverture": "public/Couvertures/PlaneteHulk.jpg",
+      "moyenne_appreciations": 4.3
     }
   ],
   "auteurs": [
-    { "id": 101, "nom": "Moebius", "prenom": "Jean" },
-    { "id": 102, "nom": "Otomo", "prenom": "Katsuhiro" },
-    { "id": 103, "nom": "Tolkien", "prenom": "J.R.R." },
-    { "id": 104, "nom": "Goscinny", "prenom": "René" },
-    { "id": 105, "nom": "Orwell", "prenom": "George" }
+    {
+      "id": 101,
+      "nom": "Giraud",
+      "prenom": "Jean",
+      "nationalite": "Française",
+      "date_naissance": "1938-05-08"
+    },
+    {
+      "id": 102,
+      "nom": "Otomo",
+      "prenom": "Katsuhiro",
+      "nationalite": "Japonaise",
+      "date_naissance": "1954-04-14"
+    },
+    {
+      "id": 103,
+      "nom": "Tolkien",
+      "prenom": "J.R.R.",
+      "nationalite": "Britannique",
+      "date_naissance": "1892-01-03"
+    },
+    {
+      "id": 104,
+      "nom": "Goscinny",
+      "prenom": "René",
+      "nationalite": "Française",
+      "date_naissance": "1926-08-14"
+    },
+    {
+      "id": 105,
+      "nom": "Orwell",
+      "prenom": "George",
+      "nationalite": "Britannique",
+      "date_naissance": "1903-06-25"
+    },
+    {
+      "id": 106,
+      "nom": "Herbert",
+      "prenom": "Frank",
+      "nationalite": "Américaine",
+      "date_naissance": "1920-10-08"
+    },
+    {
+      "id": 107,
+      "nom": "Moore",
+      "prenom": "Alan",
+      "nationalite": "Britannique",
+      "date_naissance": "1953-11-18"
+    },
+    {
+      "id": 108,
+      "nom": "Kishimoto",
+      "prenom": "Masashi",
+      "nationalite": "Japonaise",
+      "date_naissance": "1974-11-08"
+    },
+    {
+      "id": 109,
+      "nom": "de Saint-Exupéry",
+      "prenom": "Antoine",
+      "nationalite": "Française",
+      "date_naissance": "1900-06-29"
+    },
+    {
+      "id": 110,
+      "nom": "Miura",
+      "prenom": "Kentaro",
+      "nationalite": "Japonaise",
+      "date_naissance": "1966-07-11"
+    },
+    {
+      "id": 111,
+      "nom": "Hergé",
+      "prenom": "Georges",
+      "nationalite": "Belge",
+      "date_naissance": "1907-05-22"
+    },
+    {
+      "id": 112,
+      "nom": "Bradbury",
+      "prenom": "Ray",
+      "nationalite": "Américaine",
+      "date_naissance": "1920-08-22"
+    },
+    {
+      "id": 113,
+      "nom": "Oda",
+      "prenom": "Eiichiro",
+      "nationalite": "Japonaise",
+      "date_naissance": "1975-01-01"
+    },
+    {
+      "id": 114,
+      "nom": "Toriyama",
+      "prenom": "Akira",
+      "nationalite": "Japonaise",
+      "date_naissance": "1955-04-05"
+    },
+    {
+      "id": 115,
+      "nom": "Arakawa",
+      "prenom": "Hiromu",
+      "nationalite": "Japonaise",
+      "date_naissance": "1973-06-08"
+    },
+    {
+      "id": 116,
+      "nom": "Lewis",
+      "prenom": "C.S.",
+      "nationalite": "Britannique",
+      "date_naissance": "1898-11-29"
+    },
+    {
+      "id": 117,
+      "nom": "Rowling",
+      "prenom": "J.K.",
+      "nationalite": "Britannique",
+      "date_naissance": "1965-07-31"
+    },
+    {
+      "id": 118,
+      "nom": "Gaiman",
+      "prenom": "Neil",
+      "nationalite": "Britannique",
+      "date_naissance": "1960-11-10"
+    },
+    {
+      "id": 119,
+      "nom": "Dick",
+      "prenom": "Philip K.",
+      "nationalite": "Américaine",
+      "date_naissance": "1928-12-16"
+    },
+    {
+      "id": 120,
+      "nom": "Franquin",
+      "prenom": "André",
+      "nationalite": "Belge",
+      "date_naissance": "1924-01-03"
+    },
+    {
+      "id": 121,
+      "nom": "Ohba",
+      "prenom": "Tsugumi",
+      "nationalite": "Japonaise",
+      "date_naissance": "1967-01-01"
+    },
+    {
+      "id": 122,
+      "nom": "Shirow",
+      "prenom": "Masamune",
+      "nationalite": "Japonaise",
+      "date_naissance": "1961-11-23"
+    },
+    {
+      "id": 123,
+      "nom": "Huxley",
+      "prenom": "Aldous",
+      "nationalite": "Britannique",
+      "date_naissance": "1894-07-26"
+    },
+    {
+      "id": 124,
+      "nom": "Yukimura",
+      "prenom": "Makoto",
+      "nationalite": "Japonaise",
+      "date_naissance": "1976-02-26"
+    },
+    {
+      "id": 125,
+      "nom": "Hugo",
+      "prenom": "Victor",
+      "nationalite": "Française",
+      "date_naissance": "1802-02-26"
+    },
+    {
+      "id": 126,
+      "nom": "Inoue",
+      "prenom": "Takehiko",
+      "nationalite": "Japonaise",
+      "date_naissance": "1967-01-12"
+    },
+    {
+      "id": 127,
+      "nom": "Asimov",
+      "prenom": "Isaac",
+      "nationalite": "Américaine",
+      "date_naissance": "1920-01-02"
+    },
+    {
+      "id": 128,
+      "nom": "Díaz Canales",
+      "prenom": "Juan",
+      "nationalite": "Espagnole",
+      "date_naissance": "1972-01-01"
+    },
+    {
+      "id": 129,
+      "nom": "Sadamoto",
+      "prenom": "Yoshiyuki",
+      "nationalite": "Japonaise",
+      "date_naissance": "1962-01-29"
+    },
+    {
+      "id": 130,
+      "nom": "Dostoïevski",
+      "prenom": "Fiodor",
+      "nationalite": "Russe",
+      "date_naissance": "1821-11-11"
+    },
+    {
+      "id": 131,
+      "nom": "Koike",
+      "prenom": "Kazuo",
+      "nationalite": "Japonaise",
+      "date_naissance": "1936-05-08"
+    },
+    {
+      "id": 132,
+      "nom": "Boulle",
+      "prenom": "Pierre",
+      "nationalite": "Française",
+      "date_naissance": "1912-02-20"
+    },
+    {
+      "id": 133,
+      "nom": "Vaughan",
+      "prenom": "Brian K.",
+      "nationalite": "Américaine",
+      "date_naissance": "1976-07-11"
+    },
+    {
+      "id": 134,
+      "nom": "Togashi",
+      "prenom": "Yoshihiro",
+      "nationalite": "Japonaise",
+      "date_naissance": "1966-04-27"
+    },
+    {
+      "id": 135,
+      "nom": "Kafka",
+      "prenom": "Franz",
+      "nationalite": "Tchèque",
+      "date_naissance": "1883-07-03"
+    },
+    {
+      "id": 136,
+      "nom": "Spiegelman",
+      "prenom": "Art",
+      "nationalite": "Américaine",
+      "date_naissance": "1948-02-15"
+    },
+    {
+      "id": 137,
+      "nom": "Gotouge",
+      "prenom": "Koyoharu",
+      "nationalite": "Japonaise",
+      "date_naissance": "1989-05-28"
+    },
+    {
+      "id": 138,
+      "nom": "Zola",
+      "prenom": "Émile",
+      "nationalite": "Française",
+      "date_naissance": "1840-04-02"
+    },
+    {
+      "id": 139,
+      "nom": "Hoshino",
+      "prenom": "Makoto",
+      "nationalite": "Japonaise",
+      "date_naissance": "1977-01-01"
+    },
+    {
+      "id": 140,
+      "nom": "Jacobs",
+      "prenom": "Edgar P.",
+      "nationalite": "Belge",
+      "date_naissance": "1904-03-30"
+    },
+    {
+      "id": 141,
+      "nom": "Isayama",
+      "prenom": "Hajime",
+      "nationalite": "Japonaise",
+      "date_naissance": "1986-08-29"
+    },
+    {
+      "id": 142,
+      "nom": "Adams",
+      "prenom": "Douglas",
+      "nationalite": "Britannique",
+      "date_naissance": "1952-03-11"
+    },
+    {
+      "id": 143,
+      "nom": "Satrapi",
+      "prenom": "Marjane",
+      "nationalite": "Franco-iranienne",
+      "date_naissance": "1969-11-22"
+    },
+    {
+      "id": 144,
+      "nom": "Hayashi",
+      "prenom": "Naotaka",
+      "nationalite": "Japonaise",
+      "date_naissance": "1983-01-01"
+    },
+    {
+      "id": 145,
+      "nom": "Inoue",
+      "prenom": "Takehiko",
+      "nationalite": "Japonaise",
+      "date_naissance": "1967-01-12"
+    },
+    {
+      "id": 146,
+      "nom": "Gibson",
+      "prenom": "William",
+      "nationalite": "Américaine",
+      "date_naissance": "1948-03-17"
+    },
+    {
+      "id": 147,
+      "nom": "Franquin",
+      "prenom": "André",
+      "nationalite": "Belge",
+      "date_naissance": "1924-01-03"
+    },
+    {
+      "id": 148,
+      "nom": "Horikoshi",
+      "prenom": "Kōhei",
+      "nationalite": "Japonaise",
+      "date_naissance": "1986-11-20"
+    },
+    {
+      "id": 149,
+      "nom": "Takahashi",
+      "prenom": "Yōichi",
+      "nationalite": "Japonaise",
+      "date_naissance": "1960-04-17"
+    },
+    {
+      "id": 150,
+      "nom": "Jones",
+      "prenom": "Diana Wynne",
+      "nationalite": "Britannique",
+      "date_naissance": "1934-08-16"
+    },
+    {
+      "id": 151,
+      "nom": "Tezuka",
+      "prenom": "Osamu",
+      "nationalite": "Japonaise",
+      "date_naissance": "1928-11-03"
+    },
+    {
+      "id": 152,
+      "nom": "Pak",
+      "prenom": "Greg",
+      "nationalite": "Américaine",
+      "date_naissance": "1967-01-01"
+    }
   ],
   "utilisateurs": [
     {
@@ -89,6 +1098,150 @@
       "nb_ouvrages_proposes": 0,
       "nb_appreciations": 3,
       "nb_commentaires": 1
+    },
+    {
+      "id": "u3",
+      "pseudo": "MangaKing",
+      "date_entree": "2024-03-05",
+      "nb_ouvrages_proposes": 3,
+      "nb_appreciations": 20,
+      "nb_commentaires": 15
+    },
+    {
+      "id": "u4",
+      "pseudo": "FantasyQueen",
+      "date_entree": "2024-03-18",
+      "nb_ouvrages_proposes": 7,
+      "nb_appreciations": 35,
+      "nb_commentaires": 22
+    },
+    {
+      "id": "u5",
+      "pseudo": "NocturnalReader",
+      "date_entree": "2024-04-02",
+      "nb_ouvrages_proposes": 1,
+      "nb_appreciations": 8,
+      "nb_commentaires": 4
+    },
+    {
+      "id": "u6",
+      "pseudo": "BDPassionné",
+      "date_entree": "2024-04-20",
+      "nb_ouvrages_proposes": 4,
+      "nb_appreciations": 17,
+      "nb_commentaires": 11
+    },
+    {
+      "id": "u7",
+      "pseudo": "OtakuZone",
+      "date_entree": "2024-05-01",
+      "nb_ouvrages_proposes": 6,
+      "nb_appreciations": 42,
+      "nb_commentaires": 30
+    },
+    {
+      "id": "u8",
+      "pseudo": "SciFiNerd",
+      "date_entree": "2024-05-10",
+      "nb_ouvrages_proposes": 8,
+      "nb_appreciations": 55,
+      "nb_commentaires": 40
+    },
+    {
+      "id": "u9",
+      "pseudo": "ClassiqueAddict",
+      "date_entree": "2024-05-20",
+      "nb_ouvrages_proposes": 2,
+      "nb_appreciations": 14,
+      "nb_commentaires": 9
+    },
+    {
+      "id": "u10",
+      "pseudo": "PagesVolantes",
+      "date_entree": "2024-06-01",
+      "nb_ouvrages_proposes": 9,
+      "nb_appreciations": 60,
+      "nb_commentaires": 45
+    },
+    {
+      "id": "u11",
+      "pseudo": "BullesEtCases",
+      "date_entree": "2024-06-15",
+      "nb_ouvrages_proposes": 5,
+      "nb_appreciations": 28,
+      "nb_commentaires": 18
+    },
+    {
+      "id": "u12",
+      "pseudo": "MidnightInk",
+      "date_entree": "2024-06-22",
+      "nb_ouvrages_proposes": 3,
+      "nb_appreciations": 19,
+      "nb_commentaires": 12
+    },
+    {
+      "id": "u13",
+      "pseudo": "PhiloReader",
+      "date_entree": "2024-07-03",
+      "nb_ouvrages_proposes": 1,
+      "nb_appreciations": 7,
+      "nb_commentaires": 5
+    },
+    {
+      "id": "u14",
+      "pseudo": "InkAndDreams",
+      "date_entree": "2024-07-14",
+      "nb_ouvrages_proposes": 11,
+      "nb_appreciations": 70,
+      "nb_commentaires": 50
+    },
+    {
+      "id": "u15",
+      "pseudo": "SenshiManga",
+      "date_entree": "2024-07-28",
+      "nb_ouvrages_proposes": 7,
+      "nb_appreciations": 38,
+      "nb_commentaires": 27
+    },
+    {
+      "id": "u16",
+      "pseudo": "EpopéeLittéraire",
+      "date_entree": "2024-08-05",
+      "nb_ouvrages_proposes": 4,
+      "nb_appreciations": 22,
+      "nb_commentaires": 16
+    },
+    {
+      "id": "u17",
+      "pseudo": "ComiXplorer",
+      "date_entree": "2024-08-18",
+      "nb_ouvrages_proposes": 6,
+      "nb_appreciations": 31,
+      "nb_commentaires": 21
+    },
+    {
+      "id": "u18",
+      "pseudo": "DystopiaFan",
+      "date_entree": "2024-09-02",
+      "nb_ouvrages_proposes": 2,
+      "nb_appreciations": 15,
+      "nb_commentaires": 10
+    },
+    {
+      "id": "u19",
+      "pseudo": "ShonenPower",
+      "date_entree": "2024-09-15",
+      "nb_ouvrages_proposes": 8,
+      "nb_appreciations": 48,
+      "nb_commentaires": 35
+    },
+    {
+      "id": "u20",
+      "pseudo": "PaperAndTea",
+      "date_entree": "2024-10-01",
+      "nb_ouvrages_proposes": 0,
+      "nb_appreciations": 5,
+      "nb_commentaires": 2
     }
   ],
   "commentaires": [
@@ -115,6 +1268,822 @@
       "note": 4,
       "texte": "Toujours aussi actuel et terrifiant.",
       "date": "2024-02-23"
+    },
+    {
+      "id": 4,
+      "ouvrage_id": "2",
+      "utilisateur_pseudo": "MangaKing",
+      "note": 5,
+      "texte": "Otomo a révolutionné le manga avec cette œuvre. Le dessin est d'une précision époustouflante.",
+      "date": "2024-03-10"
+    },
+    {
+      "id": 5,
+      "ouvrage_id": "10",
+      "utilisateur_pseudo": "MangaKing",
+      "note": 5,
+      "texte": "Berserk est une expérience unique, sombre et magnifique. Miura était un génie.",
+      "date": "2024-03-12"
+    },
+    {
+      "id": 6,
+      "ouvrage_id": "6",
+      "utilisateur_pseudo": "FantasyQueen",
+      "note": 5,
+      "texte": "Dune est la bible de la SF. Une construction d'univers sans égale, chaque relecture révèle de nouvelles couches.",
+      "date": "2024-03-20"
+    },
+    {
+      "id": 7,
+      "ouvrage_id": "3",
+      "utilisateur_pseudo": "FantasyQueen",
+      "note": 5,
+      "texte": "Tolkien a inventé un monde entier. Incomparable.",
+      "date": "2024-03-22"
+    },
+    {
+      "id": 8,
+      "ouvrage_id": "7",
+      "utilisateur_pseudo": "BDPassionné",
+      "note": 5,
+      "texte": "Watchmen déconstruit le mythe du super-héros avec une intelligence rare. Un monument.",
+      "date": "2024-04-25"
+    },
+    {
+      "id": 9,
+      "ouvrage_id": "4",
+      "utilisateur_pseudo": "BDPassionné",
+      "note": 4,
+      "texte": "Toujours hilarant après toutes ces années. Goscinny était un immense auteur.",
+      "date": "2024-04-27"
+    },
+    {
+      "id": 10,
+      "ouvrage_id": "9",
+      "utilisateur_pseudo": "NocturnalReader",
+      "note": 5,
+      "texte": "Simple en apparence, profond dans le fond. Un livre qu'on ne lit jamais pour la dernière fois.",
+      "date": "2024-04-08"
+    },
+    {
+      "id": 11,
+      "ouvrage_id": "12",
+      "utilisateur_pseudo": "BookWorm99",
+      "note": 4,
+      "texte": "Un avertissement puissant sur la censure et la pensée unique. À lire absolument avec 1984.",
+      "date": "2024-05-01"
+    },
+    {
+      "id": 12,
+      "ouvrage_id": "8",
+      "utilisateur_pseudo": "MangaKing",
+      "note": 4,
+      "texte": "Une saga de référence pour toute une génération. Le développement des personnages est remarquable.",
+      "date": "2024-05-03"
+    },
+    {
+      "id": 13,
+      "ouvrage_id": "11",
+      "utilisateur_pseudo": "BDPassionné",
+      "note": 5,
+      "texte": "Le meilleur Tintin selon moi. Hergé y met toute son humanité et sa sensibilité.",
+      "date": "2024-05-05"
+    },
+    {
+      "id": 14,
+      "ouvrage_id": "1",
+      "utilisateur_pseudo": "FantasyQueen",
+      "note": 4,
+      "texte": "L'association Jodorowsky-Moebius produit quelque chose d'unique. Visuellement hallucinant.",
+      "date": "2024-05-07"
+    },
+    {
+      "id": 15,
+      "ouvrage_id": "6",
+      "utilisateur_pseudo": "NocturnalReader",
+      "note": 4,
+      "texte": "Dense et exigeant, mais tellement riche. Il faut s'accrocher au début, on est largement récompensé.",
+      "date": "2024-05-09"
+    },
+    {
+      "id": 16,
+      "ouvrage_id": "13",
+      "utilisateur_pseudo": "OtakuZone",
+      "note": 5,
+      "texte": "One Piece est une œuvre fleuve incroyable. Oda construit son univers avec une cohérence ahurissante sur des décennies.",
+      "date": "2024-05-12"
+    },
+    {
+      "id": 17,
+      "ouvrage_id": "36",
+      "utilisateur_pseudo": "OtakuZone",
+      "note": 5,
+      "texte": "HxH est le meilleur shonen jamais écrit. Togashi est un génie de la narration stratégique.",
+      "date": "2024-05-15"
+    },
+    {
+      "id": 18,
+      "ouvrage_id": "43",
+      "utilisateur_pseudo": "OtakuZone",
+      "note": 5,
+      "texte": "Attack on Titan m'a brisé émotionnellement à plusieurs reprises. La fin reste controversée mais l'ensemble est monumental.",
+      "date": "2024-05-18"
+    },
+    {
+      "id": 19,
+      "ouvrage_id": "29",
+      "utilisateur_pseudo": "SciFiNerd",
+      "note": 5,
+      "texte": "Fondation est une œuvre visionnaire. Asimov a imaginé des concepts socio-politiques d'une profondeur rare pour l'époque.",
+      "date": "2024-05-20"
+    },
+    {
+      "id": 20,
+      "ouvrage_id": "19",
+      "utilisateur_pseudo": "SciFiNerd",
+      "note": 5,
+      "texte": "Philip K. Dick pose des questions sur l'humanité qui résonnent encore aujourd'hui. Blade Runner le sublime.",
+      "date": "2024-05-22"
+    },
+    {
+      "id": 21,
+      "ouvrage_id": "44",
+      "utilisateur_pseudo": "SciFiNerd",
+      "note": 5,
+      "texte": "L'humour absurde d'Adams cache une satire sociale brillante. Un chef-d'œuvre comique de la SF.",
+      "date": "2024-05-24"
+    },
+    {
+      "id": 22,
+      "ouvrage_id": "48",
+      "utilisateur_pseudo": "SciFiNerd",
+      "note": 4,
+      "texte": "Neuromancien est fondateur du genre cyberpunk. Difficile à lire mais essentiel pour comprendre la SF moderne.",
+      "date": "2024-05-26"
+    },
+    {
+      "id": 23,
+      "ouvrage_id": "27",
+      "utilisateur_pseudo": "ClassiqueAddict",
+      "note": 5,
+      "texte": "Hugo n'écrit pas des livres, il écrit des cathédrales. Une fresque humaine incomparable.",
+      "date": "2024-05-28"
+    },
+    {
+      "id": 24,
+      "ouvrage_id": "32",
+      "utilisateur_pseudo": "ClassiqueAddict",
+      "note": 5,
+      "texte": "Dostoïevski plonge dans les abysses de la psychologie humaine avec une maîtrise absolue.",
+      "date": "2024-05-30"
+    },
+    {
+      "id": 25,
+      "ouvrage_id": "47",
+      "utilisateur_pseudo": "SenshiManga",
+      "note": 5,
+      "texte": "Vagabond est un chef-d'œuvre visuel et philosophique. Inoue peint autant qu'il dessine.",
+      "date": "2024-06-02"
+    },
+    {
+      "id": 26,
+      "ouvrage_id": "26",
+      "utilisateur_pseudo": "SenshiManga",
+      "note": 5,
+      "texte": "Vinland Saga commence comme un manga d'action et devient une méditation profonde sur la violence et la paix.",
+      "date": "2024-06-05"
+    },
+    {
+      "id": 27,
+      "ouvrage_id": "33",
+      "utilisateur_pseudo": "SenshiManga",
+      "note": 5,
+      "texte": "Un classique intemporel du manga historique. La relation père-fils est bouleversante.",
+      "date": "2024-06-08"
+    },
+    {
+      "id": 28,
+      "ouvrage_id": "15",
+      "utilisateur_pseudo": "OtakuZone",
+      "note": 5,
+      "texte": "FMA est parfait de la première à la dernière page. L'histoire de la rédemption la mieux construite du manga.",
+      "date": "2024-06-10"
+    },
+    {
+      "id": 29,
+      "ouvrage_id": "21",
+      "utilisateur_pseudo": "MangaKing",
+      "note": 5,
+      "texte": "Death Note est un thriller psychologique haletant. Le duel mental entre Light et L est sans équivalent.",
+      "date": "2024-06-12"
+    },
+    {
+      "id": 30,
+      "ouvrage_id": "38",
+      "utilisateur_pseudo": "PhiloReader",
+      "note": 5,
+      "texte": "Maus est un devoir de mémoire en cases. L'utilisation des animaux rend paradoxalement le témoignage encore plus humain.",
+      "date": "2024-06-15"
+    },
+    {
+      "id": 31,
+      "ouvrage_id": "45",
+      "utilisateur_pseudo": "PhiloReader",
+      "note": 5,
+      "texte": "Persepolis est un témoignage courageux et personnel d'une histoire collective. Indispensable.",
+      "date": "2024-06-18"
+    },
+    {
+      "id": 32,
+      "ouvrage_id": "24",
+      "utilisateur_pseudo": "BDPassionné",
+      "note": 5,
+      "texte": "V pour Vendetta est un cri politique intemporel. Moore signe avec Watchmen les deux meilleurs comics de tous les temps.",
+      "date": "2024-06-20"
+    },
+    {
+      "id": 33,
+      "ouvrage_id": "35",
+      "utilisateur_pseudo": "ComiXplorer",
+      "note": 5,
+      "texte": "Saga réinvente l'opéra spatial avec cœur et audace. Une histoire d'amour et d'aventure comme aucune autre.",
+      "date": "2024-06-22"
+    },
+    {
+      "id": 34,
+      "ouvrage_id": "18",
+      "utilisateur_pseudo": "InkAndDreams",
+      "note": 5,
+      "texte": "Sandman est une œuvre totale. Gaiman explore tous les genres à travers le prisme des rêves.",
+      "date": "2024-06-25"
+    },
+    {
+      "id": 35,
+      "ouvrage_id": "30",
+      "utilisateur_pseudo": "BDPassionné",
+      "note": 5,
+      "texte": "Blacksad marie le film noir, la peinture aquarelle et l'anthropomorphisme pour un résultat saisissant.",
+      "date": "2024-06-28"
+    },
+    {
+      "id": 36,
+      "ouvrage_id": "17",
+      "utilisateur_pseudo": "PagesVolantes",
+      "note": 5,
+      "texte": "Harry Potter a créé toute une génération de lecteurs. La magie de Rowling est dans la construction de son monde.",
+      "date": "2024-07-01"
+    },
+    {
+      "id": 37,
+      "ouvrage_id": "22",
+      "utilisateur_pseudo": "PagesVolantes",
+      "note": 5,
+      "texte": "Le Hobbit est plus léger que le Seigneur des Anneaux mais tout aussi enchanteur. Un conte parfait.",
+      "date": "2024-07-03"
+    },
+    {
+      "id": 38,
+      "ouvrage_id": "16",
+      "utilisateur_pseudo": "FantasyQueen",
+      "note": 4,
+      "texte": "Narnia vu à l'âge adulte révèle toute la richesse de ses symboles. Un classique de la littérature jeunesse.",
+      "date": "2024-07-05"
+    },
+    {
+      "id": 39,
+      "ouvrage_id": "14",
+      "utilisateur_pseudo": "SenshiManga",
+      "note": 5,
+      "texte": "Dragon Ball a tout inventé. La moitié des tropes du shonen viennent de là. Toriyama reste le maître.",
+      "date": "2024-07-08"
+    },
+    {
+      "id": 40,
+      "ouvrage_id": "28",
+      "utilisateur_pseudo": "SenshiManga",
+      "note": 5,
+      "texte": "Slam Dunk est le manga sportif ultime. La passion de Sakuragi est communicative dès la première page.",
+      "date": "2024-07-10"
+    },
+    {
+      "id": 41,
+      "ouvrage_id": "23",
+      "utilisateur_pseudo": "SciFiNerd",
+      "note": 5,
+      "texte": "Ghost in the Shell a posé les bases philosophiques de tout le cyberpunk japonais. Incontournable.",
+      "date": "2024-07-12"
+    },
+    {
+      "id": 42,
+      "ouvrage_id": "31",
+      "utilisateur_pseudo": "OtakuZone",
+      "note": 4,
+      "texte": "Eva déconstruit le genre mecha avec une psychologie profonde. L'anime est encore plus fou, mais le manga est solide.",
+      "date": "2024-07-15"
+    },
+    {
+      "id": 43,
+      "ouvrage_id": "41",
+      "utilisateur_pseudo": "PhiloReader",
+      "note": 5,
+      "texte": "Planètes traite de l'exploration spatiale avec une humanité rare. Un manga poétique et profond.",
+      "date": "2024-07-18"
+    },
+    {
+      "id": 44,
+      "ouvrage_id": "37",
+      "utilisateur_pseudo": "ClassiqueAddict",
+      "note": 4,
+      "texte": "Kafka en quelques dizaines de pages capture quelque chose d'essentiel sur l'aliénation moderne.",
+      "date": "2024-07-20"
+    },
+    {
+      "id": 45,
+      "ouvrage_id": "40",
+      "utilisateur_pseudo": "ClassiqueAddict",
+      "note": 5,
+      "texte": "Zola peint la misère ouvrière avec une vérité brutale. Germinal reste d'une actualité troublante.",
+      "date": "2024-07-22"
+    },
+    {
+      "id": 46,
+      "ouvrage_id": "25",
+      "utilisateur_pseudo": "DystopiaFan",
+      "note": 5,
+      "texte": "Le Meilleur des Mondes est encore plus visionnaire que 1984 : notre société ressemble plus à Huxley qu'à Orwell.",
+      "date": "2024-07-25"
+    },
+    {
+      "id": 47,
+      "ouvrage_id": "46",
+      "utilisateur_pseudo": "SciFiNerd",
+      "note": 5,
+      "texte": "Steins;Gate est l'histoire de voyage temporel la plus rigoureuse et émouvante que j'aie jamais lue.",
+      "date": "2024-07-28"
+    },
+    {
+      "id": 48,
+      "ouvrage_id": "34",
+      "utilisateur_pseudo": "DystopiaFan",
+      "note": 4,
+      "texte": "Boulle est malicieux : son roman est bien plus subversif qu'il n'y paraît sur la nature humaine.",
+      "date": "2024-08-01"
+    },
+    {
+      "id": 49,
+      "ouvrage_id": "49",
+      "utilisateur_pseudo": "BDPassionné",
+      "note": 5,
+      "texte": "Gaston est un personnage d'une modernité incroyable. Un anti-héros qui sabote le capitalisme par paresse.",
+      "date": "2024-08-05"
+    },
+    {
+      "id": 50,
+      "ouvrage_id": "20",
+      "utilisateur_pseudo": "ComiXplorer",
+      "note": 4,
+      "texte": "Spirou et Fantasio représentent le meilleur de l'aventure BD franco-belge. Dépaysant et attachant.",
+      "date": "2024-08-08"
+    },
+    {
+      "id": 51,
+      "ouvrage_id": "42",
+      "utilisateur_pseudo": "ComiXplorer",
+      "note": 4,
+      "texte": "Blake et Mortimer incarnent un esprit d'aventure classique et élégant. Jacobs dessinait comme un architecte.",
+      "date": "2024-08-10"
+    },
+    {
+      "id": 52,
+      "ouvrage_id": "39",
+      "utilisateur_pseudo": "ShonenPower",
+      "note": 4,
+      "texte": "Demon Slayer est magnifiquement dessiné. L'univers est original et les combats sont époustouflants.",
+      "date": "2024-08-12"
+    },
+    {
+      "id": 53,
+      "ouvrage_id": "50",
+      "utilisateur_pseudo": "ShonenPower",
+      "note": 4,
+      "texte": "My Hero Academia réinvente les codes du shonen super-héros avec beaucoup d'enthousiasme et de cœur.",
+      "date": "2024-08-15"
+    },
+    {
+      "id": 54,
+      "ouvrage_id": "52",
+      "utilisateur_pseudo": "ShonenPower",
+      "note": 4,
+      "texte": "Captain Tsubasa a inspiré des générations de footballeurs. Le foot y est presque magique.",
+      "date": "2024-08-18"
+    },
+    {
+      "id": 55,
+      "ouvrage_id": "54",
+      "utilisateur_pseudo": "MangaKing",
+      "note": 4,
+      "texte": "Tezuka est le dieu du manga pour une raison. Astro Boy pose les fondements de tout un médium.",
+      "date": "2024-08-20"
+    },
+    {
+      "id": 56,
+      "ouvrage_id": "53",
+      "utilisateur_pseudo": "InkAndDreams",
+      "note": 5,
+      "texte": "Le Château Ambulant est un roman enchanteur. Diana Wynne Jones crée des mondes avec une facilité déconcertante.",
+      "date": "2024-08-22"
+    },
+    {
+      "id": 57,
+      "ouvrage_id": "55",
+      "utilisateur_pseudo": "ComiXplorer",
+      "note": 4,
+      "texte": "Planète Hulk transforme un personnage secondaire en épopée shakespearienne. Greg Pak signe son meilleur travail.",
+      "date": "2024-08-25"
+    },
+    {
+      "id": 58,
+      "ouvrage_id": "6",
+      "utilisateur_pseudo": "InkAndDreams",
+      "note": 5,
+      "texte": "Dune est tellement riche qu'on en découvre de nouvelles facettes à chaque lecture. Un sommet absolu de la SF.",
+      "date": "2024-08-28"
+    },
+    {
+      "id": 59,
+      "ouvrage_id": "10",
+      "utilisateur_pseudo": "InkAndDreams",
+      "note": 5,
+      "texte": "Berserk est douloureux, sublime, dérangeant et inoubliable. La mort de Miura a laissé un vide impossible à combler.",
+      "date": "2024-09-01"
+    },
+    {
+      "id": 60,
+      "ouvrage_id": "13",
+      "utilisateur_pseudo": "ShonenPower",
+      "note": 5,
+      "texte": "One Piece est une déclaration d'amour à l'amitié, à la liberté, à l'aventure. Oda est dans une catégorie à part.",
+      "date": "2024-09-05"
+    },
+    {
+      "id": 61,
+      "ouvrage_id": "36",
+      "utilisateur_pseudo": "MangaKing",
+      "note": 5,
+      "texte": "Hunter x Hunter : chaque arc surpasse le précédent. L'arc de la Colonie de Fourmis est peut-être le meilleur arc de manga.",
+      "date": "2024-09-08"
+    },
+    {
+      "id": 62,
+      "ouvrage_id": "26",
+      "utilisateur_pseudo": "OtakuZone",
+      "note": 5,
+      "texte": "Vinland Saga est un monument. La transformation de Thorfinn est l'une des meilleures évolutions d'un personnage en manga.",
+      "date": "2024-09-10"
+    },
+    {
+      "id": 63,
+      "ouvrage_id": "47",
+      "utilisateur_pseudo": "MangaKing",
+      "note": 5,
+      "texte": "Vagabond est un musée en mouvement. Impossible de lire une page sans être ébloui par la maîtrise d'Inoue.",
+      "date": "2024-09-12"
+    },
+    {
+      "id": 64,
+      "ouvrage_id": "43",
+      "utilisateur_pseudo": "ShonenPower",
+      "note": 5,
+      "texte": "L'Attaque des Titans redéfinit ce qu'un manga shonen peut accomplir narrativement.",
+      "date": "2024-09-15"
+    },
+    {
+      "id": 65,
+      "ouvrage_id": "15",
+      "utilisateur_pseudo": "SenshiManga",
+      "note": 5,
+      "texte": "FMA réussit l'exploit d'être à la fois un manga d'aventure haletant et une œuvre philosophique sur l'équivalence et le sacrifice.",
+      "date": "2024-09-18"
+    },
+    {
+      "id": 66,
+      "ouvrage_id": "27",
+      "utilisateur_pseudo": "EpopéeLittéraire",
+      "note": 5,
+      "texte": "Victor Hugo embrasse l'humanité entière dans ce roman. Chaque personnage est un monde.",
+      "date": "2024-09-20"
+    },
+    {
+      "id": 67,
+      "ouvrage_id": "5",
+      "utilisateur_pseudo": "DystopiaFan",
+      "note": 5,
+      "texte": "1984 est un avertissement que nous aurions dû mieux écouter. Terriblement actuel.",
+      "date": "2024-09-22"
+    },
+    {
+      "id": 68,
+      "ouvrage_id": "12",
+      "utilisateur_pseudo": "DystopiaFan",
+      "note": 5,
+      "texte": "Fahrenheit 451 est un amour des livres transformé en dystopie. Bradbury était profondément humaniste.",
+      "date": "2024-09-25"
+    },
+    {
+      "id": 69,
+      "ouvrage_id": "25",
+      "utilisateur_pseudo": "EpopéeLittéraire",
+      "note": 5,
+      "texte": "Huxley décrit un bonheur vide et consommable qui ressemble de plus en plus au nôtre.",
+      "date": "2024-09-28"
+    },
+    {
+      "id": 70,
+      "ouvrage_id": "32",
+      "utilisateur_pseudo": "EpopéeLittéraire",
+      "note": 5,
+      "texte": "Dostoïevski nous force à suivre un meurtrier et à comprendre comment on peut en arriver là. C'est gênant et brillant.",
+      "date": "2024-10-01"
+    },
+    {
+      "id": 71,
+      "ouvrage_id": "37",
+      "utilisateur_pseudo": "PhiloReader",
+      "note": 5,
+      "texte": "La Métamorphose en 130 pages dit plus sur l'aliénation que bien des essais de 600 pages.",
+      "date": "2024-10-03"
+    },
+    {
+      "id": 72,
+      "ouvrage_id": "9",
+      "utilisateur_pseudo": "PaperAndTea",
+      "note": 5,
+      "texte": "Lu à 8 ans, relu à 30 ans. Le sens a changé mais la magie est intacte.",
+      "date": "2024-10-05"
+    },
+    {
+      "id": 73,
+      "ouvrage_id": "11",
+      "utilisateur_pseudo": "EpopéeLittéraire",
+      "note": 5,
+      "texte": "Tintin au Tibet est dépouillé de toute action inutile. Une ode à l'amitié, pure et sincère.",
+      "date": "2024-10-08"
+    },
+    {
+      "id": 74,
+      "ouvrage_id": "30",
+      "utilisateur_pseudo": "ComiXplorer",
+      "note": 5,
+      "texte": "Blacksad est ce que la BD européenne fait de mieux : une atmosphère unique, un art magistral, une intrigue solide.",
+      "date": "2024-10-10"
+    },
+    {
+      "id": 75,
+      "ouvrage_id": "38",
+      "utilisateur_pseudo": "EpopéeLittéraire",
+      "note": 5,
+      "texte": "Maus ne ressemble à rien d'autre. Spiegelman réussit à rendre la Shoah accessible sans jamais la trahir.",
+      "date": "2024-10-12"
+    },
+    {
+      "id": 76,
+      "ouvrage_id": "45",
+      "utilisateur_pseudo": "InkAndDreams",
+      "note": 5,
+      "texte": "Persepolis est une BD politique et personnelle d'une honnêteté totale. Satrapi n'épargne personne, pas même elle.",
+      "date": "2024-10-15"
+    },
+    {
+      "id": 77,
+      "ouvrage_id": "18",
+      "utilisateur_pseudo": "BDPassionné",
+      "note": 5,
+      "texte": "Sandman est la preuve que la bande dessinée peut être de la grande littérature. Gaiman au sommet.",
+      "date": "2024-10-18"
+    },
+    {
+      "id": 78,
+      "ouvrage_id": "35",
+      "utilisateur_pseudo": "SciFiNerd",
+      "note": 5,
+      "texte": "Saga prouve que la SF peut être intime et épique simultanément. Un tour de force narratif.",
+      "date": "2024-10-20"
+    },
+    {
+      "id": 79,
+      "ouvrage_id": "29",
+      "utilisateur_pseudo": "PagesVolantes",
+      "note": 5,
+      "texte": "Fondation est un roman d'idées rare. La psychohistoire d'Asimov est une des inventions les plus fascinantes de la SF.",
+      "date": "2024-10-22"
+    },
+    {
+      "id": 80,
+      "ouvrage_id": "53",
+      "utilisateur_pseudo": "PagesVolantes",
+      "note": 5,
+      "texte": "Le Château Ambulant est un roman bourré d'imagination et d'humour. Jones joue avec les conventions du conte.",
+      "date": "2024-10-25"
+    },
+    {
+      "id": 81,
+      "ouvrage_id": "17",
+      "utilisateur_pseudo": "MidnightInk",
+      "note": 5,
+      "texte": "Harry Potter a créé la magie sur papier avant de la créer dans nos cœurs. Un phénomène culturel mérité.",
+      "date": "2024-10-28"
+    },
+    {
+      "id": 82,
+      "ouvrage_id": "22",
+      "utilisateur_pseudo": "MidnightInk",
+      "note": 5,
+      "texte": "Le Hobbit est un roman d'aventure parfait, accessible et profond. Le début d'un voyage légendaire.",
+      "date": "2024-10-30"
+    },
+    {
+      "id": 83,
+      "ouvrage_id": "7",
+      "utilisateur_pseudo": "InkAndDreams",
+      "note": 5,
+      "texte": "Watchmen est la question posée à toute l'histoire des super-héros : et s'ils existaient vraiment ?",
+      "date": "2024-11-01"
+    },
+    {
+      "id": 84,
+      "ouvrage_id": "24",
+      "utilisateur_pseudo": "DystopiaFan",
+      "note": 5,
+      "texte": "V pour Vendetta est encore plus pertinent aujourd'hui qu'à sa parution. Le fascisme ordinaire dépeint par Moore est glaçant.",
+      "date": "2024-11-03"
+    },
+    {
+      "id": 85,
+      "ouvrage_id": "46",
+      "utilisateur_pseudo": "OtakuZone",
+      "note": 5,
+      "texte": "Steins;Gate est un roman visuel culte transposé avec soin. L'histoire de voyage temporel la plus bien construite.",
+      "date": "2024-11-05"
+    },
+    {
+      "id": 86,
+      "ouvrage_id": "2",
+      "utilisateur_pseudo": "ShonenPower",
+      "note": 5,
+      "texte": "Akira reste incomparable même aujourd'hui. Une œuvre d'anticipation qui a tout prévu.",
+      "date": "2024-11-08"
+    },
+    {
+      "id": 87,
+      "ouvrage_id": "4",
+      "utilisateur_pseudo": "MidnightInk",
+      "note": 4,
+      "texte": "Astérix est un bijou d'humour et d'érudition. Les jeux de mots et les références cachées méritent un second tome à eux seuls.",
+      "date": "2024-11-10"
+    },
+    {
+      "id": 88,
+      "ouvrage_id": "23",
+      "utilisateur_pseudo": "OtakuZone",
+      "note": 5,
+      "texte": "Ghost in the Shell pose des questions sur l'âme et l'identité que l'IA rend aujourd'hui encore plus urgentes.",
+      "date": "2024-11-12"
+    },
+    {
+      "id": 89,
+      "ouvrage_id": "40",
+      "utilisateur_pseudo": "PagesVolantes",
+      "note": 5,
+      "texte": "Germinal est brûlant, charnel, politique. Zola met ses personnages dans la mine et nous y entraîne avec eux.",
+      "date": "2024-11-15"
+    },
+    {
+      "id": 90,
+      "ouvrage_id": "41",
+      "utilisateur_pseudo": "SciFiNerd",
+      "note": 5,
+      "texte": "Planètes est un manga humaniste et poétique. Les éboueurs de l'espace sont les héros les plus attachants du manga SF.",
+      "date": "2024-11-18"
+    },
+    {
+      "id": 91,
+      "ouvrage_id": "21",
+      "utilisateur_pseudo": "PagesVolantes",
+      "note": 5,
+      "texte": "Death Note est un monument du manga psychologique. Le chat et la souris entre Light et L ne laisse aucun répit.",
+      "date": "2024-11-20"
+    },
+    {
+      "id": 92,
+      "ouvrage_id": "8",
+      "utilisateur_pseudo": "ShonenPower",
+      "note": 5,
+      "texte": "Naruto grandit avec ses lecteurs. L'arc de la guerre ninja est épique et les thèmes sur le cycle de la haine restent puissants.",
+      "date": "2024-11-22"
+    },
+    {
+      "id": 93,
+      "ouvrage_id": "14",
+      "utilisateur_pseudo": "MangaKing",
+      "note": 5,
+      "texte": "Toriyama a dessiné la joie pure. Dragon Ball est une œuvre à part, solaire et inépuisable.",
+      "date": "2024-11-25"
+    },
+    {
+      "id": 94,
+      "ouvrage_id": "33",
+      "utilisateur_pseudo": "EpopéeLittéraire",
+      "note": 5,
+      "texte": "Lone Wolf and Cub est une tragédie grecque dessinée dans le Japon féodal. Un classique universel.",
+      "date": "2024-11-28"
+    },
+    {
+      "id": 95,
+      "ouvrage_id": "28",
+      "utilisateur_pseudo": "OtakuZone",
+      "note": 5,
+      "texte": "Slam Dunk capte l'essence du sport : la sueur, l'échec, la communion. Inoue n'a fait qu'un avec le basket.",
+      "date": "2024-12-01"
+    },
+    {
+      "id": 96,
+      "ouvrage_id": "55",
+      "utilisateur_pseudo": "SciFiNerd",
+      "note": 4,
+      "texte": "Planète Hulk est une épopée de gladiateurs SF bien menée. Le personnage de Hulk n'a jamais été aussi dignement traité.",
+      "date": "2024-12-03"
+    },
+    {
+      "id": 97,
+      "ouvrage_id": "49",
+      "utilisateur_pseudo": "ComiXplorer",
+      "note": 5,
+      "texte": "Gaston est l'ancêtre du héros anti-travail. Franquin avait un génie comique et un sens de l'absurde uniques.",
+      "date": "2024-12-05"
+    },
+    {
+      "id": 98,
+      "ouvrage_id": "39",
+      "utilisateur_pseudo": "MangaKing",
+      "note": 4,
+      "texte": "Demon Slayer est un régal visuel. La progression des personnages est bien rythmée et les antagonistes ont de la profondeur.",
+      "date": "2024-12-08"
+    },
+    {
+      "id": 99,
+      "ouvrage_id": "34",
+      "utilisateur_pseudo": "EpopéeLittéraire",
+      "note": 4,
+      "texte": "La Planète des Singes est une satire féroce de l'anthropocentrisme. Boulle fait réfléchir sous couvert de divertissement.",
+      "date": "2024-12-10"
+    },
+    {
+      "id": 100,
+      "ouvrage_id": "50",
+      "utilisateur_pseudo": "InkAndDreams",
+      "note": 4,
+      "texte": "My Hero Academia porte haut les valeurs de bravoure et de dépassement de soi. Un shonen classique bien exécuté.",
+      "date": "2024-12-12"
+    },
+    {
+      "id": 101,
+      "ouvrage_id": "19",
+      "utilisateur_pseudo": "PagesVolantes",
+      "note": 5,
+      "texte": "Philip K. Dick invente le questionnement identitaire de la SF moderne. Ce roman est son chef-d'œuvre.",
+      "date": "2024-12-15"
+    },
+    {
+      "id": 102,
+      "ouvrage_id": "54",
+      "utilisateur_pseudo": "SenshiManga",
+      "note": 4,
+      "texte": "Astro Boy est l'ancêtre du manga moderne. Tezuka a tout inventé avec une énergie et une générosité incroyables.",
+      "date": "2024-12-18"
+    },
+    {
+      "id": 103,
+      "ouvrage_id": "42",
+      "utilisateur_pseudo": "MidnightInk",
+      "note": 4,
+      "texte": "Blake et Mortimer dégagent une élégance classique rare. Jacobs prenait le temps de construire ses histoires.",
+      "date": "2024-12-20"
+    },
+    {
+      "id": 104,
+      "ouvrage_id": "52",
+      "utilisateur_pseudo": "PaperAndTea",
+      "note": 4,
+      "texte": "Captain Tsubasa est plus qu'un manga sportif : c'est un rêve de gosse mis en images. Nostalgie garantie.",
+      "date": "2024-12-22"
+    },
+    {
+      "id": 105,
+      "ouvrage_id": "16",
+      "utilisateur_pseudo": "BookWorm99",
+      "note": 4,
+      "texte": "Narnia vieillit bien. Le mélange de mythologie grecque, nordique et chrétienne est d'une richesse étonnante.",
+      "date": "2024-12-25"
     }
   ]
 }
