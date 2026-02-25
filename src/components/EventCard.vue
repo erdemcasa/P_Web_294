@@ -27,7 +27,7 @@ defineProps({
   margin-bottom: 18px;
   transition: all 0.2s ease;
   overflow: hidden;
-  background: white;
+  background: rgb(243, 243, 243);
   border-radius: 8px;
 }
 
