@@ -2,7 +2,7 @@
   <div class="mybooks-container">
     <div class="header-section">
       <h1>Mes ouvrages</h1>
-      <p class="subtitle">Gérez les livres que vous avez partagés avec la communauté.</p>
+      <p class="subtitle">Cette page vous permet de gerer les livers partagés</p>
       <button @click="$router.push('/add-book')" class="btn-add">+ Ajouter un nouvel ouvrage</button>
     </div>
 
@@ -64,11 +64,11 @@ const editBook = (id) => {
 };
 
 const deleteBook = async (id) => {
-  if (confirm("Êtes-vous sûr de vouloir supprimer cet ouvrage ? Cette action est irréversible.")) {
+  if (confirm("Etes vous sure de supprimer cette ouvrage ?")) {
     try {
       await api.delete(`/ouvrages/${id}`);
       myBooks.value = myBooks.value.filter(book => book.id !== id);
-      alert("Ouvrage supprimé avec succès.");
+      alert("Ouvrage supprimé de la db .");
     } catch (error) {
       console.error("Erreur lors de la suppression:", error);
       alert("Impossible de supprimer l'ouvrage.");
