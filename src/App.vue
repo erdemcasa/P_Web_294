@@ -29,7 +29,6 @@ const contacts = ref([
           <RouterLink to="/">Accueil</RouterLink>
           <RouterLink to="/browse">Parcourir</RouterLink>
           <RouterLink to="/mybooks">Mes Ouvrages</RouterLink>
-          <RouterLink to="/addboook">Ajouter</RouterLink>
           <RouterLink to="/login" class="login-route">Se connecter</RouterLink>
           <RouterLink to="/sign" class="signin-route">S'inscrire</RouterLink>
         </nav>
