@@ -4,6 +4,7 @@ import BrowseView from '../views/BrowseView.vue'
 import BookView from '../views/BookView.vue'
 import MyBooksView from '../views/MyBooksView.vue'
 import AddBookView from '../views/AddBookView.vue'
+import EditBookView from '../views/EditBookView.vue'
 import LoginView from '../views/LoginView.vue'
 import SignView from '../views/SignView.vue'
 
@@ -31,9 +32,14 @@ const router = createRouter({
       component: MyBooksView,
     },
     {
-      path: '/addboook',
-      name: 'addboook',
+      path: '/add-book',
+      name: 'add-book',
       component: AddBookView,
+    },
+    {
+      path: '/edit-book/:id',
+      name: 'edit-book',
+      component: EditBookView,
     },
     {
       path: '/login',

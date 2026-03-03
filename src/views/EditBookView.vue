@@ -1,11 +1,11 @@
 <template>
-  <div class="add-book-container">
+  <div class="edit-book-container">
     <div class="header-section">
-      <h1>Ajouter un livre</h1>
-      <p class="subtitle">Partagez votre nouvelle découverte avec la communauté.</p>
+      <h1>Modifier l'ouvrage</h1>
+      <p class="subtitle">Modification de : <strong>{{ book.titre }}</strong></p>
     </div>
 
-    <form @submit.prevent="submitBook" class="book-form">
+    <form @submit.prevent="updateBook" class="book-form">
       <div class="form-grid">
         <div class="form-group">
           <label>Titre de l'ouvrage</label>
@@ -13,7 +13,6 @@
             v-model="book.titre"
             type="text"
             required
-            placeholder="Ex: L'Incal"
           >
         </div>
 
@@ -38,7 +37,7 @@
 
         <div class="form-group">
           <label>Éditeur</label>
-          <input v-model="book.editeur" type="text" required placeholder="Ex: Glénat">
+          <input v-model="book.editeur" type="text" required>
         </div>
 
         <div class="form-group">
@@ -54,27 +53,18 @@
 
       <div class="form-group full-width">
         <label>Résumé de l'ouvrage</label>
-        <textarea
-          v-model="book.resume"
-          rows="5"
-          required
-          placeholder="Décrivez brièvement l'histoire..."
-        ></textarea>
+        <textarea v-model="book.resume" rows="5" required></textarea>
       </div>
 
       <div class="form-group full-width">
         <label>Lien de l'image de couverture</label>
-        <input
-          v-model="book.image_couverture"
-          type="text"
-          placeholder="Ex: public/Couvertures/mon-livre.jpg"
-        >
+        <input v-model="book.image_couverture" type="text">
       </div>
 
       <div class="actions">
-        <button type="button" @click="$router.push('/catalog')" class="btn-cancel">Annuler</button>
+        <button type="button" @click="$router.push('/mybooks')" class="btn-cancel">Annuler</button>
         <button type="submit" class="btn-submit" :disabled="loading">
-          {{ loading ? 'Enregistrement...' : 'Publier l\'ouvrage' }}
+          {{ loading ? 'Mise à jour...' : 'Enregistrer les modifications' }}
         </button>
       </div>
     </form>
@@ -83,57 +73,61 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 import api from '@/services/api';
 
 const router = useRouter();
+const route = useRoute(); 
 const loading = ref(false);
 const auteurs = ref([]);
 
+const bookId = route.params.id;
+
 const book = ref({
   titre: '',
-  categorie: 'roman',
+  categorie: '',
   nombre_pages: null,
-  extrait: '/assets/pdf/default.pdf', 
   resume: '',
   auteur_id: null,
   editeur: '',
-  annee_edition: new Date().getFullYear(),
+  annee_edition: null,
   image_couverture: '',
-  moyenne_appreciations: 0
+  extrait: ''
 });
 
-const fetchAuteurs = async () => {
+const loadInitialData = async () => {
   try {
-    const response = await api.get('/auteurs');
-    auteurs.value = response.data;
+    const resAuteurs = await api.get('/auteurs');
+    auteurs.value = resAuteurs.data;
 
-    if (auteurs.value.length > 0) {
-      book.value.auteur_id = auteurs.value[0].id;
-    }
+    const resBook = await api.get(`/ouvrages/${bookId}`);
+    book.value = resBook.data;
   } catch (error) {
-    console.error("Erreur lors de la récupération des auteurs:", error);
+    console.error("Erreur de chargement:", error);
+    alert("Impossible de trouver cet ouvrage.");
+    router.push('/mybooks');
   }
 };
-const submitBook = async () => {
+
+const updateBook = async () => {
   loading.value = true;
   try {
-    await api.post('/ouvrages', book.value);
-    alert('Livre ajouté avec succès !');
-    router.push('/catalog');
+    await api.put(`/ouvrages/${bookId}`, book.value);
+    alert('Modification réussie !');
+    router.push('/mybooks');
   } catch (error) {
-    console.error("Erreur lors de l'envoi:", error);
-    alert("Une erreur est survenue lors de l'ajout.");
+    console.error("Erreur PUT:", error);
+    alert("Erreur lors de la sauvegarde.");
   } finally {
     loading.value = false;
   }
 };
 
-onMounted(fetchAuteurs);
+onMounted(loadInitialData);
 </script>
 
 <style scoped>
-.add-book-container {
+.edit-book-container {
   max-width: 900px;
   margin: 3rem auto;
   padding: 30px;
@@ -149,9 +143,6 @@ onMounted(fetchAuteurs);
   padding-bottom: 15px;
 }
 
-h1 { color: #2c3e50; margin: 0; }
-.subtitle { color: #7f8c8d; font-size: 0.9rem; }
-
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -166,24 +157,12 @@ h1 { color: #2c3e50; margin: 0; }
 
 .full-width { grid-column: span 2; }
 
-label {
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #34495e;
-  font-size: 0.9rem;
-}
+label { font-weight: bold; margin-bottom: 8px; color: #34495e; }
 
 input, select, textarea {
   padding: 12px;
   border: 1px solid #dcdde1;
   border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.3s;
-}
-
-input:focus, select:focus, textarea:focus {
-  outline: none;
-  border-color: #42b983;
 }
 
 .actions {
@@ -196,7 +175,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .btn-submit {
-  background-color: #42b983;
+  background-color: #3498db;
   color: white;
   padding: 12px 30px;
   border: none;
@@ -213,7 +192,4 @@ input:focus, select:focus, textarea:focus {
   border-radius: 8px;
   cursor: pointer;
 }
-
-.btn-submit:hover { background-color: #3aa876; }
-.btn-submit:disabled { background-color: #a8d5c2; cursor: not-allowed; }
 </style>
