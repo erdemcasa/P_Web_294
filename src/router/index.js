@@ -7,6 +7,7 @@ import AddBookView from '../views/AddBookView.vue'
 import EditBookView from '../views/EditBookView.vue'
 import LoginView from '../views/LoginView.vue'
 import SignView from '../views/SignView.vue'
+import AuthorView from '@/views/AuthorView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -51,6 +52,11 @@ const router = createRouter({
       name: 'sign',
       component: SignView,
     },
+    {
+      path: '/auteur/:id',
+      name: 'AuthorDetails',
+      component: AuthorView,
+    }
   ],
 })
 
