@@ -13,6 +13,7 @@ const contacts = ref([
   { id: 1, Name: 'Zidane Sahraoui', Mail: 'zidane.sahraoui@mail.com', Tel: '+41 00 000 00 00' },
   { id: 2, Name: 'Ökkes Erdem Köse', Mail: 'erdem.kose@mail.com', Tel: '+41 00 000 00 00' },
 ])
+
 </script>
 
 <template>
