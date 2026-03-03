@@ -31,7 +31,7 @@ onMounted(() => {
     <p>Derniers ouvrages ajoutés</p>
 
     <div class="events">
-      <EventCard v-for="ouvrage in ouvrages.slice(0, 4)" :key="ouvrage.id" :ouvrage="ouvrage" />
+      <EventCard v-for="ouvrage in ouvrages.slice(0, 5)" :key="ouvrage.id" :ouvrage="ouvrage" />
     </div>
   </main>
 </template>
