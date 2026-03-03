@@ -27,7 +27,7 @@ onMounted(() => {
   </header>
 
   <main>
-    <h2>Ajouté récemment</h2>
+    <h2>Ajoutés récemment</h2>
     <p>Derniers ouvrages ajoutés</p>
 
     <div class="events">

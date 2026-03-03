@@ -1,76 +1,6 @@
 {
   "ouvrages": [
     {
-      "id": "1",
-      "titre": "L'Incalee",
-      "categorie": "bande dessinée",
-      "nombre_pages": 312,
-      "extrait": "public/Extraits/L-incal.pdf",
-      "resume": "Un détective de classe R dans une cité-puits géante.",
-      "auteur_id": 101,
-      "editeur": "Les Humanoïdes Associés",
-      "annee_edition": 1981,
-      "image_couverture": "public/Couvertures/L-incal.jpg",
-      "moyenne_appreciations": 4,
-      "user_id": 8
-    },
-    {
-      "id": "2",
-      "titre": "Akira",
-      "categorie": "manga",
-      "nombre_pages": 360,
-      "extrait": "public/Extraits/Akira.pdf",
-      "resume": "Dans un Neo-Tokyo post-apocalyptique, des adolescents affrontent des pouvoirs psychiques.",
-      "auteur_id": 102,
-      "editeur": "Glénat",
-      "annee_edition": 1982,
-      "image_couverture": "public/Couvertures/Akira.jpg",
-      "moyenne_appreciations": 4,
-      "user_id": 8
-    },
-    {
-      "id": "3",
-      "titre": "Le Seigneur des Anneaux",
-      "categorie": "roman",
-      "nombre_pages": 1178,
-      "extrait": "public/Extraits/LOTR.pdf",
-      "resume": "Un hobbit doit détruire un anneau maléfique dans la Montagne du Destin.",
-      "auteur_id": 103,
-      "editeur": "Christian Bourgois",
-      "annee_edition": 1954,
-      "image_couverture": "public/Couvertures/LOTR.jpg",
-      "moyenne_appreciations": 4,
-      "user_id": 3
-    },
-    {
-      "id": "4",
-      "titre": "Astérix le Gaulois",
-      "categorie": "bande dessinée",
-      "nombre_pages": 48,
-      "extrait": "public/Extraits/Asterix.pdf",
-      "resume": "Un village gaulois résiste à l'envahisseur romain.",
-      "auteur_id": 104,
-      "editeur": "Dargaud",
-      "annee_edition": 1961,
-      "image_couverture": "public/Couvertures/Asterix.jpg",
-      "moyenne_appreciations": 4,
-      "user_id": 3
-    },
-    {
-      "id": "5",
-      "titre": "1984",
-      "categorie": "roman",
-      "nombre_pages": 328,
-      "extrait": "public/Extraits/1984.pdf",
-      "resume": "Winston Smith survit dans un régime totalitaire surveillé par Big Brother.",
-      "auteur_id": 105,
-      "editeur": "Seuil",
-      "annee_edition": 1949,
-      "image_couverture": "public/Couvertures/1984.jpg",
-      "moyenne_appreciations": 4,
-      "user_id": 3
-    },
-    {
       "id": "6",
       "titre": "Dune",
       "categorie": "roman",
@@ -141,20 +71,6 @@
       "user_id": 4
     },
     {
-      "id": "11",
-      "titre": "Tintin au Tibet",
-      "categorie": "bande dessinée",
-      "nombre_pages": 62,
-      "extrait": "public/Extraits/TintinAuTibet.pdf",
-      "resume": "Tintin cherche son ami Tchang dans l'Himalaya et croise la légende du Yéti.",
-      "auteur_id": 111,
-      "editeur": "Casterman",
-      "annee_edition": 1960,
-      "image_couverture": "public/Couvertures/TintinAuTibet.jpg",
-      "moyenne_appreciations": 4,
-      "user_id": 3
-    },
-    {
       "id": "12",
       "titre": "Fahrenheit 451",
       "categorie": "roman",
@@ -213,91 +129,91 @@
   ],
   "auteurs": [
     {
-      "id": 101,
+      "id": "101",
       "nom": "Giraud",
       "prenom": "Jean",
       "nationalite": "Française"
     },
     {
-      "id": 102,
+      "id": "102",
       "nom": "Otomo",
       "prenom": "Katsuhiro",
       "nationalite": "Japonaise"
     },
     {
-      "id": 103,
+      "id": "103",
       "nom": "Tolkien",
       "prenom": "J.R.R.",
       "nationalite": "Britannique"
     },
     {
-      "id": 104,
+      "id": "104",
       "nom": "Goscinny",
       "prenom": "René",
       "nationalite": "Française"
     },
     {
-      "id": 105,
+      "id": "105",
       "nom": "Orwell",
       "prenom": "George",
       "nationalite": "Britannique"
     },
     {
-      "id": 106,
+      "id": "106",
       "nom": "Herbert",
       "prenom": "Frank",
       "nationalite": "Américaine"
     },
     {
-      "id": 107,
+      "id": "107",
       "nom": "Moore",
       "prenom": "Alan",
       "nationalite": "Britannique"
     },
     {
-      "id": 108,
+      "id": "108",
       "nom": "Kishimoto",
       "prenom": "Masashi",
       "nationalite": "Japonaise"
     },
     {
-      "id": 109,
+      "id": "109",
       "nom": "de Saint-Exupéry",
       "prenom": "Antoine",
       "nationalite": "Française"
     },
     {
-      "id": 110,
+      "id": "110",
       "nom": "Miura",
       "prenom": "Kentaro",
       "nationalite": "Japonaise"
     },
     {
-      "id": 111,
+      "id": "111",
       "nom": "Hergé",
       "prenom": "Georges",
       "nationalite": "Belge"
     },
     {
-      "id": 112,
+      "id": "112",
       "nom": "Bradbury",
       "prenom": "Ray",
       "nationalite": "Américaine"
     },
     {
-      "id": 113,
+      "id": "113",
       "nom": "Oda",
       "prenom": "Eiichiro",
       "nationalite": "Japonaise"
     },
     {
-      "id": 114,
+      "id": "114",
       "nom": "Toriyama",
       "prenom": "Akira",
       "nationalite": "Japonaise"
     },
     {
-      "id": 115,
+      "id": "115",
       "nom": "Arakawa",
       "prenom": "Hiromu",
       "nationalite": "Japonaise"
@@ -387,7 +303,7 @@
   ],
   "commentaires": [
     {
-      "id": 1,
+      "id": "1",
       "ouvrage_id": "1",
       "utilisateur_pseudo": "BookWorm99",
       "note": 5,
@@ -395,7 +311,7 @@
       "date": "2024-02-20"
     },
     {
-      "id": 2,
+      "id": "2",
       "ouvrage_id": "3",
       "utilisateur_pseudo": "LecteurAnonyme",
       "note": 5,
@@ -403,7 +319,7 @@
       "date": "2024-02-22"
     },
     {
-      "id": 3,
+      "id": "3",
       "ouvrage_id": "5",
       "utilisateur_pseudo": "BookWorm99",
       "note": 4,
@@ -411,7 +327,7 @@
       "date": "2024-02-23"
     },
     {
-      "id": 4,
+      "id": "4",
       "ouvrage_id": "2",
       "utilisateur_pseudo": "MangaKing",
       "note": 5,
@@ -419,7 +335,7 @@
       "date": "2024-03-10"
     },
     {
-      "id": 5,
+      "id": "5",
       "ouvrage_id": "10",
       "utilisateur_pseudo": "MangaKing",
       "note": 5,
@@ -427,7 +343,7 @@
       "date": "2024-03-12"
     },
     {
-      "id": 6,
+      "id": "6",
       "ouvrage_id": "6",
       "utilisateur_pseudo": "FantasyQueen",
       "note": 5,
@@ -435,7 +351,7 @@
       "date": "2024-03-20"
     },
     {
-      "id": 7,
+      "id": "7",
       "ouvrage_id": "3",
       "utilisateur_pseudo": "FantasyQueen",
       "note": 5,
@@ -443,7 +359,7 @@
       "date": "2024-03-22"
     },
     {
-      "id": 8,
+      "id": "8",
       "ouvrage_id": "7",
       "utilisateur_pseudo": "BDPassionné",
       "note": 5,
@@ -451,7 +367,7 @@
       "date": "2024-04-25"
     },
     {
-      "id": 9,
+      "id": "9",
       "ouvrage_id": "4",
       "utilisateur_pseudo": "BDPassionné",
       "note": 4,
@@ -459,7 +375,7 @@
       "date": "2024-04-27"
     },
     {
-      "id": 10,
+      "id": "10",
       "ouvrage_id": "9",
       "utilisateur_pseudo": "NocturnalReader",
       "note": 5,
@@ -467,7 +383,7 @@
       "date": "2024-04-08"
     },
     {
-      "id": 11,
+      "id": "11",
       "ouvrage_id": "12",
       "utilisateur_pseudo": "BookWorm99",
       "note": 4,
@@ -475,7 +391,7 @@
       "date": "2024-05-01"
     },
     {
-      "id": 12,
+      "id": "12",
       "ouvrage_id": "8",
       "utilisateur_pseudo": "MangaKing",
       "note": 4,
@@ -483,7 +399,7 @@
       "date": "2024-05-03"
     },
     {
-      "id": 13,
+      "id": "13",
       "ouvrage_id": "11",
       "utilisateur_pseudo": "BDPassionné",
       "note": 5,
@@ -491,7 +407,7 @@
       "date": "2024-05-05"
     },
     {
-      "id": 14,
+      "id": "14",
       "ouvrage_id": "13",
       "utilisateur_pseudo": "OtakuZone",
       "note": 5,
@@ -499,7 +415,7 @@
       "date": "2024-05-12"
     },
     {
-      "id": 18,
+      "id": "18",
       "ouvrage_id": "15",
       "utilisateur_pseudo": "OtakuZone",
       "note": 5,

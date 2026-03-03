@@ -43,30 +43,16 @@ const error = ref('')
 const router = useRouter()
 
 const handleLogin = () => {
-  if (username.value === 'BookWorm99' || username.value === 'admin') {
+  if (username.value === 'utilisateur' || username.value === 'admin') {
     console.log("Connexion réussie pour :", username.value)
 
     localStorage.setItem('user', JSON.stringify({ pseudo: username.value, role: username.value === 'admin' ? 'admin' : 'user' }))
 
     router.push('/')
   } else {
-    error.value = "Utilisateur inconnu. Essayez 'BookWorm99' ou 'admin'."
+    error.value = "Utilisateur inconnu."
   }
 }
-
-const handleRegister = () => {
-  const users = JSON.parse(localStorage.getItem('registered_users') || '[]');
-
-  if (users.find(u => u.username === username.value)) {
-    error.value = "Ce pseudo est déjà pris.";
-    return;
-  }
-
-  users.push({ username: username.value, password: password.value });
-  localStorage.setItem('registered_users', JSON.stringify(users));
-
-  router.push('/login');
-};
 
 </script>
 
