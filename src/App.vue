@@ -1,15 +1,29 @@
 <script setup>
 import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
+import { useAuth0 } from '@auth0/auth0-vue'
 import Footer from '@/components/Footer.vue'
 
+const {
+  isLoading,
+  isAuthenticated,
+  user,
+  loginWithRedirect,
+  logout: auth0Logout
+} = useAuth0()
+
+const signup = () => loginWithRedirect({
+  authorizationParams: { screen_hint: 'signup' }
+})
+
+const login = () => loginWithRedirect()
+
+const logout = () => auth0Logout({
+  logoutParams: { returnTo: window.location.origin }
+})
+
 const contacts = ref([
-  {
-    id: 0,
-    Name: 'Snehan Gnanassorian',
-    Mail: 'snehan.gnanassorian@mail.com',
-    Tel: '+41 00 000 00 00',
-  },
+  { id: 0, Name: 'Snehan Gnanassorian', Mail: 'snehan.gnanassorian@mail.com', Tel: '+41 00 000 00 00' },
   { id: 1, Name: 'Zidane Sahraoui', Mail: 'zidane.sahraoui@mail.com', Tel: '+41 00 000 00 00' },
   { id: 2, Name: 'Ökkes Erdem Köse', Mail: 'erdem.kose@mail.com', Tel: '+41 00 000 00 00' },
 ])
@@ -26,15 +40,31 @@ const contacts = ref([
         <nav class="links">
           <RouterLink to="/">Accueil</RouterLink>
           <RouterLink to="/browse">Parcourir</RouterLink>
-          <RouterLink to="/mybooks">Mes Ouvrages</RouterLink>
-          <RouterLink to="/addboook">Ajouter</RouterLink>
-          <RouterLink to="/login" class="login-route">Se connecter</RouterLink>
-          <RouterLink to="/sign" class="signin-route">S'inscrire</RouterLink>
+
+          <template v-if="isAuthenticated">
+            <RouterLink to="/mybooks">Mes Ouvrages</RouterLink>
+            <RouterLink to="/addboook">Ajouter</RouterLink>
+          </template>
+
+          <div v-if="!isLoading" class="auth-buttons">
+            <template v-if="!isAuthenticated">
+              <button @click="login" class="nav-btn login-route">Se connecter</button>
+              <button @click="signup" class="nav-btn signin-route">S'inscrire</button>
+            </template>
+
+            <template v-else>
+              <span class="user-name">{{ user?.nickname || user?.name }}</span>
+              <button @click="logout" class="nav-btn login-route">Déconnexion</button>
+            </template>
+          </div>
         </nav>
       </div>
     </header>
 
-    <RouterView />
+    <main class="content">
+      <div v-if="isLoading" class="loading-screen">Chargement...</div>
+      <RouterView v-else />
+    </main>
 
     <footer>
       <div class="contacts-container">
@@ -46,15 +76,7 @@ const contacts = ref([
 
 <style>
 #layout {
-  font-family:
-    'Inter',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    sans-serif;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -66,21 +88,19 @@ const contacts = ref([
 
 header {
   flex-shrink: 0;
-}
-footer {
-  margin-top: auto;
-  width: 100%;
-  background-color: #f9f9f9;
-}
-
-header {
   background: #ffffff;
   border-bottom: 1px solid #f1f1f1;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
 }
 
-.logo-container img {
-  width: 100px;
+.logo {
+  height: 70px;
+  width: auto;
+  display: block;
+}
+
+.content {
+  flex: 1;
 }
 
 .wrapper {
@@ -97,7 +117,8 @@ nav {
   align-items: center;
 }
 
-nav a {
+nav a,
+.nav-btn {
   text-decoration: none;
   color: #666;
   font-size: 15px;
@@ -106,6 +127,10 @@ nav a {
   margin: 0 5px;
   transition: all 0.3s ease;
   border-radius: 6px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 nav a:hover:not(.login-route, .signin-route) {
@@ -113,30 +138,36 @@ nav a:hover:not(.login-route, .signin-route) {
   background: #f8f8f8;
 }
 
-nav a.router-link-exact-active:not(.login-route, .signin-route) {
-  color: #2c3e50;
-  font-weight: 700;
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 15px;
+  color: #42b983;
 }
 
 .login-route {
-  margin-left: 40px;
   color: #2c3e50;
-  border: 1px solid #dcdcdc;
+  border: 1px solid #dcdcdc !important;
 }
 
 .login-route:hover {
   background: #fdfdfd;
-  border-color: #999;
+  border-color: #999 !important;
 }
 
 .signin-route {
-  background-color: #2c3e50;
-  color: #ffffff;
-  margin-left: 10px;
+  background-color: #2c3e50 !important;
+  color: #ffffff !important;
 }
 
 .signin-route:hover {
-  background-color: #1a252f;
+  background-color: #1a252f !important;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -147,6 +178,10 @@ nav a.router-link-exact-active:not(.login-route, .signin-route) {
   gap: 30px;
   padding: 40px;
   background-color: #f9f9f9;
-  margin-top: auto;
+}
+
+.loading-screen {
+  padding: 100px;
+  font-weight: bold;
 }
 </style>

@@ -53,6 +53,21 @@ const handleLogin = () => {
     error.value = "Utilisateur inconnu. Essayez 'BookWorm99' ou 'admin'."
   }
 }
+
+const handleRegister = () => {
+  const users = JSON.parse(localStorage.getItem('registered_users') || '[]');
+
+  if (users.find(u => u.username === username.value)) {
+    error.value = "Ce pseudo est déjà pris.";
+    return;
+  }
+
+  users.push({ username: username.value, password: password.value });
+  localStorage.setItem('registered_users', JSON.stringify(users));
+
+  router.push('/login');
+};
+
 </script>
 
 <style scoped>
