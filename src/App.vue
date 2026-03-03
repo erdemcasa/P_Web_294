@@ -11,7 +11,7 @@ const contacts = ref([
     Tel: '+41 00 000 00 00',
   },
   { id: 1, Name: 'Zidane Sahraoui', Mail: 'zidane.sahraoui@mail.com', Tel: '+41 00 000 00 00' },
-  { id: 2, Name: 'Ökkes Erdem Köse', Mail: 'erdem.kose@mail.com', Tel: '+41 79 823 67 67' },
+  { id: 2, Name: 'Ökkes Erdem Köse', Mail: 'erdem.kose@mail.com', Tel: '+41 00 000 00 00' },
 ])
 </script>
 
@@ -20,16 +20,13 @@ const contacts = ref([
     <header>
       <div class="wrapper">
         <div class="logo-container">
-          <RouterLink to="/">
-            <img src="/logo.png" alt="Logo" class="logo" />
-          </RouterLink>
+          <img src="/logo.png" alt="Logo" class="logo" />
         </div>
 
         <nav class="links">
           <RouterLink to="/">Accueil</RouterLink>
           <RouterLink to="/browse">Parcourir</RouterLink>
           <RouterLink to="/mybooks">Mes Ouvrages</RouterLink>
-          <RouterLink to="/addboook">Ajouter</RouterLink>
           <RouterLink to="/login" class="login-route">Se connecter</RouterLink>
           <RouterLink to="/sign" class="signin-route">S'inscrire</RouterLink>
         </nav>
@@ -69,7 +66,6 @@ const contacts = ref([
 header {
   flex-shrink: 0;
 }
-
 footer {
   margin-top: auto;
   width: 100%;
@@ -151,20 +147,5 @@ nav a.router-link-exact-active:not(.login-route, .signin-route) {
   padding: 40px;
   background-color: #f9f9f9;
   margin-top: auto;
-}
-
-.logo-container a {
-  text-decoration: none;
-  display: block;
-  line-height: 0;
-}
-
-.logo-container img {
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-}
-
-.logo-container img:hover {
-  opacity: 0.8;
 }
 </style>

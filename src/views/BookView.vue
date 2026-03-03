@@ -41,7 +41,6 @@ const ouvrageSelectionne = computed(() => {
         <section class="info-block">
           <div class="block-header">
             <h2>Résumé</h2>
-            <a href="#" class="view-all">Voir tout</a>
           </div>
           <div class="resume-content">
             <p>{{ ouvrageSelectionne.resume }}</p>
@@ -51,7 +50,6 @@ const ouvrageSelectionne = computed(() => {
         <section class="info-block">
           <div class="block-header">
             <h2>Caractéristiques</h2>
-            <a href="#" class="view-all">Voir tout</a>
           </div>
           <div class="specs-table">
             <div class="spec-row">
