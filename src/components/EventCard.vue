@@ -53,8 +53,10 @@ function ReturnUserById(id) {
       <h3 class="title">{{ ouvrage.titre }}</h3>
 
       <p class="author">
-        Par : <strong>{{ ReturnAuthorById(ouvrage.auteur_id) }}</strong>
-      </p>
+        <span class="author-link" @click.stop="$router.push(`/auteur/${ouvrage.auteur_id}`)">
+          {{ ReturnAuthorById(ouvrage.auteur_id) }}
+        </span>
+</p>
 
       <p class="posted-by">
         Posté par :
@@ -113,7 +115,17 @@ function ReturnUserById(id) {
   margin: 2px 0;
   color: #555;
 }
+.author-link {
+  color: #2c3e50;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
 
+.author-link:hover {
+  color: #42b983;
+  text-decoration: underline;
+}
 .posted-by {
   font-size: 0.85rem;
   margin: 5px 0;

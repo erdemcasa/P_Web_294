@@ -41,7 +41,6 @@ const ouvrageSelectionne = computed(() => {
         <section class="info-block">
           <div class="block-header">
             <h2>Résumé</h2>
-            <a href="#" class="view-all">Voir tout</a>
           </div>
           <div class="resume-content">
             <p>{{ ouvrageSelectionne.resume }}</p>
@@ -51,7 +50,6 @@ const ouvrageSelectionne = computed(() => {
         <section class="info-block">
           <div class="block-header">
             <h2>Caractéristiques</h2>
-            <a href="#" class="view-all">Voir tout</a>
           </div>
           <div class="specs-table">
             <div class="spec-row">
@@ -103,16 +101,14 @@ const ouvrageSelectionne = computed(() => {
   margin-bottom: 30px;
 }
 
-/* LE LAYOUT PRINCIPAL */
 .main-content {
   display: flex;
   gap: 40px;
   align-items: flex-start;
 }
 
-/* --- COLONNE GAUCHE (IMAGE) --- */
 .col-visual {
-  flex: 0 0 380px; /* Largeur fixe pour l'image à gauche */
+  flex: 0 0 380px;
 }
 
 .main-img {
@@ -140,7 +136,6 @@ const ouvrageSelectionne = computed(() => {
   border: 2px solid #f39c12;
 }
 
-/* --- COLONNE ACTIONS --- */
 .col-actions {
   flex: 0 0 100px;
   display: flex;
@@ -172,9 +167,8 @@ const ouvrageSelectionne = computed(() => {
   font-size: 1.2rem;
 }
 
-/* --- COLONNE DROITE (TEXTE) --- */
 .col-details {
-  flex: 1; /* Prend tout l'espace restant */
+  flex: 1;
 }
 
 .block-header {
@@ -229,7 +223,6 @@ const ouvrageSelectionne = computed(() => {
   color: #2980b9;
   text-decoration: underline;
 }
-/* Style pour les appréciations */
 .rating-summary {
   display: flex;
   align-items: center;
@@ -248,7 +241,7 @@ const ouvrageSelectionne = computed(() => {
   align-items: center;
 }
 .star-icon {
-  color: #f39c12; /* Orange pour l'étoile */
+  color: #f39c12;
   font-size: 1.4rem;
 }
 
