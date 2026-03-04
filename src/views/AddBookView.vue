@@ -9,12 +9,7 @@
       <div class="form-grid">
         <div class="form-group">
           <label>Titre de l'ouvrage</label>
-          <input
-            v-model="book.titre"
-            type="text"
-            required
-            placeholder="Ex: L'Incal"
-          >
+          <input v-model="book.titre" type="text" required placeholder="Ex: L'Incal" />
         </div>
 
         <div class="form-group">
@@ -38,17 +33,17 @@
 
         <div class="form-group">
           <label>Éditeur</label>
-          <input v-model="book.editeur" type="text" required placeholder="Ex: Glénat">
+          <input v-model="book.editeur" type="text" required placeholder="Ex: Glénat" />
         </div>
 
         <div class="form-group">
           <label>Nombre de pages</label>
-          <input v-model.number="book.nombre_pages" type="number" required>
+          <input v-model.number="book.nombre_pages" type="number" required />
         </div>
 
         <div class="form-group">
           <label>Année d'édition</label>
-          <input v-model.number="book.annee_edition" type="number" required>
+          <input v-model.number="book.annee_edition" type="number" required />
         </div>
       </div>
 
@@ -68,13 +63,13 @@
           v-model="book.image_couverture"
           type="text"
           placeholder="Ex: public/Couvertures/mon-livre.jpg"
-        >
+        />
       </div>
 
       <div class="actions">
-        <button type="button" @click="$router.push('/catalog')" class="btn-cancel">Annuler</button>
+        <button type="button" @click="$router.push('/home')" class="btn-cancel">Annuler</button>
         <button type="submit" class="btn-submit" :disabled="loading">
-          {{ loading ? 'Enregistrement...' : 'Publier l\'ouvrage' }}
+          {{ loading ? 'Enregistrement...' : "Publier l'ouvrage" }}
         </button>
       </div>
     </form>
@@ -82,54 +77,54 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
-import api from '@/services/api';
+import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import api from '@/services/api'
 
-const router = useRouter();
-const loading = ref(false);
-const auteurs = ref([]);
+const router = useRouter()
+const loading = ref(false)
+const auteurs = ref([])
 
 const book = ref({
   titre: '',
   categorie: 'roman',
   nombre_pages: null,
-  extrait: '/assets/pdf/default.pdf', 
+  extrait: '/assets/pdf/default.pdf',
   resume: '',
   auteur_id: null,
   editeur: '',
   annee_edition: new Date().getFullYear(),
   image_couverture: '',
-  moyenne_appreciations: 0
-});
+  moyenne_appreciations: 0,
+})
 
 const fetchAuteurs = async () => {
   try {
-    const response = await api.get('/auteurs');
-    auteurs.value = response.data;
+    const response = await api.get('/auteurs')
+    auteurs.value = response.data
 
     if (auteurs.value.length > 0) {
-      book.value.auteur_id = auteurs.value[0].id;
+      book.value.auteur_id = auteurs.value[0].id
     }
   } catch (error) {
-    console.error("Erreur lors de la récupération des auteurs:", error);
+    console.error('Erreur lors de la récupération des auteurs:', error)
   }
-};
+}
 const submitBook = async () => {
-  loading.value = true;
+  loading.value = true
   try {
-    await api.post('/ouvrages', book.value);
-    alert('Livre ajouté avec succès !');
-    router.push('/catalog');
+    await api.post('/ouvrages', book.value)
+    alert('Livre ajouté avec succès !')
+    router.push('/catalog')
   } catch (error) {
-    console.error("Erreur lors de l'envoi:", error);
-    alert("Une erreur est survenue lors de l'ajout.");
+    console.error("Erreur lors de l'envoi:", error)
+    alert("Une erreur est survenue lors de l'ajout.")
   } finally {
-    loading.value = false;
+    loading.value = false
   }
-};
+}
 
-onMounted(fetchAuteurs);
+onMounted(fetchAuteurs)
 </script>
 
 <style scoped>
@@ -139,7 +134,7 @@ onMounted(fetchAuteurs);
   padding: 30px;
   background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   font-family: 'Century Gothic', sans-serif;
 }
 
@@ -149,8 +144,14 @@ onMounted(fetchAuteurs);
   padding-bottom: 15px;
 }
 
-h1 { color: #2c3e50; margin: 0; }
-.subtitle { color: #7f8c8d; font-size: 0.9rem; }
+h1 {
+  color: #2c3e50;
+  margin: 0;
+}
+.subtitle {
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
 
 .form-grid {
   display: grid;
@@ -164,7 +165,9 @@ h1 { color: #2c3e50; margin: 0; }
   margin-bottom: 15px;
 }
 
-.full-width { grid-column: span 2; }
+.full-width {
+  grid-column: span 2;
+}
 
 label {
   font-weight: bold;
@@ -173,7 +176,9 @@ label {
   font-size: 0.9rem;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   padding: 12px;
   border: 1px solid #dcdde1;
   border-radius: 8px;
@@ -181,7 +186,9 @@ input, select, textarea {
   transition: border-color 0.3s;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
   outline: none;
   border-color: #42b983;
 }
@@ -214,6 +221,11 @@ input:focus, select:focus, textarea:focus {
   cursor: pointer;
 }
 
-.btn-submit:hover { background-color: #3aa876; }
-.btn-submit:disabled { background-color: #a8d5c2; cursor: not-allowed; }
+.btn-submit:hover {
+  background-color: #3aa876;
+}
+.btn-submit:disabled {
+  background-color: #a8d5c2;
+  cursor: not-allowed;
+}
 </style>

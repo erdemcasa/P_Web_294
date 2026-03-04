@@ -13,11 +13,9 @@ const loading = ref(true)
 
 onMounted(async () => {
   try {
-    // 1. Récupérer les infos de l'auteur spécifique
     const resAuteur = await axios.get(`http://localhost:3000/auteurs/${auteurId}`)
     auteur.value = resAuteur.data
 
-    // 2. Récupérer uniquement les ouvrages de cet auteur (Filtre json-server)
     const resOuvrages = await axios.get(`http://localhost:3000/ouvrages?auteur_id=${auteurId}`)
     ouvragesAuteur.value = resOuvrages.data
   } catch (error) {
