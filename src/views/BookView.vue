@@ -48,9 +48,6 @@ const ouvrageSelectionne = computed(() => {
         </section>
 
         <section class="info-block">
-          <div class="block-header">
-            <h2>Caractéristiques</h2>
-          </div>
           <div class="specs-table">
             <div class="spec-row">
               <span class="label">Date de parution</span>
