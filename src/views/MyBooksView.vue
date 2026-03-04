@@ -3,7 +3,9 @@
     <div class="header-section">
       <h1>Mes ouvrages</h1>
       <p class="subtitle">Cette page vous permet de gerer les livers partagés</p>
-      <button @click="$router.push('/add-book')" class="btn-add">+ Ajouter un nouvel ouvrage</button>
+      <button @click="$router.push('/add-book')" class="btn-add">
+        + Ajouter un nouvel ouvrage
+      </button>
     </div>
 
     <div class="table-container">
@@ -21,15 +23,15 @@
             <td>
               <img :src="book.image_couverture" alt="Couverture" class="thumbnail" />
             </td>
-            <td><strong>{{ book.titre }}</strong></td>
-            <td><span class="badge">{{ book.categorie }}</span></td>
+            <td>
+              <strong>{{ book.titre }}</strong>
+            </td>
+            <td>
+              <span class="badge">{{ book.categorie }}</span>
+            </td>
             <td class="actions-cell">
-              <button @click="editBook(book.id)" class="btn-edit">
-                Modifier
-              </button>
-              <button @click="deleteBook(book.id)" class="btn-delete">
-                Supprimer
-              </button>
+              <button @click="editBook(book.id)" class="btn-edit">Modifier</button>
+              <button @click="deleteBook(book.id)" class="btn-delete">Supprimer</button>
             </td>
           </tr>
         </tbody>
@@ -43,40 +45,40 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
-import api from '@/services/api';
+import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import api from '@/services/api'
 
-const router = useRouter();
-const myBooks = ref([]);
+const router = useRouter()
+const myBooks = ref([])
 
 const fetchMyBooks = async () => {
   try {
-    const response = await api.get('/ouvrages');
-    myBooks.value = response.data;
+    const response = await api.get('/ouvrages')
+    myBooks.value = response.data
   } catch (error) {
-    console.error("Erreur lors de la récupération des livres:", error);
+    console.error('Erreur lors de la récupération des livres:', error)
   }
-};
+}
 
 const editBook = (id) => {
-  router.push(`/edit-book/${id}`);
-};
+  router.push(`/edit-book/${id}`)
+}
 
 const deleteBook = async (id) => {
-  if (confirm("Etes vous sure de supprimer cette ouvrage ?")) {
+  if (confirm('Etes vous sure de supprimer cette ouvrage ?')) {
     try {
-      await api.delete(`/ouvrages/${id}`);
-      myBooks.value = myBooks.value.filter(book => book.id !== id);
-      alert("Ouvrage supprimé de la db .");
+      await api.delete(`/ouvrages/${id}`)
+      myBooks.value = myBooks.value.filter((book) => book.id !== id)
+      alert('Ouvrage supprimé de la db .')
     } catch (error) {
-      console.error("Erreur lors de la suppression:", error);
-      alert("Impossible de supprimer l'ouvrage.");
+      console.error('Erreur lors de la suppression:', error)
+      alert("Impossible de supprimer l'ouvrage.")
     }
   }
-};
+}
 
-onMounted(fetchMyBooks);
+onMounted(fetchMyBooks)
 </script>
 
 <style scoped>
@@ -108,7 +110,7 @@ onMounted(fetchMyBooks);
 .table-container {
   background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   overflow: hidden;
 }
 
@@ -117,10 +119,10 @@ onMounted(fetchMyBooks);
   border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
   padding: 15px;
   text-align: left;
-  border-bottom: 1px solid #eee;
 }
 
 th {
@@ -148,6 +150,7 @@ th {
 .actions-cell {
   display: flex;
   gap: 10px;
+  flex-direction: column;
 }
 
 .btn-edit {
@@ -168,8 +171,12 @@ th {
   cursor: pointer;
 }
 
-.btn-edit:hover { background-color: #2980b9; }
-.btn-delete:hover { background-color: #c0392b; }
+.btn-edit:hover {
+  background-color: #2980b9;
+}
+.btn-delete:hover {
+  background-color: #c0392b;
+}
 
 .empty-state {
   padding: 40px;
