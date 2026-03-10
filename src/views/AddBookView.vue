@@ -67,7 +67,7 @@
       </div>
 
       <div class="actions">
-        <button type="button" @click="$router.push('/home')" class="btn-cancel">Annuler</button>
+        <button type="button" @click="$router.push('/')" class="btn-cancel">Annuler</button>
         <button type="submit" class="btn-submit" :disabled="loading">
           {{ loading ? 'Enregistrement...' : "Publier l'ouvrage" }}
         </button>
