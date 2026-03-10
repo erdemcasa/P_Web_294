@@ -1,48 +1,6 @@
 {
   "ouvrages": [
     {
-      "id": "6",
-      "titre": "Dune",
-      "categorie": "roman",
-      "nombre_pages": 688,
-      "extrait": "public/Extraits/Dune.pdf",
-      "resume": "Paul Atréides découvre sa destinée sur la planète désertique Arrakis.",
-      "auteur_id": 106,
-      "editeur": "Robert Laffont",
-      "annee_edition": 1965,
-      "image_couverture": "public/Couvertures/Dune.jpg",
-      "moyenne_appreciations": 4,
-      "user_id": 2
-    },
-    {
-      "id": "7",
-      "titre": "Watchmen",
-      "categorie": "bande dessinée",
-      "nombre_pages": 416,
-      "extrait": "public/Extraits/Watchmen.pdf",
-      "resume": "D'anciens super-héros enquêtent sur le meurtre de l'un des leurs.",
-      "auteur_id": 107,
-      "editeur": "Panini Comics",
-      "annee_edition": 1986,
-      "image_couverture": "public/Couvertures/Watchmen.jpg",
-      "moyenne_appreciations": 4,
-      "user_id": 2
-    },
-    {
-      "id": "8",
-      "titre": "Naruto",
-      "categorie": "manga",
-      "nombre_pages": 192,
-      "extrait": "public/Extraits/Naruto.pdf",
-      "resume": "Un jeune ninja rêve de devenir chef de son village.",
-      "auteur_id": 108,
-      "editeur": "Kana",
-      "annee_edition": 1999,
-      "image_couverture": "public/Couvertures/Naruto.jpg",
-      "moyenne_appreciations": 4,
-      "user_id": 7
-    },
-    {
       "id": "9",
       "titre": "Le Petit Prince",
       "categorie": "roman",

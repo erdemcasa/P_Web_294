@@ -1,130 +1,56 @@
+<script setup>
+import { ref, onMounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+import api from '@/services/api'
+import BookForm from '@/components/BookForm.vue'
+
+const router = useRouter()
+const route = useRoute()
+const loading = ref(false)
+const auteurs = ref([])
+const book = ref({})
+
+onMounted(async () => {
+  const [resAuteurs, resBook] = await Promise.all([
+    api.get('/auteurs'),
+    api.get(`/ouvrages/${route.params.id}`),
+  ])
+  auteurs.value = resAuteurs.data
+  book.value = resBook.data
+})
+
+const updateBook = async () => {
+  loading.value = true
+  try {
+    await api.put(`/ouvrages/${route.params.id}`, book.value)
+    router.push('/mes-ouvrages')
+  } catch (error) {
+    console.error(error)
+  } finally {
+    loading.value = false
+  }
+}
+</script>
+
 <template>
   <div class="edit-book-container">
     <div class="header-section">
       <h1>Modifier l'ouvrage</h1>
-      <p class="subtitle">Modification de : <strong>{{ book.titre }}</strong></p>
+      <p class="subtitle">
+        Modification de : <strong>{{ book.titre }}</strong>
+      </p>
     </div>
-
-    <form @submit.prevent="updateBook" class="book-form">
-      <div class="form-grid">
-        <div class="form-group">
-          <label>Titre de l'ouvrage</label>
-          <input
-            v-model="book.titre"
-            type="text"
-            required
-          >
-        </div>
-
-        <div class="form-group">
-          <label>Catégorie</label>
-          <select v-model="book.categorie" required>
-            <option value="bande dessinée">Bande dessinée</option>
-            <option value="manga">Manga</option>
-            <option value="roman">Roman</option>
-            <option value="livre">Livre</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>Auteur</label>
-          <select v-model="book.auteur_id" required>
-            <option v-for="auteur in auteurs" :key="auteur.id" :value="auteur.id">
-              {{ auteur.prenom }} {{ auteur.nom }}
-            </option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>Éditeur</label>
-          <input v-model="book.editeur" type="text" required>
-        </div>
-
-        <div class="form-group">
-          <label>Nombre de pages</label>
-          <input v-model.number="book.nombre_pages" type="number" required>
-        </div>
-
-        <div class="form-group">
-          <label>Année d'édition</label>
-          <input v-model.number="book.annee_edition" type="number" required>
-        </div>
-      </div>
-
-      <div class="form-group full-width">
-        <label>Résumé de l'ouvrage</label>
-        <textarea v-model="book.resume" rows="5" required></textarea>
-      </div>
-
-      <div class="form-group full-width">
-        <label>Lien de l'image de couverture</label>
-        <input v-model="book.image_couverture" type="text">
-      </div>
-
-      <div class="actions">
-        <button type="button" @click="$router.push('/mybooks')" class="btn-cancel">Annuler</button>
-        <button type="submit" class="btn-submit" :disabled="loading">
-          {{ loading ? 'Mise à jour...' : 'Enregistrer les modifications' }}
-        </button>
-      </div>
-    </form>
+    <BookForm
+      v-if="book.id"
+      v-model="book"
+      :auteurs="auteurs"
+      :loading="loading"
+      :isEditing="true"
+      @submit="updateBook"
+      @cancel="$router.push('/mes-ouvrages')"
+    />
   </div>
 </template>
-
-<script setup>
-import { ref, onMounted } from 'vue';
-import { useRouter, useRoute } from 'vue-router';
-import api from '@/services/api';
-
-const router = useRouter();
-const route = useRoute(); 
-const loading = ref(false);
-const auteurs = ref([]);
-
-const bookId = route.params.id;
-
-const book = ref({
-  titre: '',
-  categorie: '',
-  nombre_pages: null,
-  resume: '',
-  auteur_id: null,
-  editeur: '',
-  annee_edition: null,
-  image_couverture: '',
-  extrait: ''
-});
-
-const loadInitialData = async () => {
-  try {
-    const resAuteurs = await api.get('/auteurs');
-    auteurs.value = resAuteurs.data;
-
-    const resBook = await api.get(`/ouvrages/${bookId}`);
-    book.value = resBook.data;
-  } catch (error) {
-    console.error("Erreur de chargement:", error);
-    alert("Impossible de trouver cet ouvrage.");
-    router.push('/mybooks');
-  }
-};
-
-const updateBook = async () => {
-  loading.value = true;
-  try {
-    await api.put(`/ouvrages/${bookId}`, book.value);
-    alert('Modification réussie !');
-    router.push('/mybooks');
-  } catch (error) {
-    console.error("Erreur PUT:", error);
-    alert("Erreur lors de la sauvegarde.");
-  } finally {
-    loading.value = false;
-  }
-};
-
-onMounted(loadInitialData);
-</script>
 
 <style scoped>
 .edit-book-container {
@@ -133,7 +59,7 @@ onMounted(loadInitialData);
   padding: 30px;
   background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   font-family: 'Century Gothic', sans-serif;
 }
 
@@ -155,11 +81,19 @@ onMounted(loadInitialData);
   margin-bottom: 15px;
 }
 
-.full-width { grid-column: span 2; }
+.full-width {
+  grid-column: span 2;
+}
 
-label { font-weight: bold; margin-bottom: 8px; color: #34495e; }
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #34495e;
+}
 
-input, select, textarea {
+input,
+select,
+textarea {
   padding: 12px;
   border: 1px solid #dcdde1;
   border-radius: 8px;

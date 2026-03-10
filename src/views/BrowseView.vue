@@ -1,30 +1,44 @@
 <script setup>
-import EventCard from '@/components/EventCard.vue'
 import { ref, onMounted, computed } from 'vue'
-import axios from 'axios'
+import api from '@/services/api'
+import BookCard from '@/components/BookCard.vue'
 
 const ouvrages = ref([])
+const auteurs = ref([])
 const recherche = ref('')
+const loading = ref(true)
 
-onMounted(() => {
-  axios
-    .get('http://localhost:3000/ouvrages')
-    .then((response) => {
-      ouvrages.value = response.data.reverse()
-    })
-    .catch((error) => {
-      console.error('Erreur lors de la récupération des ouvrages:', error)
-    })
+onMounted(async () => {
+  try {
+    const [resOuvrages, resAuteurs] = await Promise.all([api.get('/ouvrages'), api.get('/auteurs')])
+    ouvrages.value = resOuvrages.data.reverse()
+    auteurs.value = resAuteurs.data
+  } catch (error) {
+    console.error('Erreur :', error)
+  } finally {
+    loading.value = false
+  }
+})
+
+const ouvragesEnrichis = computed(() => {
+  return ouvrages.value.map((ouvrage) => {
+    const auteur = auteurs.value.find((a) => a.id === ouvrage.auteur_id)
+    return {
+      ...ouvrage,
+      auteurNom: auteur ? `${auteur.prenom} ${auteur.nom}` : 'Auteur inconnu',
+    }
+  })
 })
 
 const filteredOuvrages = computed(() => {
-  return ouvrages.value.filter((ouvrage) => {
-    const titre = ouvrage.titre ? ouvrage.titre.toLowerCase() : ''
-    const auteur = ouvrage.auteur ? ouvrage.auteur.toLowerCase() : ''
-    const terme = recherche.value.toLowerCase()
+  if (!recherche.value) return ouvragesEnrichis.value
 
-    return titre.includes(terme) || auteur.includes(terme)
-  })
+  const terme = recherche.value.toLowerCase()
+  return ouvragesEnrichis.value.filter(
+    (ouvrage) =>
+      (ouvrage.titre && ouvrage.titre.toLowerCase().includes(terme)) ||
+      (ouvrage.auteurNom && ouvrage.auteurNom.toLowerCase().includes(terme)),
+  )
 })
 </script>
 
@@ -33,29 +47,30 @@ const filteredOuvrages = computed(() => {
     <h1>Parcourir les livres</h1>
 
     <div class="search-wrapper">
-        <input
-          v-model="recherche"
-          type="text"
-          placeholder="Rechercher un livre ou un auteur..."
-          class="search-bar"
-        />
+      <input
+        v-model="recherche"
+        type="text"
+        placeholder="Rechercher un livre ou un auteur..."
+        class="search-bar"
+      />
     </div>
 
-    <div class="results-container">
+    <div v-if="loading" class="loading">Chargement des ouvrages...</div>
+
+    <div v-else class="results-container">
       <div v-if="filteredOuvrages.length > 0" class="events">
-        <EventCard
+        <BookCard
           v-for="ouvrage in filteredOuvrages"
           :key="ouvrage.id"
           :ouvrage="ouvrage"
+          :auteurNom="ouvrage.auteurNom"
         />
       </div>
-
-      <div v-else-if="ouvrages.length > 0" class="no-results">
-        <p>Aucun livre ne correspond à "<strong>{{ recherche }}</strong>"</p>
-      </div>
-
-      <div v-else class="loading">
-        Chargement des ouvrages...
+      <div v-else class="no-results">
+        <p>
+          Aucun livre ne correspond à "<strong>{{ recherche }}</strong
+          >"
+        </p>
       </div>
     </div>
   </div>
@@ -102,7 +117,8 @@ h1 {
   padding: 20px;
 }
 
-.no-results, .loading {
+.no-results,
+.loading {
   margin-top: 50px;
   font-size: 1.2rem;
   color: #828282;

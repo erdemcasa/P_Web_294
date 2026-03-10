@@ -1,5 +1,5 @@
 <script setup>
-import EventCard from '@/components/EventCard.vue'
+import BookCard from '@/components/BookCard.vue'
 import Footer from '@/components/Footer.vue'
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
@@ -31,7 +31,7 @@ onMounted(() => {
     <p>Derniers ouvrages ajoutés</p>
 
     <div class="events">
-      <EventCard v-for="ouvrage in ouvrages.slice(0, 5)" :key="ouvrage.id" :ouvrage="ouvrage" />
+      <BookCard v-for="ouvrage in ouvrages.slice(0, 5)" :key="ouvrage.id" :ouvrage="ouvrage" />
     </div>
   </main>
 </template>

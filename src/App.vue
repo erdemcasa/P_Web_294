@@ -6,14 +6,23 @@ import Footer from '@/components/Footer.vue'
 const contacts = ref([
   {
     id: 0,
-    Name: 'Snehan Gnanassorian',
-    Mail: 'snehan.gnanassorian@mail.com',
-    Tel: '+41 00 000 00 00',
+    name: 'Snehan Gnanassorian',
+    mail: 'snehan.gnanassorian@mail.com',
+    tel: '+41 00 000 00 00',
   },
-  { id: 1, Name: 'Zidane Sahraoui', Mail: 'zidane.sahraoui@mail.com', Tel: '+41 00 000 00 00' },
-  { id: 2, Name: 'Ökkes Erdem Köse', Mail: 'erdem.kose@mail.com', Tel: '+41 00 000 00 00' },
+  {
+    id: 1,
+    name: 'Zidane Sahraoui',
+    mail: 'zidane.sahraoui@mail.com',
+    tel: '+41 00 000 00 00',
+  },
+  {
+    id: 2,
+    name: 'Ökkes Erdem Köse',
+    mail: 'erdem.kose@mail.com',
+    tel: '+41 00 000 00 00',
+  },
 ])
-
 </script>
 
 <template>
@@ -21,20 +30,25 @@ const contacts = ref([
     <header>
       <div class="wrapper">
         <div class="logo-container">
-          <img src="/logo.png" alt="Logo" class="logo" />
+          <RouterLink to="/">
+            <img src="/logo.png" alt="Logo" class="logo" />
+          </RouterLink>
         </div>
 
         <nav class="links">
           <RouterLink to="/">Accueil</RouterLink>
-          <RouterLink to="/browse">Parcourir</RouterLink>
-          <RouterLink to="/mybooks">Mes Ouvrages</RouterLink>
-          <RouterLink to="/login" class="login-route">Se connecter</RouterLink>
-          <RouterLink to="/sign" class="signin-route">S'inscrire</RouterLink>
+          <RouterLink to="/parcourir">Parcourir</RouterLink>
+          <RouterLink to="/mes-ouvrages">Mes Ouvrages</RouterLink>
+
+          <RouterLink to="/connexion" class="login-route">Se connecter</RouterLink>
+          <RouterLink to="/inscription" class="signin-route">S'inscrire</RouterLink>
         </nav>
       </div>
     </header>
 
-    <RouterView />
+    <main class="content">
+      <RouterView />
+    </main>
 
     <footer>
       <div class="contacts-container">
@@ -45,42 +59,26 @@ const contacts = ref([
 </template>
 
 <style>
+
 #layout {
-  font-family:
-    'Inter',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    sans-serif;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-header {
-  flex-shrink: 0;
-}
-footer {
-  margin-top: auto;
-  width: 100%;
-  background-color: #f9f9f9;
+.content {
+  flex: 1;
 }
 
 header {
   background: #ffffff;
   border-bottom: 1px solid #f1f1f1;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
-}
-
-.logo-container img {
-  width: 100px;
+  flex-shrink: 0;
 }
 
 .wrapper {
@@ -90,6 +88,11 @@ header {
   max-width: 1350px;
   margin: 0 auto;
   padding: 10px 20px;
+}
+
+.logo-container img {
+  width: 100px;
+  cursor: pointer;
 }
 
 nav {
@@ -113,7 +116,7 @@ nav a:hover:not(.login-route, .signin-route) {
   background: #f8f8f8;
 }
 
-nav a.router-link-exact-active:not(.login-route, .signin-route) {
+nav a.router-link-active:not(.login-route, .signin-route) {
   color: #2c3e50;
   font-weight: 700;
 }
@@ -124,11 +127,6 @@ nav a.router-link-exact-active:not(.login-route, .signin-route) {
   border: 1px solid #dcdcdc;
 }
 
-.login-route:hover {
-  background: #fdfdfd;
-  border-color: #999;
-}
-
 .signin-route {
   background-color: #2c3e50;
   color: #ffffff;
@@ -137,8 +135,11 @@ nav a.router-link-exact-active:not(.login-route, .signin-route) {
 
 .signin-route:hover {
   background-color: #1a252f;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  background-color: #f9f9f9;
+  border-top: 1px solid #eee;
 }
 
 .contacts-container {
@@ -146,7 +147,5 @@ nav a.router-link-exact-active:not(.login-route, .signin-route) {
   justify-content: center;
   gap: 30px;
   padding: 40px;
-  background-color: #f9f9f9;
-  margin-top: auto;
 }
 </style>

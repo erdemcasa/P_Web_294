@@ -1,39 +1,52 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
 import { useRoute } from 'vue-router'
-import axios from 'axios'
+import api from '@/services/api'
 
 const route = useRoute()
-const ouvrages = ref([])
+const ouvrage = ref(null)
+const auteur = ref(null)
+const loading = ref(true)
 
-const bookId = route.params.id
+onMounted(async () => {
+  try {
+    const resOuvrage = await api.get(`/ouvrages/${route.params.id}`)
+    ouvrage.value = resOuvrage.data
 
-onMounted(() => {
-  axios
-    .get('http://localhost:3000/ouvrages')
-    .then((response) => {
-      ouvrages.value = response.data
-    })
-    .catch((error) => {
-      console.error('Erreurs lors de la recetupration :', error)
-    })
+    const resAuteur = await api.get(`/auteurs/${ouvrage.value.auteur_id}`)
+    auteur.value = resAuteur.data
+  } catch (error) {
+    console.error('Erreur lors du chargement des données :', error)
+  } finally {
+    loading.value = false
+  }
 })
 
-const ouvrageSelectionne = computed(() => {
-  return ouvrages.value.find((item) => item.id == bookId)
+const imagePath = computed(() => {
+  if (!ouvrage.value?.image_couverture) return ''
+  return ouvrage.value.image_couverture.replace('public/', '/')
 })
 </script>
 
 <template>
-  <div v-if="ouvrageSelectionne" class="page-container">
+  <div v-if="loading" class="state-msg">
+    <div class="spinner"></div>
+    <p>Chargement de l'ouvrage...</p>
+  </div>
+
+  <div v-else-if="ouvrage" class="page-container">
     <header class="header">
-      <h1>{{ ouvrageSelectionne.titre }}</h1>
+      <h1>{{ ouvrage.titre }}</h1>
+      <p class="author-sub" v-if="auteur">
+        Par
+        <RouterLink :to="`/auteurs/${auteur.id}`">{{ auteur.prenom }} {{ auteur.nom }}</RouterLink>
+      </p>
     </header>
 
     <div class="main-content">
       <div class="col-visual">
         <div class="main-image-wrapper">
-          <img :src="`/${ouvrageSelectionne.image_couverture}`" alt="Couverture" class="main-img" />
+          <img :src="imagePath" :alt="ouvrage.titre" class="main-img" />
         </div>
       </div>
 
@@ -43,213 +56,141 @@ const ouvrageSelectionne = computed(() => {
             <h2>Résumé</h2>
           </div>
           <div class="resume-content">
-            <p>{{ ouvrageSelectionne.resume }}</p>
+            <p>{{ ouvrage.resume }}</p>
           </div>
         </section>
 
         <section class="info-block">
           <div class="specs-table">
             <div class="spec-row">
-              <span class="label">Date de parution</span>
-              <span class="value">{{ ouvrageSelectionne.annee_edition }}</span>
+              <span class="label">Catégorie</span>
+              <span class="value text-capitalize">{{ ouvrage.categorie }}</span>
             </div>
             <div class="spec-row">
-              <span class="label">Editeur</span>
-              <span class="value"
-                ><a href="#">{{ ouvrageSelectionne.editeur }}</a></span
-              >
+              <span class="label">Date de parution</span>
+              <span class="value">{{ ouvrage.annee_edition }}</span>
+            </div>
+            <div class="spec-row">
+              <span class="label">Éditeur</span>
+              <span class="value">{{ ouvrage.editeur }}</span>
             </div>
             <div class="spec-row">
               <span class="label">Nombre de pages</span>
-              <span class="value">{{ ouvrageSelectionne.nombre_pages }}</span>
+              <span class="value">{{ ouvrage.nombre_pages }} pages</span>
             </div>
             <div class="spec-row">
-              <span class="label">Note</span>
+              <span class="label">Note moyenne</span>
               <div class="stars">
                 <span class="star-icon">★</span>
-                <span class="average-note">{{ ouvrageSelectionne.moyenne_appreciations }}</span>
+                <span class="average-note">{{ ouvrage.moyenne_appreciations }}</span>
                 <span class="max-note">/5</span>
               </div>
             </div>
           </div>
         </section>
+
+        <div class="actions-footer">
+          <button class="btn-read" @click="window.open(ouvrage.extrait, '_blank')">
+            Lire un extrait (PDF)
+          </button>
+        </div>
       </div>
     </div>
   </div>
 
-  <div v-else class="loading">Chargement...</div>
+  <div v-else class="state-msg error">
+    <p>Ouvrage introuvable.</p>
+    <button @click="$router.push('/parcourir')">Retour au catalogue</button>
+  </div>
 </template>
+
 <style scoped>
+
 .page-container {
-  max-width: 1200px;
-  margin: 30px auto;
+  max-width: 1100px;
+  margin: 40px auto;
   padding: 0 20px;
-  font-family: sans-serif;
 }
 
-.header h1 {
-  font-size: 2.2rem;
-  margin-bottom: 23px;
-}
-
-.qa-link {
+.author-sub {
+  font-size: 1.2rem;
   color: #666;
-  font-size: 0.9rem;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+.author-sub a {
+  color: #42b983;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .main-content {
   display: flex;
-  gap: 40px;
-  align-items: flex-start;
+  gap: 60px;
+  margin-top: 30px;
 }
 
 .col-visual {
-  flex: 0 0 380px;
+  flex: 0 0 350px;
 }
 
 .main-img {
   width: 100%;
-  height: auto;
-  border-radius: 4px;
-  display: block;
-}
-
-.thumbs {
-  display: flex;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.thumb {
-  width: 65px;
-  height: 85px;
-  object-fit: cover;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.thumb.active {
-  border: 2px solid #f39c12;
-}
-
-.col-actions {
-  flex: 0 0 100px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding-top: 50px;
-}
-
-.btn-action {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 0.85rem;
-  color: #555;
-  gap: 8px;
-}
-
-.icon-circle {
-  width: 45px;
-  height: 45px;
-  border: 1px solid #ccc;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-}
-
-.col-details {
-  flex: 1;
-}
-
-.block-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 10px;
-  margin-bottom: 15px;
-}
-
-.block-header h2 {
-  font-size: 1.25rem;
-  margin: 0;
-}
-
-.view-all {
-  font-size: 0.85rem;
-  color: #000;
-  text-decoration: underline;
-  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .resume-content {
-  background-color: #f9f9f9;
-  padding: 25px;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 30px;
-}
-
-.specs-table {
-  width: 100%;
+  background-color: #fcfcfc;
+  padding: 20px;
+  border-left: 4px solid #42b983;
+  line-height: 1.7;
+  font-size: 1.05rem;
 }
 
 .spec-row {
   display: flex;
-  padding: 12px 0;
-  border-bottom: 1px solid #f0f0f0;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
 }
 
-.spec-row .label {
-  width: 200px;
-  color: #666;
+.label {
+  color: #888;
+}
+.value {
+  font-weight: 600;
+}
+.text-capitalize {
+  text-transform: capitalize;
 }
 
-.spec-row .value {
-  font-weight: bold;
-}
-
-.spec-row a {
-  color: #2980b9;
-  text-decoration: underline;
-}
-.rating-summary {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-}
-
-.stars {
-  display: flex;
-  align-items: baseline;
-  gap: 4px;
-}
-.rating-summary .label {
-  display: flex;
-  align-items: center;
-}
 .star-icon {
   color: #f39c12;
-  font-size: 1.4rem;
+  margin-right: 5px;
 }
 
-.average-note {
-  font-size: 1.2rem;
+.btn-read {
+  margin-top: 30px;
+  background-color: #2c3e50;
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
   font-weight: bold;
-  color: #333;
+  transition: background 0.3s;
 }
 
-.max-note {
-  color: #999;
-  font-size: 0.9rem;
+.btn-read:hover {
+  background-color: #42b983;
+}
+
+.state-msg {
+  text-align: center;
+  padding: 100px;
+}
+.error {
+  color: #e74c3c;
 }
 </style>

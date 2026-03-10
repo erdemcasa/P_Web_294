@@ -3,7 +3,7 @@
     <div class="header-section">
       <h1>Mes ouvrages</h1>
       <p class="subtitle">Cette page vous permet de gerer les livers partagés</p>
-      <button @click="$router.push('/add-book')" class="btn-add">
+      <button @click="$router.push('/ouvrages/nouveau')" class="btn-add">
         + Ajouter un nouvel ouvrage
       </button>
     </div>
@@ -62,7 +62,7 @@ const fetchMyBooks = async () => {
 }
 
 const editBook = (id) => {
-  router.push(`/edit-book/${id}`)
+  router.push(`/ouvrages/${id}/editer`)
 }
 
 const deleteBook = async (id) => {

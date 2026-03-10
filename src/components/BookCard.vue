@@ -1,67 +1,29 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-import axios from 'axios'
-
 defineProps({
-  ouvrage: {
-    type: Object,
-    required: true,
-  },
+  ouvrage: { type: Object, required: true },
+  auteurNom: { type: String, default: 'Auteur inconnu' },
+  utilisateurNom: { type: String, default: 'Utilisateur inconnu' },
 })
-
-const auteurs = ref([])
-const users = ref([])
-
-onMounted(() => {
-  axios
-    .get('http://localhost:3000/auteurs')
-    .then((response) => {
-      auteurs.value = response.data
-    })
-    .catch((error) => {
-      console.error('Erreur lors de la recuoeratiuon des auteurs :', error)
-    })
-
-  axios
-    .get('http://localhost:3000/utilisateurs')
-    .then((response) => {
-      users.value = response.data
-    })
-    .catch((error) => {
-      console.error('Erreur lors de la recuperation des utilisateurs :', error)
-    })
-})
-
-function ReturnAuthorById(id) {
-  const auteur = auteurs.value.find((item) => item.id == id)
-  return auteur ? auteur.nom : 'Auteur inconnu'
-}
-
-function ReturnUserById(id) {
-  const utilisateur = users.value.find((item) => item.id == id)
-  return utilisateur ? utilisateur.nom : 'Utilisateur inconnu'
-}
 </script>
 
 <template>
-  <div class="event-card" @click="$router.push(`/book/${ouvrage.id}`)">
+  <div class="event-card" @click="$router.push(`/ouvrages/${ouvrage.id}`)">
     <img :src="ouvrage.image_couverture" alt="Couverture" class="cover-img" />
 
     <div class="info">
       <span class="category">{{ ouvrage.categorie }}</span>
-
       <h3 class="title">{{ ouvrage.titre }}</h3>
 
       <p class="author">
-        <span class="author-link" @click.stop="$router.push(`/auteur/${ouvrage.auteur_id}`)">
-          {{ ReturnAuthorById(ouvrage.auteur_id) }}
+        <span class="author-link" @click.stop="$router.push(`/auteurs/${ouvrage.auteur_id}`)">
+          {{ auteurNom }}
         </span>
-</p>
+      </p>
 
       <p class="posted-by">
         Posté par :
         <span class="user-link" @click.stop="$router.push(`/profile/${ouvrage.user_id}`)">
-          {{ ReturnUserById(ouvrage.user_id) }}
+          {{ utilisateurNom }}
         </span>
       </p>
 
@@ -72,6 +34,7 @@ function ReturnUserById(id) {
     </div>
   </div>
 </template>
+
 
 <style scoped>
 .event-card {

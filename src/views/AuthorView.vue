@@ -2,7 +2,7 @@
 import { ref, onMounted, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import axios from 'axios'
-import EventCard from '../components/EventCard.vue'
+import BookCard from '../components/BookCard.vue'
 
 const route = useRoute()
 const auteurId = route.params.id
@@ -50,7 +50,7 @@ onMounted(async () => {
       <h2>Ouvrages de {{ auteur.nom }} (présents sur le site)</h2>
 
       <div v-if="ouvragesAuteur.length > 0" class="books-grid">
-        <EventCard
+        <BookCard
           v-for="livre in ouvragesAuteur"
           :key="livre.id"
           :ouvrage="livre"

@@ -1,85 +1,8 @@
-<template>
-  <div class="add-book-container">
-    <div class="header-section">
-      <h1>Ajouter un livre</h1>
-      <p class="subtitle">Partagez votre nouvelle découverte avec la communauté.</p>
-    </div>
-
-    <form @submit.prevent="submitBook" class="book-form">
-      <div class="form-grid">
-        <div class="form-group">
-          <label>Titre de l'ouvrage</label>
-          <input v-model="book.titre" type="text" required placeholder="Ex: L'Incal" />
-        </div>
-
-        <div class="form-group">
-          <label>Catégorie</label>
-          <select v-model="book.categorie" required>
-            <option value="bande dessinée">Bande dessinée</option>
-            <option value="manga">Manga</option>
-            <option value="roman">Roman</option>
-            <option value="livre">Livre</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>Auteur</label>
-          <select v-model="book.auteur_id" required>
-            <option v-for="auteur in auteurs" :key="auteur.id" :value="auteur.id">
-              {{ auteur.prenom }} {{ auteur.nom }}
-            </option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>Éditeur</label>
-          <input v-model="book.editeur" type="text" required placeholder="Ex: Glénat" />
-        </div>
-
-        <div class="form-group">
-          <label>Nombre de pages</label>
-          <input v-model.number="book.nombre_pages" type="number" required />
-        </div>
-
-        <div class="form-group">
-          <label>Année d'édition</label>
-          <input v-model.number="book.annee_edition" type="number" required />
-        </div>
-      </div>
-
-      <div class="form-group full-width">
-        <label>Résumé de l'ouvrage</label>
-        <textarea
-          v-model="book.resume"
-          rows="5"
-          required
-          placeholder="Décrivez brièvement l'histoire..."
-        ></textarea>
-      </div>
-
-      <div class="form-group full-width">
-        <label>Lien de l'image de couverture</label>
-        <input
-          v-model="book.image_couverture"
-          type="text"
-          placeholder="Ex: public/Couvertures/mon-livre.jpg"
-        />
-      </div>
-
-      <div class="actions">
-        <button type="button" @click="$router.push('/')" class="btn-cancel">Annuler</button>
-        <button type="submit" class="btn-submit" :disabled="loading">
-          {{ loading ? 'Enregistrement...' : "Publier l'ouvrage" }}
-        </button>
-      </div>
-    </form>
-  </div>
-</template>
-
 <script setup>
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import api from '@/services/api'
+import BookForm from '@/components/BookForm.vue'
 
 const router = useRouter()
 const loading = ref(false)
@@ -89,7 +12,6 @@ const book = ref({
   titre: '',
   categorie: 'roman',
   nombre_pages: null,
-  extrait: '/assets/pdf/default.pdf',
   resume: '',
   auteur_id: null,
   editeur: '',
@@ -98,35 +20,39 @@ const book = ref({
   moyenne_appreciations: 0,
 })
 
-const fetchAuteurs = async () => {
-  try {
-    const response = await api.get('/auteurs')
-    auteurs.value = response.data
+onMounted(async () => {
+  const res = await api.get('/auteurs')
+  auteurs.value = res.data
+  if (auteurs.value.length > 0) book.value.auteur_id = auteurs.value[0].id
+})
 
-    if (auteurs.value.length > 0) {
-      book.value.auteur_id = auteurs.value[0].id
-    }
-  } catch (error) {
-    console.error('Erreur lors de la récupération des auteurs:', error)
-  }
-}
 const submitBook = async () => {
   loading.value = true
   try {
     await api.post('/ouvrages', book.value)
-    alert('Livre ajouté avec succès !')
-    router.push('/catalog')
+    router.push('/mes-ouvrages')
   } catch (error) {
-    console.error("Erreur lors de l'envoi:", error)
-    alert("Une erreur est survenue lors de l'ajout.")
+    console.error(error)
   } finally {
     loading.value = false
   }
 }
-
-onMounted(fetchAuteurs)
 </script>
 
+<template>
+  <div class="add-book-container">
+    <div class="header-section">
+      <h1>Ajouter un livre</h1>
+    </div>
+    <BookForm
+      v-model="book"
+      :auteurs="auteurs"
+      :loading="loading"
+      @submit="submitBook"
+      @cancel="$router.push('/')"
+    />
+  </div>
+</template>
 <style scoped>
 .add-book-container {
   max-width: 900px;
