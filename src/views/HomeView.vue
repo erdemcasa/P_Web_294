@@ -1,37 +1,45 @@
 <script setup>
 import BookCard from '@/components/BookCard.vue'
-import Footer from '@/components/Footer.vue'
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
 
 const ouvrages = ref([])
+const auteurs = ref([])
+const users = ref([])
 
 onMounted(() => {
-  axios
-    .get('http://localhost:3000/ouvrages')
-    .then((response) => {
-      ouvrages.value = response.data.reverse()
+  axios.get('http://localhost:3000/ouvrages')
+    .then((res) => {
+      ouvrages.value = res.data.reverse()
     })
-    .catch((error) => {
-      console.error('Erreur lors de la récupération des ouvrages:', error)
+    .catch((err) => console.error('Erreur ouvrages:', err))
+
+  axios.get('http://localhost:3000/auteurs')
+    .then((res) => {
+      auteurs.value = res.data
+    })
+    .catch((err) => console.error('Erreur auteurs:', err))
+
+  axios.get('http://localhost:3000/utilisateurs')
+    .then((res) => {
+      users.value = res.data
+    })
+    .catch((err) => {
+      console.warn('Note: La route /users n’existe pas encore (404).')
     })
 })
 </script>
 
 <template>
-  <header class="section">
-    <div class="Title">
-      <h1>Passion Lecture</h1>
-      <p>Votre bibliothèque, vos avis, votre passion.</p>
-    </div>
-  </header>
-
   <main>
-    <h2>Ajoutés récemment</h2>
-    <p>Derniers ouvrages ajoutés</p>
-
     <div class="events">
-      <BookCard v-for="ouvrage in ouvrages.slice(0, 5)" :key="ouvrage.id" :ouvrage="ouvrage" />
+      <BookCard
+        v-for="ouvrage in ouvrages.slice(0, 5)"
+        :key="ouvrage.id"
+        :ouvrage="ouvrage"
+        :auteurs="auteurs"
+        :users="users"
+      />
     </div>
   </main>
 </template>

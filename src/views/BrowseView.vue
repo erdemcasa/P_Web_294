@@ -5,40 +5,51 @@ import BookCard from '@/components/BookCard.vue'
 
 const ouvrages = ref([])
 const auteurs = ref([])
+const users = ref([])
 const recherche = ref('')
 const loading = ref(true)
 
-onMounted(async () => {
-  try {
-    const [resOuvrages, resAuteurs] = await Promise.all([api.get('/ouvrages'), api.get('/auteurs')])
-    ouvrages.value = resOuvrages.data.reverse()
-    auteurs.value = resAuteurs.data
-  } catch (error) {
-    console.error('Erreur :', error)
-  } finally {
-    loading.value = false
-  }
+onMounted(() => {
+  api.get('/ouvrages')
+    .then(res => {
+      ouvrages.value = res.data.reverse()
+    })
+    .catch(err => console.error('Erreur ouvrages:', err))
+    .finally(() => { loading.value = false })
+
+  api.get('/auteurs')
+    .then(res => {
+      auteurs.value = res.data
+    })
+    .catch(err => console.error('Erreur auteurs:', err))
+
+  api.get('/users')
+    .then(res => {
+      users.value = res.data
+    })
+    .catch(() => { console.warn('Route /users introuvable') })
 })
 
 const ouvragesEnrichis = computed(() => {
   return ouvrages.value.map((ouvrage) => {
-    const auteur = auteurs.value.find((a) => a.id === ouvrage.auteur_id)
+    const auteur = auteurs.value.find((a) => a.id == ouvrage.auteur_id)
     return {
       ...ouvrage,
-      auteurNom: auteur ? `${auteur.prenom} ${auteur.nom}` : 'Auteur inconnu',
+      searchAuthor: auteur ? `${auteur.prenom} ${auteur.nom}`.toLowerCase() : ''
     }
   })
 })
 
 const filteredOuvrages = computed(() => {
-  if (!recherche.value) return ouvragesEnrichis.value
+  const terme = recherche.value.toLowerCase().trim()
+  if (!terme) return ouvragesEnrichis.value
 
-  const terme = recherche.value.toLowerCase()
-  return ouvragesEnrichis.value.filter(
-    (ouvrage) =>
+  return ouvragesEnrichis.value.filter((ouvrage) => {
+    return (
       (ouvrage.titre && ouvrage.titre.toLowerCase().includes(terme)) ||
-      (ouvrage.auteurNom && ouvrage.auteurNom.toLowerCase().includes(terme)),
-  )
+      (ouvrage.searchAuthor && ouvrage.searchAuthor.includes(terme))
+    )
+  })
 })
 </script>
 
@@ -63,68 +74,26 @@ const filteredOuvrages = computed(() => {
           v-for="ouvrage in filteredOuvrages"
           :key="ouvrage.id"
           :ouvrage="ouvrage"
-          :auteurNom="ouvrage.auteurNom"
+          :auteurs="auteurs"
+          :users="users"
         />
       </div>
       <div v-else class="no-results">
-        <p>
-          Aucun livre ne correspond à "<strong>{{ recherche }}</strong
-          >"
-        </p>
+        <p>Aucun livre ne correspond à "<strong>{{ recherche }}</strong>"</p>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.browse {
-  padding: 20px;
-  text-align: center;
-}
-
-h1 {
-  margin-bottom: 30px;
-  color: #2c3e50;
-}
-
-.search-wrapper {
-  max-width: 500px;
-  margin: 0 auto 40px auto;
-}
-
+.browse { padding: 20px; text-align: center; }
+h1 { margin-bottom: 30px; color: #2c3e50; }
+.search-wrapper { max-width: 500px; margin: 0 auto 40px auto; }
 .search-bar {
-  width: 100%;
-  padding: 15px 25px;
-  border-radius: 30px;
-  border: 1px solid #ddd;
-  font-size: 1.1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  outline: none;
-  transition: all 0.3s ease;
+  width: 100%; padding: 15px 25px; border-radius: 30px;
+  border: 1px solid #ddd; font-size: 1.1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); outline: none;
 }
-
-.search-bar:focus {
-  border-color: #2c3e50;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-}
-
-.events {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-}
-
-.no-results,
-.loading {
-  margin-top: 50px;
-  font-size: 1.2rem;
-  color: #828282;
-}
-
-.no-results strong {
-  color: #2c3e50;
-}
+.events { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
+.no-results, .loading { margin-top: 50px; font-size: 1.2rem; color: #828282; }
 </style>

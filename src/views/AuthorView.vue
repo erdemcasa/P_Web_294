@@ -50,12 +50,7 @@ onMounted(async () => {
       <h2>Ouvrages de {{ auteur.nom }} (présents sur le site)</h2>
 
       <div v-if="ouvragesAuteur.length > 0" class="books-grid">
-        <BookCard
-          v-for="livre in ouvragesAuteur"
-          :key="livre.id"
-          :ouvrage="livre"
-
-        />
+        <BookCard v-for="livre in ouvragesAuteur" :key="livre.id" :ouvrage="livre" :auteurs="[auteur]" :users="[]" />
       </div>
 
       <div v-else class="no-data-box">
@@ -91,7 +86,7 @@ onMounted(async () => {
   padding: 40px;
   border-radius: 16px;
   border: 1px solid #eaeaea;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
 .avatar-placeholder {

@@ -83,6 +83,20 @@
       "image_couverture": "public/Couvertures/FMA.jpg",
       "moyenne_appreciations": 4,
       "user_id": 5
+    },
+    {
+      "id": "16",
+      "titre": "Fullmetal Alchemist",
+      "categorie": "manga",
+      "nombre_pages": 192,
+      "extrait": "public/Extraits/FMA.pdf",
+      "resume": "Deux frères alchimistes cherchent la Pierre Philosophale pour retrouver leurs corps.",
+      "auteur_id": 115,
+      "editeur": "Square Enix Manga",
+      "annee_edition": 2001,
+      "image_couverture": "public/Couvertures/FMA.jpg",
+      "moyenne_appreciations": 4,
+      "user_id": 5
     }
   ],
   "auteurs": [
@@ -179,7 +193,7 @@
   ],
   "utilisateurs": [
     {
-      "id": "u1",
+      "id": "1",
       "pseudo": "BookWorm99",
       "date_entree": "2024-01-15",
       "nb_ouvrages_proposes": 5,
@@ -187,7 +201,7 @@
       "nb_commentaires": 8
     },
     {
-      "id": "u2",
+      "id": "2",
       "pseudo": "LecteurAnonyme",
       "date_entree": "2024-02-10",
       "nb_ouvrages_proposes": 0,
@@ -195,7 +209,7 @@
       "nb_commentaires": 1
     },
     {
-      "id": "u3",
+      "id": "3",
       "pseudo": "MangaKing",
       "date_entree": "2024-03-05",
       "nb_ouvrages_proposes": 3,
@@ -203,7 +217,7 @@
       "nb_commentaires": 15
     },
     {
-      "id": "u4",
+      "id": "4",
       "pseudo": "FantasyQueen",
       "date_entree": "2024-03-18",
       "nb_ouvrages_proposes": 7,
@@ -211,7 +225,7 @@
       "nb_commentaires": 22
     },
     {
-      "id": "u5",
+      "id": "5",
       "pseudo": "NocturnalReader",
       "date_entree": "2024-04-02",
       "nb_ouvrages_proposes": 1,
@@ -219,7 +233,7 @@
       "nb_commentaires": 4
     },
     {
-      "id": "u6",
+      "id": "6",
       "pseudo": "BDPassionné",
       "date_entree": "2024-04-20",
       "nb_ouvrages_proposes": 4,
@@ -227,7 +241,7 @@
       "nb_commentaires": 11
     },
     {
-      "id": "u7",
+      "id": "7",
       "pseudo": "OtakuZone",
       "date_entree": "2024-05-01",
       "nb_ouvrages_proposes": 6,
@@ -235,7 +249,7 @@
       "nb_commentaires": 30
     },
     {
-      "id": "u8",
+      "id": "8",
       "pseudo": "SciFiNerd",
       "date_entree": "2024-05-10",
       "nb_ouvrages_proposes": 8,
@@ -243,7 +257,7 @@
       "nb_commentaires": 40
     },
     {
-      "id": "u9",
+      "id": "9",
       "pseudo": "ClassiqueAddict",
       "date_entree": "2024-05-20",
       "nb_ouvrages_proposes": 2,
@@ -251,7 +265,7 @@
       "nb_commentaires": 9
     },
     {
-      "id": "u10",
+      "id": "10",
       "pseudo": "SenshiManga",
       "date_entree": "2024-06-01",
       "nb_ouvrages_proposes": 7,
