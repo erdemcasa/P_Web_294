@@ -1,4 +1,4 @@
-﻿<script setup>
+<script setup>
 defineProps({
   modelValue: { type: Object, required: true },
   auteurs: { type: Array, required: true },

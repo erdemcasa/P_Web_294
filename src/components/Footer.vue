@@ -11,15 +11,15 @@ defineProps({
 
 <template>
   <div class="Contact-Us">
-    <p>{{ contact.Name }} :</p>
-    <p>{{ contact.Mail }}</p>
-    <p>{{ contact.Tel }}</p>
+    <p>{{ contact.name }}</p>
+    <p>{{ contact.mail }}</p>
+    <p>{{ contact.tel }}</p>
   </div>
 </template>
 
 <style scoped>
 .Contact-Us {
   color: #828282;
-  width: 25vh;
+  width: 35vh;
 }
 </style>

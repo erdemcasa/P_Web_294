@@ -37,6 +37,7 @@ const submitBook = async () => {
     loading.value = false
   }
 }
+
 </script>
 
 <template>

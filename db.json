@@ -7,7 +7,7 @@
       "nombre_pages": 96,
       "extrait": "public/Extraits/LePetitPrince.pdf",
       "resume": "Un aviateur dans le désert rencontre un prince venu d'une autre planète.",
-      "auteur_id": 109,
+      "auteur_id": "101",
       "editeur": "Gallimard",
       "annee_edition": 1943,
       "image_couverture": "public/Couvertures/LePetitPrince.jpg",
