@@ -22,6 +22,20 @@ onMounted(() => {
 const ouvrageSelectionne = computed(() => {
   return ouvrages.value.find((item) => item.id == bookId)
 })
+
+const formatImageUrl = (path) => {
+  if (!path) return 'https://via.placeholder.com/380x500?text=Pas+d+image'
+
+  if (path.startsWith('http')) {
+    return path
+  }
+
+  return path.startsWith('/') ? path : `/${path}`
+  }
+
+  const handleImageError = (event) => {
+  event.target.src = 'https://via.placeholder.com/380x500?text=Image+introuvable'
+  }
 </script>
 
 <template>
@@ -33,7 +47,12 @@ const ouvrageSelectionne = computed(() => {
     <div class="main-content">
       <div class="col-visual">
         <div class="main-image-wrapper">
-          <img :src="`/${ouvrageSelectionne.image_couverture}`" alt="Couverture" class="main-img" />
+          <img 
+            :src="formatImageUrl(ouvrageSelectionne.image_couverture)" 
+            alt="Couverture" 
+            class="main-img" 
+            @error="handleImageError"
+          />
         </div>
       </div>
 
