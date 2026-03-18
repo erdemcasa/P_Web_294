@@ -756,21 +756,6 @@ const downloadExtrait = () => {
   animation: spin 0.8s linear infinite;
   margin: 0 auto 20px;
 }
-<<<<<<< HEAD
-=======
-.author-link { 
-  color: #334155; 
-  text-decoration: none; 
-}
-.author-link:hover{ 
-  color: #42b983; 
-  text-decoration: none; 
-}
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
->>>>>>> e8dfa957c26f099b8b35587315e034e6b9149e31
 
 @keyframes spin {
   0% { transform: rotate(0deg); }

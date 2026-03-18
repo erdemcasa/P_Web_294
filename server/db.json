@@ -134,6 +134,20 @@
       "moyenne_appreciations": 4,
       "user_id": 5,
       "extrait_texte": "L'alchimie est la science de la compréhension, de la décomposition et de la reconstitution de la matière. Cependant, elle n'est pas un art omnipotent. On ne peut rien créer sans rien donner en échange. C'est le principe de l'Échange Équivalent.\n\nEdward Elric regardait son bras de métal, l'automail brillant sous le soleil de Central. Il se souvenait de cette nuit terrible où Alphonse et lui avaient tenté l'impossible : ramener leur mère à la vie. La transmutation humaine — le tabou absolu de l'alchimie. La Vérité les avait punis comme elle punit tous ceux qui osent franchir cette porte.\n\nAl avait perdu son corps entier. Ed avait perdu son bras gauche et sa jambe droite pour ancrer l'âme de son frère dans une armure de fer. Depuis ce jour, ils cherchaient la Pierre Philosophale — la seule chose capable de contourner l'Échange Équivalent et de leur rendre ce qu'ils avaient perdu. Mais plus ils avançaient, plus ils découvraient que certains secrets valaient peut-être mieux rester enfouis."
+    },
+    {
+      "id": "03c4",
+      "titre": "dsadasda",
+      "categorie": "manga",
+      "nombre_pages": 123,
+      "extrait": "/assets/pdf/default.pdf",
+      "resume": "adsasdasdasdasadsasdasdasdas",
+      "auteur_id": 101,
+      "editeur": "nktm",
+      "annee_edition": 2026,
+      "image_couverture": "",
+      "moyenne_appreciations": 0,
+      "extrait_texte": "adsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdasadsasdasdasdas"
     }
   ],
   "auteurs": [
@@ -581,6 +595,22 @@
       "utilisateur_pseudo": "dasdadas",
       "note": 5,
       "texte": "dasdasda",
+      "date": "2026-03-18"
+    },
+    {
+      "id": "0b96",
+      "ouvrage_id": "15",
+      "utilisateur_pseudo": "Snehan",
+      "note": 3,
+      "texte": "dsadasdasdasdasdasdasd",
+      "date": "2026-03-18"
+    },
+    {
+      "id": "92fb",
+      "ouvrage_id": "03c4",
+      "utilisateur_pseudo": "dasdasdas",
+      "note": 3,
+      "texte": "dasdadasda",
       "date": "2026-03-18"
     }
   ],

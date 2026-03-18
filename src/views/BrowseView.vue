@@ -5,7 +5,7 @@ import axios from 'axios'
 
 const ouvrages = ref([])
 const recherche = ref('')
-const categorieSelectionnee = ref('') 
+const categorieSelectionnee = ref('')
 
 onMounted(() => {
   axios
@@ -23,12 +23,12 @@ const filteredOuvrages = computed(() => {
 
     const terme = recherche.value.toLowerCase().trim()
     const titre = (ouvrage.titre || '').toLowerCase()
-    
+
 
     const matchTexte = terme === '' || titre.includes(terme)
 
 
-    const matchCategorie = categorieSelectionnee.value === '' || 
+    const matchCategorie = categorieSelectionnee.value === '' ||
                            ouvrage.categorie === categorieSelectionnee.value
 
     return matchTexte && matchCategorie
