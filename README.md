@@ -17,5 +17,5 @@ npm run dev
 ### Lancer le serveur pour le json
 
 ```sh
-npx json-server --watch db.json
+npm run backend
 ```
