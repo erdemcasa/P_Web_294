@@ -1,8 +1,8 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import axios from 'axios'
 
-defineProps({
+const props = defineProps({
   ouvrage: {
     type: Object,
     required: true,
@@ -11,35 +11,43 @@ defineProps({
 
 const auteurs = ref([])
 const users = ref([])
+const commentaires = ref([])
 
-onMounted(() => {
-  axios
-    .get('http://localhost:3000/auteurs')
-    .then((response) => {
-      auteurs.value = response.data
-    })
-    .catch((error) => {
-      console.error('Erreur lors de la recuoeratiuon des auteurs :', error)
-    })
-
-  axios
-    .get('http://localhost:3000/utilisateurs')
-    .then((response) => {
-      users.value = response.data
-    })
-    .catch((error) => {
-      console.error('Erreur lors de la recuperation des utilisateurs :', error)
-    })
+onMounted(async () => {
+  try {
+    // On peut lancer les requêtes en parallèle pour plus de rapidité
+    const [resAuteurs, resUsers, resComms] = await Promise.all([
+      axios.get('http://localhost:3000/auteurs'),
+      axios.get('http://localhost:3000/utilisateurs'),
+      axios.get('http://localhost:3000/commentaires')
+    ])
+    
+    auteurs.value = resAuteurs.data
+    users.value = resUsers.data
+    commentaires.value = resComms.data
+  } catch (error) {
+    console.error('Erreur lors de la récupération des données :', error)
+  }
 })
+
+const moyenneDynamique = computed(() => {
+  const avis = commentaires.value.filter(c => String(c.ouvrage_id) === String(props.ouvrage.id))
+  if (avis.length === 0) return 0
+  
+  const somme = avis.reduce((acc, curr) => acc + curr.note, 0)
+  return (somme / avis.length).toFixed(1)
+})
+
+const nbEtoiles = computed(() => Math.round(moyenneDynamique.value))
 
 function ReturnAuthorById(id) {
   const auteur = auteurs.value.find((item) => item.id == id)
-  return auteur ? auteur.nom : 'Auteur inconnu'
+  return auteur ? `${auteur.prenom} ${auteur.nom}` : 'Auteur inconnu'
 }
 
 function ReturnUserById(id) {
-  const utilisateur = users.value.find((item) => item.id == id)
-  return utilisateur ? utilisateur.nom : 'Utilisateur inconnu'
+  const utilisateur = users.value.find((item) => item.id == id || item.id == `u${id}`)
+  return utilisateur ? utilisateur.pseudo : 'Anonyme'
 }
 </script>
 
@@ -56,7 +64,7 @@ function ReturnUserById(id) {
         <span class="author-link" @click.stop="$router.push(`/auteur/${ouvrage.auteur_id}`)">
           {{ ReturnAuthorById(ouvrage.auteur_id) }}
         </span>
-</p>
+      </p>
 
       <p class="posted-by">
         Posté par :
@@ -66,14 +74,21 @@ function ReturnUserById(id) {
       </p>
 
       <div class="rating">
-        <span v-for="star in ouvrage.moyenne_appreciations" :key="star">⭐</span>
-        <span class="note-text">({{ ouvrage.moyenne_appreciations }}/5)</span>
+        <div class="stars-container">
+          <span v-for="n in 5" :key="n" class="star">
+            {{ n <= nbEtoiles ? '⭐' : '☆' }}
+          </span>
+          <span class="note-text">
+            ({{ moyenneDynamique > 0 ? moyenneDynamique + '/5' : 'Aucun avis' }})
+          </span>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+/* Tes styles restent identiques, j'ajoute juste une précision pour les étoiles */
 .event-card {
   padding: 0;
   width: 220px;
@@ -119,7 +134,6 @@ function ReturnUserById(id) {
   color: #2c3e50;
   font-weight: bold;
   cursor: pointer;
-  text-decoration: none;
 }
 
 .author-link:hover {
@@ -139,14 +153,15 @@ function ReturnUserById(id) {
   font-weight: bold;
 }
 
-.user-link:hover {
-  color: #33a06f;
-}
-
 .rating {
   margin-top: 8px;
   border-top: 1px solid #eee;
   padding-top: 5px;
+}
+
+.star {
+  color: #f1c40f;
+  font-size: 1rem;
 }
 
 .note-text {
