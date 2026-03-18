@@ -9,11 +9,7 @@
       <div class="form-grid">
         <div class="form-group">
           <label>Titre de l'ouvrage</label>
-          <input
-            v-model="book.titre"
-            type="text"
-            required
-          >
+          <input v-model="book.titre" type="text" required>
         </div>
 
         <div class="form-group">
@@ -61,6 +57,12 @@
         <input v-model="book.image_couverture" type="text">
       </div>
 
+      <div class="form-group full-width">
+        <label>Extrait de l'ouvrage</label>
+        <textarea v-model="book.extrait_texte" rows="8"
+          placeholder="Collez ou écrivez ici un extrait du livre..."></textarea>
+      </div>
+
       <div class="actions">
         <button type="button" @click="$router.push('/mybooks')" class="btn-cancel">Annuler</button>
         <button type="submit" class="btn-submit" :disabled="loading">
@@ -77,7 +79,7 @@ import { useRouter, useRoute } from 'vue-router';
 import api from '@/services/api';
 
 const router = useRouter();
-const route = useRoute(); 
+const route = useRoute();
 const loading = ref(false);
 const auteurs = ref([]);
 
@@ -92,7 +94,7 @@ const book = ref({
   editeur: '',
   annee_edition: null,
   image_couverture: '',
-  extrait: ''
+  extrait_texte: ''
 });
 
 const loadInitialData = async () => {
@@ -132,7 +134,7 @@ onMounted(loadInitialData);
   padding: 30px;
   background: #ffffff;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   font-family: 'Century Gothic', sans-serif;
 }
 
@@ -154,11 +156,19 @@ onMounted(loadInitialData);
   margin-bottom: 15px;
 }
 
-.full-width { grid-column: span 2; }
+.full-width {
+  grid-column: span 2;
+}
 
-label { font-weight: bold; margin-bottom: 8px; color: #34495e; }
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #34495e;
+}
 
-input, select, textarea {
+input,
+select,
+textarea {
   padding: 12px;
   border: 1px solid #dcdde1;
   border-radius: 8px;

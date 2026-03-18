@@ -13,7 +13,7 @@
       "image_couverture": "public/Couvertures/Dune.jpg",
       "moyenne_appreciations": 4,
       "user_id": 2,
-      "extrait_texte": "La nuit était froide sur Arrakis. Paul Atréides se tenait à l'entrée de la tente-sietch, regardant l'horizon de sable ondoyer sous les deux lunes. Il sentait déjà le spice dans l'air — cette odeur de cannelle qui imprégnait tout sur cette planète maudite et bénie à la fois."
+      "extrait_texte": "La nuit était froide sur Arrakis. Paul Atréides se tenait à l'entrée de la tente-sietch, regardant l'horizon de sable ondoyer sous les deux lunes. Il sentait déjà le spice dans l'air — cette odeur de cannelle qui imprégnait tout sur cette planète maudite et bénie à la fois.\n\nLe Gom Jabbar n'était qu'un début. La Révérende Mère l'avait averti : la douleur est une illusion de l'esprit, et l'esprit peut être maîtrisé. Il avait tenu. Il avait retiré sa main de la boîte, tremblant mais vivant, tandis que l'aiguille empoisonnée effleurait son cou.\n\nMaintenant, debout sur le sable rouge, il comprenait ce que sa mère lui avait enseigné depuis l'enfance. Il n'était pas venu sur Arrakis par hasard. Le destin des Fremen, du spice, de l'Empire tout entier — tout cela convergeait vers lui comme les lignes d'une tempête de sable à l'horizon. Il sentait le futur glisser entre ses doigts comme les grains d'une dune en plein vent, et pour la première fois, il n'en avait plus peur."
     },
     {
       "id": "7",
@@ -27,7 +27,8 @@
       "annee_edition": 1986,
       "image_couverture": "public/Couvertures/Watchmen.jpg",
       "moyenne_appreciations": 4,
-      "user_id": 2
+      "user_id": 2,
+      "extrait_texte": "Journal de Rorschach. 12 octobre 1985. Carcasse de chien dans l'allée ce matin, trace de pneu sur l'estomac éclaté. Cette ville a peur de moi. J'ai vu son vrai visage.\n\nLes rues sont des caniveaux géants et ces caniveaux sont pleins de sang. Quand les égouts finiront par déborder, toute la vermine finira par se noyer. Les ordures, les violeurs, les assassins en col blanc — ils regardent en haut vers les honnêtes gens et ils crient 'Sauvez-nous !' Et je leur murmurerai : 'Non.'\n\nLe Comédien est mort à New York, et personne ne semble savoir pourquoi, sauf moi. Edward Blake. Le Comédien. Un salaud, certes. Mais notre salaud. Quelqu'un l'a poussé par la fenêtre et ce quelqu'un connaissait son identité secrète. Je suis le seul à m'en inquiéter. Les autres ont raccroché leur costume. Pas moi. Jamais."
     },
     {
       "id": "8",
@@ -41,7 +42,8 @@
       "annee_edition": 1999,
       "image_couverture": "public/Couvertures/Naruto.jpg",
       "moyenne_appreciations": 4,
-      "user_id": 7
+      "user_id": 7,
+      "extrait_texte": "Naruto fixait le monument des Hokage avec un mélange de défi et de solitude. 'Un jour, je serai plus grand qu'eux tous !', cria-t-il dans le vide de la nuit de Konoha.\n\nIl ajusta ses lunettes de protection, ignorant les murmures des villageois dans son dos. Ils ne l'avaient jamais regardé autrement qu'avec méfiance ou pitié. Lui, l'orphelin sans clan, le gamin turbulent qui ratait ses examens — il savait ce qu'ils pensaient. Mais il savait aussi quelque chose qu'eux ignoraient : il n'abandonnerait jamais. C'était sa voie ninja.\n\nDans son cœur brûlait la volonté du feu, plus vive que n'importe quel jutsu de haut rang. Iruka-sensei lui avait dit que les mots gravés dans l'âme ne s'effacent jamais. Et ces mots, Naruto les portait comme un serment : il deviendrait Hokage, et ce jour-là, chaque habitant du village prononcerait son nom avec respect."
     },
     {
       "id": "9",
@@ -55,7 +57,8 @@
       "annee_edition": 1943,
       "image_couverture": "public/Couvertures/LePetitPrince.jpg",
       "moyenne_appreciations": 4,
-      "user_id": 7
+      "user_id": 7,
+      "extrait_texte": "Les grandes personnes ne comprennent jamais rien toutes seules, et c'est fatigant, pour les enfants, de toujours et toujours leur donner des explications.\n\nQuand j'avais six ans j'ai vu, une fois, une magnifique image, dans un livre sur la Forêt Vierge qui s'appelait 'Histoires Vécues'. Ça représentait un serpent boa qui avalait un fauve. J'ai alors beaucoup réfléchi sur les aventures de la jungle et, à mon tour, j'ai réussi, avec un crayon de couleur, à tracer mon premier dessin. Mon dessin numéro 1.\n\nJ'avais ainsi appris une seconde chose très importante : c'est que sa planète d'origine était à peine plus grande qu'une maison. Cela ne pouvait pas m'étonner beaucoup. Je savais bien qu'en dehors des grosses planètes comme la Terre, Jupiter, Mars, Vénus, auxquelles on a donné des noms, il y en a des centaines d'autres qui sont parfois si petites qu'on a beaucoup de mal à les apercevoir au télescope. Quand un astronome découvre l'une d'elles, il lui donne pour nom un numéro. Il l'appelle par exemple : 'l'astéroïde 3251'."
     },
     {
       "id": "10",
@@ -69,7 +72,8 @@
       "annee_edition": 1989,
       "image_couverture": "public/Couvertures/Berserk.png",
       "moyenne_appreciations": 4,
-      "user_id": 4
+      "user_id": 4,
+      "extrait_texte": "Le vent hurlait à travers les brèches de l'armure de Guts. Dans l'obscurité, la marque sur son cou commença à saigner, signalant l'approche imminente des spectres.\n\nIl empoigna la poignée de la Dragon Slayer, cet énorme morceau de fer trop massif pour être appelé une épée. Un forgeron aurait dit que c'était juste un tas de métal brut. Mais dans les mains de Guts, c'était la seule réponse qu'il connaissait au monde qui l'avait trahi.\n\nIl n'y avait plus de place pour la peur, seulement pour la rage froide qui le maintenait en vie depuis l'Eclipse. Griffith. Ce nom résonnait dans sa poitrine comme une blessure qui ne cicatriserait jamais. Autrefois son commandant, son rival, son ami — peut-être le seul qu'il ait jamais eu. Aujourd'hui, un dieu déchu et monstrueux bâti sur les cadavres de ceux qu'ils aimaient. La lutte contre le destin commençait, une fois de plus, dans le noir et le sang."
     },
     {
       "id": "12",
@@ -83,7 +87,8 @@
       "annee_edition": 1953,
       "image_couverture": "public/Couvertures/Fahrenheit451.jpg",
       "moyenne_appreciations": 4,
-      "user_id": 1
+      "user_id": 1,
+      "extrait_texte": "C'était un plaisir de brûler. C'était un plaisir particulier de voir les choses se consumer, de les voir changer d'aspect, de les voir devenir noires et se modifier.\n\nMontag tenait la lance de cuivre, ce serpent géant crachant son kérosène venimeux sur le monde. Dans son esprit, les pages des livres ressemblaient à des oiseaux blancs qui battaient des ailes avant de s'écrouler dans les cendres. Il souriait, un sourire de pompier, qui ne le quitterait jamais, pensait-il.\n\nMais ce soir-là, une silhouette était apparue sur le trottoir. Une fille aux cheveux clairs, qui marchait comme si elle regardait tout. Qui regardait vraiment. Elle s'était tournée vers lui et avait dit d'une voix douce : 'Êtes-vous heureux ?' La question l'avait traversé comme une flamme d'un genre différent — non pas celle qui consume et détruit, mais celle qui éclaire dans le noir. Il rentra chez lui et, pour la première fois depuis des années, il ne souriait plus."
     },
     {
       "id": "13",
@@ -97,7 +102,8 @@
       "annee_edition": 1997,
       "image_couverture": "public/Couvertures/OnePiece.jpg",
       "moyenne_appreciations": 4,
-      "user_id": 1
+      "user_id": 1,
+      "extrait_texte": "Le soleil brillait sur Grand Line. Luffy, assis sur la tête de proue du Vogue Merry, humait l'air salin avec un sourire immense. 'L'aventure nous appelle !', s'écria-t-il en ajustant son chapeau de paille.\n\nCe chapeau, Shanks le lui avait confié il y a dix ans, avec une promesse : 'Rends-le moi quand tu seras devenu un grand pirate.' Ces mots avaient guidé chacun de ses pas depuis l'enfance dans le village de Foosha. Il avait mangé le Fruit du Démon, perdu la capacité de nager, et gagné un corps de caoutchouc. Marché conclu, pensait-il.\n\nAutour de lui, son équipage discutait, riait, se disputait. Zoro aiguisait ses lames en silence. Nami étudiait ses cartes. Usopp racontait une histoire invraisemblable. Sanji préparait quelque chose qui sentait divinement bon. Ce n'était pas juste un équipage — c'était sa famille. Et ensemble, ils allaient trouver le One Piece, atteindre Raftel, et Luffy deviendrait le Roi des Pirates."
     },
     {
       "id": "14",
@@ -111,7 +117,8 @@
       "annee_edition": 1984,
       "image_couverture": "public/Couvertures/DragonBall.png",
       "moyenne_appreciations": 4,
-      "user_id": 5
+      "user_id": 5,
+      "extrait_texte": "Au fin fond de la montagne Paozu, un petit garçon doté d'une queue de singe portait un énorme tronc d'arbre comme s'il ne pesait rien. Son Goku ne connaissait rien du monde extérieur. Il vivait seul depuis la mort de son grand-père, chassait pour se nourrir, et s'entraînait chaque jour sans vraiment savoir pourquoi.\n\nJusqu'à ce qu'une étrange capsule s'écrase près de chez lui, et qu'une fille aux cheveux bleus en sorte avec un appareil bizarre. 'C'est un monstre !', pensa-t-il en se préparant au combat. Mais Bulma n'était pas un monstre — elle était la première humaine de son âge qu'il rencontrait, et elle cherchait des boules de cristal aux pouvoirs légendaires.\n\nSept Dragon Balls. Un dragon éternel. Un vœu capable d'exaucer n'importe quel désir. Goku ne comprenait pas encore l'ampleur de cette quête, ni qu'elle le mènerait à travers des déserts, des tournois, des armées et des dieux. Il savait juste une chose : l'aventure commençait, et son bâton Nyoi-Bo était prêt."
     },
     {
       "id": "15",
@@ -125,7 +132,8 @@
       "annee_edition": 2001,
       "image_couverture": "public/Couvertures/FMA.jpg",
       "moyenne_appreciations": 4,
-      "user_id": 5
+      "user_id": 5,
+      "extrait_texte": "L'alchimie est la science de la compréhension, de la décomposition et de la reconstitution de la matière. Cependant, elle n'est pas un art omnipotent. On ne peut rien créer sans rien donner en échange. C'est le principe de l'Échange Équivalent.\n\nEdward Elric regardait son bras de métal, l'automail brillant sous le soleil de Central. Il se souvenait de cette nuit terrible où Alphonse et lui avaient tenté l'impossible : ramener leur mère à la vie. La transmutation humaine — le tabou absolu de l'alchimie. La Vérité les avait punis comme elle punit tous ceux qui osent franchir cette porte.\n\nAl avait perdu son corps entier. Ed avait perdu son bras gauche et sa jambe droite pour ancrer l'âme de son frère dans une armure de fer. Depuis ce jour, ils cherchaient la Pierre Philosophale — la seule chose capable de contourner l'Échange Équivalent et de leur rendre ce qu'ils avaient perdu. Mais plus ils avançaient, plus ils découvraient que certains secrets valaient peut-être mieux rester enfouis."
     }
   ],
   "auteurs": [

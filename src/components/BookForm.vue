@@ -108,12 +108,10 @@ const handlePdfChange = async (event) => {
     </div>
 
     <div class="form-group full-width">
-      <label>Extrait PDF</label>
-      <div class="file-input-wrapper">
-        <input type="file" accept=".pdf" @change="handlePdfChange" class="file-input" />
-        <p v-if="localBook.extrait_texte" class="file-name">✅ PDF chargé et prêt</p>
-        <p v-else class="file-hint">Sélectionnez un fichier PDF à associer à cet ouvrage</p>
-      </div>
+      <label>Extrait de l'ouvrage</label>
+      <textarea v-model="localBook.extrait_texte" rows="8"
+        placeholder="Collez ou écrivez ici un extrait du livre..."></textarea>
+      <p class="field-hint">Ce texte sera affiché sur la page du livre et téléchargeable en PDF.</p>
     </div>
 
     <div class="form-group full-width">
