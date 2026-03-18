@@ -45,7 +45,7 @@ const handleSubmit = () => {
 
       <div class="form-group">
         <label>Auteur</label>
-        <select v-model="localBook.auteur_id" required>
+        <select v-model.number="localBook.auteur_id" required>
           <option disabled value="">Sélectionnez un auteur</option>
           <option v-for="auteur in auteurs" :key="auteur.id" :value="auteur.id">
             {{ auteur.prenom }} {{ auteur.nom }}
