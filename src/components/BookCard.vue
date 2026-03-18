@@ -30,6 +30,19 @@ onMounted(async () => {
   }
 })
 
+const formatImageUrl = (path) => {
+  if (!path) return 'https://via.placeholder.com/220x250?text=Pas+d+image'
+  
+  if (path.startsWith('http')) {
+    return path
+  }
+  
+  return path.startsWith('/') ? path : `/${path}`
+}
+
+const handleImageError = (event) => {
+  event.target.src = 'https://via.placeholder.com/220x250?text=Image+introuvable'
+}
 const moyenne = computed(() => {
   if (!commentaires.value.length) return 0
   const somme = commentaires.value.reduce((acc, c) => acc + c.note, 0)
@@ -52,8 +65,13 @@ const goTo = (path) => router.push(path)
 </script>
 
 <template>
-  <div class="event-card" @click="goTo(`/book/${ouvrage.id}`)">
-    <img :src="ouvrage.image_couverture" alt="Couverture" class="cover-img" loading="lazy" />
+  <div class="book-card" @click="$router.push(`/book/${ouvrage.id}`)">
+    <img 
+      :src="formatImageUrl(ouvrage.image_couverture)" 
+      alt="Couverture" 
+      class="cover-img" 
+      @error="handleImageError"
+    />
 
     <div class="info">
       <span class="category">{{ ouvrage.categorie }}</span>
@@ -86,7 +104,7 @@ const goTo = (path) => router.push(path)
 </template>
 
 <style scoped>
-.event-card {
+.book-card {
   padding: 0;
   width: 220px;
   cursor: pointer;
@@ -167,7 +185,7 @@ const goTo = (path) => router.push(path)
   margin-left: 5px;
 }
 
-.event-card:hover {
+.book-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
