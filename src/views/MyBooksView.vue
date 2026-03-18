@@ -2,7 +2,7 @@
   <div class="mybooks-container">
     <div class="header-section">
       <h1>Mes ouvrages</h1>
-      <p class="subtitle">Cette page vous permet de gerer les livers partagés</p>
+      <p class="subtitle">Cette page vous permet de gerer les livres partagés</p>
       <button @click="$router.push('/add-book')" class="btn-add">
         + Ajouter un nouvel ouvrage
       </button>
