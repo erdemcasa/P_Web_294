@@ -28,6 +28,19 @@ onMounted(fetchOuvrages)
     </div>
   </header>
 
+  <section class="about-section">
+  <div class="container">
+    <h2>Pourquoi Passion Lecture ?</h2>
+    <p>
+      Passion Lecture est une plateforme communautaire dédiée aux amoureux des livres. 
+      Notre but est de vous permettre de <strong>répertorier vos ouvrages préférés</strong>, 
+      de partager vos dernières découvertes et de consulter les avis de la communauté 
+      pour choisir votre prochaine lecture. Que vous soyez fan de mangas, de romans ou 
+      de bandes dessinées, cet espace est le vôtre.
+    </p>
+  </div>
+</section>
+
   <main class="container">
     <section class="recent-section">
       <h2>Ajoutés récemment</h2>
@@ -104,6 +117,34 @@ h2 {
   padding: 50px;
   font-style: italic;
   color: #95a5a6;
+}
+
+.about-section {
+  padding: 40px 20px;
+  background-color: #f8fafc; /* Un gris très léger pour détacher du blanc */
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.about-section .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-section h2 {
+  color: #1e293b;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.about-section p {
+  color: #64748b;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.about-section strong {
+  color: #42b983; /* Le vert de ton projet pour faire ressortir l'idée */
 }
 
 </style>
