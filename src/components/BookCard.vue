@@ -1,74 +1,73 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue'
-import axios from 'axios'
+import { useRouter } from 'vue-router'
+import { authorService } from '@/services/authorService'
+import { userService } from '@/services/userService'
+import { commentService } from '@/services/commentService'
 
 const props = defineProps({
-  ouvrage: {
-    type: Object,
-    required: true,
-  },
+  ouvrage: { type: Object, required: true },
 })
 
+const router = useRouter()
 const auteurs = ref([])
 const users = ref([])
 const commentaires = ref([])
 
 onMounted(async () => {
   try {
-    const [resAuteurs, resUsers, resComms] = await Promise.all([
-      axios.get('http://localhost:3000/auteurs'),
-      axios.get('http://localhost:3000/utilisateurs'),
-      axios.get('http://localhost:3000/commentaires')
+    const [dataAuteurs, dataUsers, dataComms] = await Promise.all([
+      authorService.getAll(),
+      userService.getAll(),
+      commentService.getByBookId(props.ouvrage.id)
     ])
     
-    auteurs.value = resAuteurs.data
-    users.value = resUsers.data
-    commentaires.value = resComms.data
+    auteurs.value = dataAuteurs
+    users.value = dataUsers
+    commentaires.value = dataComms
   } catch (error) {
-    console.error('Erreur lors de la récupération des données :', error)
+    console.error('Erreur Card:', error)
   }
 })
 
-const moyenneDynamique = computed(() => {
-  const avis = commentaires.value.filter(c => String(c.ouvrage_id) === String(props.ouvrage.id))
-  if (avis.length === 0) return 0
-  
-  const somme = avis.reduce((acc, curr) => acc + curr.note, 0)
-  return (somme / avis.length).toFixed(1)
+const moyenne = computed(() => {
+  if (!commentaires.value.length) return 0
+  const somme = commentaires.value.reduce((acc, c) => acc + c.note, 0)
+  return (somme / commentaires.value.length).toFixed(1)
 })
 
-const nbEtoiles = computed(() => Math.round(moyenneDynamique.value))
+const nbEtoiles = computed(() => Math.round(Number(moyenne.value)))
 
-function ReturnAuthorById(id) {
-  const auteur = auteurs.value.find((item) => item.id == id)
-  return auteur ? `${auteur.prenom} ${auteur.nom}` : 'Auteur inconnu'
+const getAuthorName = (id) => {
+  const a = auteurs.value.find(item => item.id == id)
+  return a ? `${a.prenom} ${a.nom}` : 'Chargement...'
 }
 
-function ReturnUserById(id) {
-  const utilisateur = users.value.find((item) => item.id == id || item.id == `u${id}`)
-  return utilisateur ? utilisateur.pseudo : 'Anonyme'
+const getUserPseudo = (id) => {
+  const u = users.value.find(item => item.id == id || item.id == `u${id}`)
+  return u ? u.pseudo : 'Anonyme'
 }
+
+const goTo = (path) => router.push(path)
 </script>
 
 <template>
-  <div class="event-card" @click="$router.push(`/book/${ouvrage.id}`)">
-    <img :src="ouvrage.image_couverture" alt="Couverture" class="cover-img" />
+  <div class="event-card" @click="goTo(`/book/${ouvrage.id}`)">
+    <img :src="ouvrage.image_couverture" alt="Couverture" class="cover-img" loading="lazy" />
 
     <div class="info">
       <span class="category">{{ ouvrage.categorie }}</span>
-
       <h3 class="title">{{ ouvrage.titre }}</h3>
 
       <p class="author">
-        <span class="author-link" @click.stop="$router.push(`/auteur/${ouvrage.auteur_id}`)">
-          {{ ReturnAuthorById(ouvrage.auteur_id) }}
+        <span class="author-link" @click.stop="goTo(`/auteur/${ouvrage.auteur_id}`)">
+          {{ getAuthorName(ouvrage.auteur_id) }}
         </span>
       </p>
 
       <p class="posted-by">
-        Posté par :
-        <span class="user-link" @click.stop="$router.push(`/profile/${ouvrage.user_id}`)">
-          {{ ReturnUserById(ouvrage.user_id) }}
+        Par : <span class="user-link" @click.stop="goTo(`/profile/${ouvrage.user_id}`)">
+          {{ getUserPseudo(ouvrage.user_id) }}
         </span>
       </p>
 
@@ -78,7 +77,7 @@ function ReturnUserById(id) {
             {{ n <= nbEtoiles ? '⭐' : '☆' }}
           </span>
           <span class="note-text">
-            ({{ moyenneDynamique > 0 ? moyenneDynamique + '/5' : 'Aucun avis' }})
+             ({{ moyenne > 0 ? moyenne + '/5' : 'Aucun avis' }})
           </span>
         </div>
       </div>
