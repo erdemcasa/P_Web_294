@@ -1,5 +1,5 @@
 <script setup>
-import EventCard from '@/components/EventCard.vue'
+import EventCard from '@/components/BookCard.vue'
 import Footer from '@/components/Footer.vue'
 import { ref, onMounted } from 'vue'
 import axios from 'axios'

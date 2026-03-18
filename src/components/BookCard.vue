@@ -15,7 +15,6 @@ const commentaires = ref([])
 
 onMounted(async () => {
   try {
-    // On peut lancer les requêtes en parallèle pour plus de rapidité
     const [resAuteurs, resUsers, resComms] = await Promise.all([
       axios.get('http://localhost:3000/auteurs'),
       axios.get('http://localhost:3000/utilisateurs'),
@@ -88,7 +87,6 @@ function ReturnUserById(id) {
 </template>
 
 <style scoped>
-/* Tes styles restent identiques, j'ajoute juste une précision pour les étoiles */
 .event-card {
   padding: 0;
   width: 220px;

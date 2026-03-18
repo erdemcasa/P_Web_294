@@ -1,5 +1,5 @@
 <script setup>
-import EventCard from '@/components/EventCard.vue'
+import BookCard from '@/components/BookCard.vue'
 import { ref, onMounted, computed } from 'vue'
 import axios from 'axios'
 
@@ -43,7 +43,7 @@ const filteredOuvrages = computed(() => {
 
     <div class="results-container">
       <div v-if="filteredOuvrages.length > 0" class="events">
-        <EventCard
+        <BookCard
           v-for="ouvrage in filteredOuvrages"
           :key="ouvrage.id"
           :ouvrage="ouvrage"
