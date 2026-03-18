@@ -21,7 +21,7 @@ onMounted(async () => {
       userService.getAll(),
       commentService.getByBookId(props.ouvrage.id)
     ])
-    
+
     auteurs.value = dataAuteurs
     users.value = dataUsers
     commentaires.value = dataComms
@@ -66,7 +66,7 @@ const goTo = (path) => router.push(path)
       </p>
 
       <p class="posted-by">
-        Par : <span class="user-link" @click.stop="goTo(`/profile/${ouvrage.user_id}`)">
+        Par : <span class="user-link">
           {{ getUserPseudo(ouvrage.user_id) }}
         </span>
       </p>

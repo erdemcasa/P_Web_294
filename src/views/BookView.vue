@@ -1,56 +1,56 @@
 <script setup>
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
-import axios from 'axios'
+import { bookService } from '@/services/bookService'
 
 const route = useRoute()
-const ouvrages = ref([])
-
+const ouvrage = ref(null)
+const loading = ref(true)
 const bookId = route.params.id
 
-onMounted(() => {
-  axios
-    .get('http://localhost:3000/ouvrages')
-    .then((response) => {
-      ouvrages.value = response.data
-    })
-    .catch((error) => {
-      console.error('Erreurs lors de la recetupration :', error)
-    })
-})
+const fetchOuvrage = async () => {
+  try {
+    loading.value = true
+    // On récupère directement le bon livre par son ID
+    const data = await bookService.getById(bookId)
+    ouvrage.value = data
+  } catch (error) {
+    console.error('Erreur lors de la récupération du livre:', error)
+  } finally {
+    loading.value = false
+  }
+}
 
-const ouvrageSelectionne = computed(() => {
-  return ouvrages.value.find((item) => item.id == bookId)
-})
+onMounted(fetchOuvrage)
 
 const formatImageUrl = (path) => {
-  if (!path) return 'https://via.placeholder.com/380x500?text=Pas+d+image'
-
-  if (path.startsWith('http')) {
-    return path
-  }
-
+  if (!path) return 'https://placehold.co/380x500?text=Pas+d+image'
+  if (path.startsWith('http')) return path
+  // Si le chemin commence par Couvertures/, on s'assure qu'il y a un / devant
   return path.startsWith('/') ? path : `/${path}`
-  }
+}
 
-  const handleImageError = (event) => {
-  event.target.src = 'https://via.placeholder.com/380x500?text=Image+introuvable'
-  }
+const handleImageError = (event) => {
+  // Changement de fournisseur de placeholder (plus stable)
+  event.target.src = 'https://placehold.co/380x500?text=Image+introuvable'
+}
 </script>
 
 <template>
-  <div v-if="ouvrageSelectionne" class="page-container">
+  <div v-if="loading" class="loading">Chargement du livre...</div>
+
+  <div v-else-if="ouvrage" class="page-container">
     <header class="header">
-      <h1>{{ ouvrageSelectionne.titre }}</h1>
+      <h1>{{ ouvrage.titre }}</h1>
     </header>
 
     <div class="main-content">
       <div class="col-visual">
         <div class="main-image-wrapper">
-          <img 
-            :src="formatImageUrl(ouvrageSelectionne.image_couverture)" 
-            alt="Couverture" 
-            class="main-img" 
+          <img
+            :src="formatImageUrl(ouvrage.image_couverture)"
+            alt="Couverture"
+            class="main-img"
             @error="handleImageError"
           />
         </div>
@@ -62,7 +62,7 @@ const formatImageUrl = (path) => {
             <h2>Résumé</h2>
           </div>
           <div class="resume-content">
-            <p>{{ ouvrageSelectionne.resume }}</p>
+            <p>{{ ouvrage.resume || 'Aucun résumé disponible.' }}</p>
           </div>
         </section>
 
@@ -70,23 +70,21 @@ const formatImageUrl = (path) => {
           <div class="specs-table">
             <div class="spec-row">
               <span class="label">Date de parution</span>
-              <span class="value">{{ ouvrageSelectionne.annee_edition }}</span>
+              <span class="value">{{ ouvrage.annee_edition }}</span>
             </div>
             <div class="spec-row">
               <span class="label">Editeur</span>
-              <span class="value"
-                ><a href="#">{{ ouvrageSelectionne.editeur }}</a></span
-              >
+              <span class="value">{{ ouvrage.editeur }}</span>
             </div>
             <div class="spec-row">
               <span class="label">Nombre de pages</span>
-              <span class="value">{{ ouvrageSelectionne.nombre_pages }}</span>
+              <span class="value">{{ ouvrage.nombre_pages }}</span>
             </div>
             <div class="spec-row">
               <span class="label">Note</span>
               <div class="stars">
                 <span class="star-icon">★</span>
-                <span class="average-note">{{ ouvrageSelectionne.moyenne_appreciations }}</span>
+                <span class="average-note">{{ ouvrage.moyenne_appreciations }}</span>
                 <span class="max-note">/5</span>
               </div>
             </div>
@@ -96,8 +94,9 @@ const formatImageUrl = (path) => {
     </div>
   </div>
 
-  <div v-else class="loading">Chargement...</div>
+  <div v-else class="error">Livre introuvable.</div>
 </template>
+
 <style scoped>
 .page-container {
   max-width: 1200px;

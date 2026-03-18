@@ -44,7 +44,7 @@ onMounted(fetchOuvrages)
       </div>
 
       <div v-if="!loading && ouvrages.length === 0">
-        Aucun livre trouvé. Lancez json-server !
+        Aucun livre trouvé.
       </div>
     </section>
   </main>
