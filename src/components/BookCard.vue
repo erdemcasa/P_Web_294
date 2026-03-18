@@ -30,7 +30,6 @@ onMounted(async () => {
   }
 })
 
-<<<<<<< HEAD
 const avisOuvrage = computed(() =>
   commentaires.value.filter(c => String(c.ouvrage_id) === String(props.ouvrage.id))
 )
@@ -39,25 +38,6 @@ const moyenneDynamique = computed(() => {
   if (avisOuvrage.value.length === 0) return 0
   const somme = avisOuvrage.value.reduce((acc, c) => acc + c.note, 0)
   return (somme / avisOuvrage.value.length).toFixed(1)
-=======
-const formatImageUrl = (path) => {
-  if (!path) return 'https://via.placeholder.com/220x250?text=Pas+d+image'
-  
-  if (path.startsWith('http')) {
-    return path
-  }
-  
-  return path.startsWith('/') ? path : `/${path}`
-}
-
-const handleImageError = (event) => {
-  event.target.src = 'https://via.placeholder.com/220x250?text=Image+introuvable'
-}
-const moyenne = computed(() => {
-  if (!commentaires.value.length) return 0
-  const somme = commentaires.value.reduce((acc, c) => acc + c.note, 0)
-  return (somme / commentaires.value.length).toFixed(1)
->>>>>>> f485e2b9896336b8a109780917c8a5e92270717e
 })
 
 const nbEtoiles = computed(() => Math.round(Number(moyenneDynamique.value)))
@@ -83,18 +63,8 @@ const goTo = (path) => router.push(path)
 </script>
 
 <template>
-<<<<<<< HEAD
   <div class="event-card" @click="goTo(`/book/${ouvrage.id}`)">
     <img :src="formatPath(ouvrage.image_couverture)" alt="Couverture" class="cover-img" loading="lazy" />
-=======
-  <div class="book-card" @click="$router.push(`/book/${ouvrage.id}`)">
-    <img 
-      :src="formatImageUrl(ouvrage.image_couverture)" 
-      alt="Couverture" 
-      class="cover-img" 
-      @error="handleImageError"
-    />
->>>>>>> f485e2b9896336b8a109780917c8a5e92270717e
 
     <div class="info">
       <span class="category">{{ ouvrage.categorie }}</span>
@@ -130,14 +100,8 @@ const goTo = (path) => router.push(path)
 </template>
 
 <style scoped>
-<<<<<<< HEAD
 .event-card {
   width: 240px;
-=======
-.book-card {
-  padding: 0;
-  width: 220px;
->>>>>>> f485e2b9896336b8a109780917c8a5e92270717e
   cursor: pointer;
   border: 1px solid #e2e8f0;
   margin-bottom: 20px;

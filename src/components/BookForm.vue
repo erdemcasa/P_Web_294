@@ -30,6 +30,32 @@ const handleFileChange = (event) => {
     localBook.value.extrait = `/assets/pdf/${file.name}`
   }
 }
+const handlePdfChange = async (event) => {
+  const file = event.target.files[0]
+  if (!file) return
+
+  const formData = new FormData()
+  formData.append('pdf', file)
+
+  try {
+    const res = await fetch('http://localhost:3000/upload-pdf', {
+      method: 'POST',
+      body: formData
+    })
+
+    if (!res.ok) {
+      const err = await res.json()
+      console.error('Erreur serveur:', err)
+      return
+    }
+
+    const data = await res.json()
+    console.log('PDF uploadé:', data.path)
+    localBook.value.extrait = data.path
+  } catch (err) {
+    console.error('Erreur upload PDF:', err)
+  }
+}
 </script>
 
 <template>
@@ -82,12 +108,11 @@ const handleFileChange = (event) => {
     </div>
 
     <div class="form-group full-width">
-      <label>Choisir l'extrait (PDF uniquement)</label>
+      <label>Extrait PDF</label>
       <div class="file-input-wrapper">
-        <input type="file" accept=".pdf" @change="handleFileChange" class="file-input" />
-        <p v-if="localBook.extrait" class="file-name">
-          Fichier sélectionné : {{ localBook.extrait }}
-        </p>
+        <input type="file" accept=".pdf" @change="handlePdfChange" class="file-input" />
+        <p v-if="localBook.extrait_texte" class="file-name">✅ PDF chargé et prêt</p>
+        <p v-else class="file-hint">Sélectionnez un fichier PDF à associer à cet ouvrage</p>
       </div>
     </div>
 
@@ -114,6 +139,12 @@ const handleFileChange = (event) => {
   gap: 20px;
 }
 
+.field-hint {
+  font-size: 0.8rem;
+  color: #95a5a6;
+  margin-top: 5px;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -133,6 +164,7 @@ const handleFileChange = (event) => {
   background: #f8fafc;
   text-align: center;
 }
+
 .file-name {
   margin-top: 10px;
   font-size: 0.85rem;

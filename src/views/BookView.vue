@@ -49,6 +49,72 @@ const formatPath = (path) => {
 const handleImageError = (event) => {
   event.target.src = 'https://placehold.co/380x500?text=Image+introuvable'
 }
+
+const downloadExtractAsPdf = () => {
+  const content = ouvrage.value.extrait_texte
+  const titre = ouvrage.value.titre
+
+  const printWindow = window.open('', '_blank')
+  printWindow.document.write(`
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="UTF-8">
+        <title>Extrait - ${titre}</title>
+        <style>
+          body {
+            font-family: Georgia, serif;
+            max-width: 700px;
+            margin: 60px auto;
+            line-height: 1.9;
+            color: #333;
+            padding: 0 40px;
+          }
+          h1 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            border-bottom: 2px solid #42b983;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+          }
+          .label {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 30px;
+            font-style: italic;
+          }
+          p {
+            font-size: 1.05rem;
+            text-align: justify;
+            white-space: pre-line;
+          }
+          footer {
+            margin-top: 60px;
+            font-size: 0.8rem;
+            color: #aaa;
+            text-align: center;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+          }
+        </style>
+      </head>
+      <body>
+        <h1>Extrait — ${titre}</h1>
+        <div class="label">Extrait de l'ouvrage</div>
+        <p>${content}</p>
+        <footer>Généré depuis Passion Lecture</footer>
+      </body>
+    </html>
+  `)
+  printWindow.document.close()
+  printWindow.focus()
+  setTimeout(() => {
+    printWindow.print()
+    printWindow.close()
+  }, 500)
+}
+
+
 </script>
 
 <template>
@@ -66,12 +132,8 @@ const handleImageError = (event) => {
     <div class="main-content">
       <div class="col-visual">
         <div class="main-image-wrapper">
-          <img
-            :src="formatPath(ouvrage.image_couverture)"
-            :alt="ouvrage.titre"
-            class="main-img"
-            @error="handleImageError"
-          />
+          <img :src="formatPath(ouvrage.image_couverture)" :alt="ouvrage.titre" class="main-img"
+            @error="handleImageError" />
         </div>
       </div>
 
@@ -109,20 +171,16 @@ const handleImageError = (event) => {
             </div>
           </div>
         </section>
-
         <section class="info-block excerpt-section">
           <div class="block-header">
             <h2>Extrait de l'ouvrage</h2>
           </div>
 
           <div v-if="ouvrage.extrait" class="excerpt-box">
-            <p>Un extrait au format PDF est disponible pour ce livre.</p>
-            <a
-              :href="formatPath(ouvrage.extrait)"
-              :download="ouvrage.titre + '_extrait.pdf'"
-              class="btn-download"
-            >
-              Télécharger l'extrait
+            <p>Un extrait PDF est disponible pour ce livre.</p>
+
+            <a :href="'http://localhost:3000' + ouvrage.extrait" :download="ouvrage.titre + '.pdf'" class="btn-download">
+            📄 Télécharger l'extrait PDF
             </a>
           </div>
 
@@ -136,13 +194,13 @@ const handleImageError = (event) => {
             <h2>Commentaires clients</h2>
           </div>
           <div v-if="commentaires.length > 0">
-             <div v-for="com in commentaires" :key="com.id" class="comment-item">
-                <div class="com-meta">
-                  <strong>{{ com.utilisateur_pseudo }}</strong>
-                  <span class="com-note">{{ com.note }}/5</span>
-                </div>
-                <p class="com-text">{{ com.texte }}</p>
-             </div>
+            <div v-for="com in commentaires" :key="com.id" class="comment-item">
+              <div class="com-meta">
+                <strong>{{ com.utilisateur_pseudo }}</strong>
+                <span class="com-note">{{ com.note }}/5</span>
+              </div>
+              <p class="com-text">{{ com.texte }}</p>
+            </div>
           </div>
           <div v-else class="no-comments">Aucun commentaire pour le moment.</div>
         </section>
@@ -162,42 +220,182 @@ const handleImageError = (event) => {
   border-bottom: 1px solid #eee;
   padding: 15px 0;
 }
+
+.excerpt-actions {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.btn-download-pdf {
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.btn-download-pdf:hover {
+  background-color: #42b983;
+}
+
+.excerpt-text-box {
+  background: #fdfdfd;
+  border-left: 4px solid #42b983;
+  padding: 20px 25px;
+  border-radius: 4px;
+  line-height: 1.9;
+  color: #444;
+  font-style: italic;
+  white-space: pre-line;
+}
+
 .com-meta {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
 }
+
 .com-note {
   color: #f39c12;
   font-weight: bold;
 }
+
 .com-text {
   font-size: 0.95rem;
   color: #555;
   margin: 0;
 }
+
 .no-comments {
   color: #999;
   font-style: italic;
 }
 
-.page-container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-.header { margin-bottom: 30px; border-bottom: 2px solid #eee; padding-bottom: 15px; }
-.badge-category { background: #42b983; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; }
-.main-content { display: flex; gap: 50px; }
-.col-visual { flex: 0 0 350px; }
-.main-img { width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
-.col-details { flex: 1; }
-.info-block { margin-bottom: 35px; }
-.block-header h2 { font-size: 1.4rem; color: #2c3e50; margin-bottom: 15px; }
-.resume-content { background: #fdfdfd; border-left: 4px solid #42b983; padding: 20px; line-height: 1.7; color: #444; border-radius: 4px; }
-.spec-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
-.spec-row .label { color: #7f8c8d; }
-.spec-row .value { font-weight: 600; color: #2c3e50; }
-.excerpt-box { background: #eef9f5; padding: 20px; border-radius: 8px; text-align: center; }
-.btn-download { display: inline-block; margin-top: 10px; background-color: #2c3e50; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; transition: transform 0.2s; }
-.btn-download:hover { transform: scale(1.02); }
-.loading-state { text-align: center; padding: 100px; }
-.spinner { border: 4px solid #f3f3f3; border-top: 4px solid #42b983; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto 20px; }
-@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.page-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.header {
+  margin-bottom: 30px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 15px;
+}
+
+.badge-category {
+  background: #42b983;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.main-content {
+  display: flex;
+  gap: 50px;
+}
+
+.col-visual {
+  flex: 0 0 350px;
+}
+
+.main-img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.col-details {
+  flex: 1;
+}
+
+.info-block {
+  margin-bottom: 35px;
+}
+
+.block-header h2 {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.resume-content {
+  background: #fdfdfd;
+  border-left: 4px solid #42b983;
+  padding: 20px;
+  line-height: 1.7;
+  color: #444;
+  border-radius: 4px;
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.spec-row .label {
+  color: #7f8c8d;
+}
+
+.spec-row .value {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.excerpt-box {
+  background: #eef9f5;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.btn-download {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #2c3e50;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.btn-download:hover {
+  transform: scale(1.02);
+}
+
+.loading-state {
+  text-align: center;
+  padding: 100px;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #42b983;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
 </style>
