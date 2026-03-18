@@ -24,7 +24,7 @@ const emptyBook = {
 
 const fetchAuteurs = async () => {
   try {
-    const response = await api.get('/authors')
+    const response = await api.get('/auteurs')
     auteurs.value = response.data
   } catch (error) {
     console.error('Erreur auteurs:', error)
@@ -39,7 +39,7 @@ const handleSaveBook = async (bookData) => {
 
   loading.value = true
   try {
-    await api.post('/books', bookData)
+    await api.post('/ouvrages', bookData)
     alert('Livre ajouté avec succès !')
     router.push('/browse')
   } catch (error) {
