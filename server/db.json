@@ -596,6 +596,63 @@
       "note": 5,
       "texte": "Le meilleur shonen selon moi. Aucun personnage n'est inutile.",
       "date": "2024-06-20"
+    },
+    {
+      "id": "2c73",
+      "ouvrage_id": "a9dd",
+      "utilisateur_pseudo": "Snehan",
+      "note": 3,
+      "texte": "jaime le livre et je szuis beau",
+      "date": "2026-03-18"
+    },
+    {
+      "id": "eb31",
+      "ouvrage_id": "a9dd",
+      "utilisateur_pseudo": "ZIdane",
+      "note": 5,
+      "texte": "c tro de la fgrappe",
+      "date": "2026-03-18"
+    },
+    {
+      "id": "23aa",
+      "ouvrage_id": "a9dd",
+      "utilisateur_pseudo": "dsasadasd",
+      "note": 2,
+      "texte": "dassada",
+      "date": "2026-03-18"
+    },
+    {
+      "id": "b369",
+      "ouvrage_id": "c5ff",
+      "utilisateur_pseudo": "dasdasdas",
+      "note": 2,
+      "texte": "dasdasdasd",
+      "date": "2026-03-18"
+    },
+    {
+      "id": "9ebd",
+      "ouvrage_id": "c5ff",
+      "utilisateur_pseudo": "dasdad",
+      "note": 4,
+      "texte": "dasdasda",
+      "date": "2026-03-18"
+    },
+    {
+      "id": "4789",
+      "ouvrage_id": "c5ff",
+      "utilisateur_pseudo": "dasdas",
+      "note": 5,
+      "texte": "adsasdasd",
+      "date": "2026-03-18"
+    },
+    {
+      "id": "d5f7",
+      "ouvrage_id": "d0c1",
+      "utilisateur_pseudo": "dasdadas",
+      "note": 5,
+      "texte": "dasdasda",
+      "date": "2026-03-18"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
