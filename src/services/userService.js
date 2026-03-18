@@ -1,10 +1,13 @@
 import api from './api';
 
-export const authorService = {
+export const userService = {
   getAll() {
-    return api.get('/auteurs').then(res => res.data);
+    return api.get('/utilisateurs').then(res => res.data);
   },
-  getById(id) {
-    return api.get(`/auteurs/${id}`).then(res => res.data);
+  getByEmail(email) {
+    return api.get(`/utilisateurs?email=${email}`).then(res => res.data);
+  },
+  register(userData) {
+    return api.post('/utilisateurs', userData).then(res => res.data);
   }
 };
