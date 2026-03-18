@@ -513,6 +513,10 @@ const getAuthorName = (id) => {
   margin: 0 auto 20px;
 }
 .author-link { 
+  color: #334155; 
+  text-decoration: none; 
+}
+.author-link:hover{ 
   color: #42b983; 
   text-decoration: none; 
 }
