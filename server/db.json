@@ -127,16 +127,16 @@
       "user_id": 5
     },
     {
-      "id": "30d5",
-      "titre": "Erdem",
-      "categorie": "bande dessinée",
-      "nombre_pages": 67,
+      "id": "de45",
+      "titre": "La messe n'est pas dite",
+      "categorie": "roman",
+      "nombre_pages": 416,
       "extrait": "/assets/pdf/default.pdf",
-      "resume": "2eqfeqfeq",
-      "auteur_id": "106",
-      "editeur": "Glénat",
+      "resume": "Après le temps des sombres diagnostics, celui de l'espoir lumineux. Après les best-sellers du Suicide français et du Destin français, Éric Zemmour reprend sa réflexion sur l'histoire et l'avenir de notre pays : il rêve d'une Europe sauvée parce qu'elle renoue avec ses racines chrétiennes. Un véritable manifeste pour un sursaut judéo-chrétien.",
+      "auteur_id": "101",
+      "editeur": "J'ai Lu",
       "annee_edition": 2026,
-      "image_couverture": "",
+      "image_couverture": "https://m.media-amazon.com/images/I/718+oF9KwlL._SY466_.jpg",
       "moyenne_appreciations": 0
     }
   ],
