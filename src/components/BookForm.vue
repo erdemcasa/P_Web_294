@@ -1,3 +1,30 @@
+<script setup>
+import { ref, watch } from 'vue'
+
+const props = defineProps({
+  initialData: { type: Object, required: true },
+  auteurs: { type: Array, default: () => [] },
+  loading: { type: Boolean, default: false },
+  submitLabel: { type: String, default: "Publier l'ouvrage" }
+})
+
+const emit = defineEmits(['submit', 'cancel'])
+
+const localBook = ref({ ...props.initialData })
+
+watch(() => props.initialData, (newData) => {
+  localBook.value = { ...newData }
+}, { deep: true })
+
+const handleSubmit = () => {
+  if (!localBook.value.auteur_id) {
+    alert("Veuillez sélectionner un auteur.");
+    return;
+  }
+  emit('submit', { ...localBook.value })
+}
+</script>
+
 <template>
   <form @submit.prevent="handleSubmit" class="book-form">
     <div class="form-grid">
@@ -19,6 +46,7 @@
       <div class="form-group">
         <label>Auteur</label>
         <select v-model="localBook.auteur_id" required>
+          <option disabled value="">Sélectionnez un auteur</option>
           <option v-for="auteur in auteurs" :key="auteur.id" :value="auteur.id">
             {{ auteur.prenom }} {{ auteur.nom }}
           </option>
@@ -32,12 +60,12 @@
 
       <div class="form-group">
         <label>Nombre de pages</label>
-        <input v-model.number="localBook.nombre_pages" type="number" required />
+        <input v-model.number="localBook.nombre_pages" type="number" required min="1" />
       </div>
 
       <div class="form-group">
         <label>Année d'édition</label>
-        <input v-model.number="localBook.annee_edition" type="number" required />
+        <input v-model.number="localBook.annee_edition" type="number" required :max="new Date().getFullYear()" />
       </div>
     </div>
 
@@ -47,12 +75,14 @@
     </div>
 
     <div class="form-group full-width">
-      <label>Lien de l'image de couverture</label>
-      <input v-model="localBook.image_couverture" type="text" placeholder="Ex: public/Couvertures/mon-livre.jpg" />
+      <label>URL de la couverture (chemin public/)</label>
+      <input v-model="localBook.image_couverture" type="text" placeholder="Ex: Couvertures/1984.jpg" />
     </div>
 
     <div class="actions">
-      <button type="button" @click="$emit('cancel')" class="btn-cancel">Annuler</button>
+      <button type="button" @click="$emit('cancel')" class="btn-cancel" :disabled="loading">
+        Annuler
+      </button>
       <button type="submit" class="btn-submit" :disabled="loading">
         {{ loading ? 'Enregistrement...' : submitLabel }}
       </button>
@@ -60,38 +90,72 @@
   </form>
 </template>
 
-<script setup>
-import { ref, watch } from 'vue'
-
-const props = defineProps({
-  initialData: { type: Object, required: true },
-  auteurs: { type: Array, default: () => [] },
-  loading: { type: Boolean, default: false },
-  submitLabel: { type: String, default: "Publier l'ouvrage" }
-})
-
-const emit = defineEmits(['submit', 'cancel'])
-
-const localBook = ref({ ...props.initialData })
-
-watch(() => props.auteurs, (newAuteurs) => {
-  if (newAuteurs.length > 0 && !localBook.value.auteur_id) {
-    localBook.value.auteur_id = newAuteurs[0].id
-  }
-}, { immediate: true })
-
-const handleSubmit = () => {
-  emit('submit', localBook.value)
-}
-</script>
-
 <style scoped>
-.form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-.form-group { display: flex; flex-direction: column; margin-bottom: 15px; }
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
 .full-width { grid-column: span 2; }
-label { font-weight: bold; margin-bottom: 8px; color: #34495e; font-size: 0.9rem; }
-input, select, textarea { padding: 12px; border: 1px solid #dcdde1; border-radius: 8px; font-size: 1rem; }
-.actions { display: flex; justify-content: flex-end; gap: 15px; margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; }
-.btn-submit { background-color: #42b983; color: white; padding: 12px 30px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; }
-.btn-cancel { background-color: #ecf0f1; color: #7f8c8d; padding: 12px 30px; border: none; border-radius: 8px; cursor: pointer; }
+
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #34495e;
+  font-size: 0.9rem;
+}
+
+input, select, textarea {
+  padding: 12px;
+  border: 1px solid #dcdde1;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #42b983;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.btn-submit {
+  background-color: #42b983;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-submit:disabled {
+  background-color: #a8e6cf;
+  cursor: not-allowed;
+}
+
+.btn-cancel {
+  background-color: #ecf0f1;
+  color: #7f8c8d;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
 </style>

@@ -1,19 +1,28 @@
 import api from './api';
 
 export const bookService = {
-  getAll() {
-    return api.get('/ouvrages').then(res => res.data);
+  async getAll() {
+    const { data } = await api.get('/ouvrages');
+    return data;
   },
-  getById(id) {
-    return api.get(`/ouvrages/${id}`).then(res => res.data);
+  async getById(id) {
+    const { data } = await api.get(`/ouvrages/${id}`);
+    return data;
   },
-  create(bookData) {
-    return api.post('/ouvrages', bookData).then(res => res.data);
+  async getByUserId(userId) {
+    const { data } = await api.get(`/ouvrages?ownerId=${userId}`);
+    return data;
   },
-  update(id, bookData) {
-    return api.put(`/ouvrages/${id}`, bookData).then(res => res.data);
+  async create(bookData) {
+    const { data } = await api.post('/ouvrages', bookData);
+    return data;
   },
-  delete(id) {
-    return api.delete(`/ouvrages/${id}`).then(res => res.data);
+  async update(id, bookData) {
+    const { data } = await api.put(`/ouvrages/${id}`, bookData);
+    return data;
+  },
+  async delete(id) {
+    const { data } = await api.delete(`/ouvrages/${id}`);
+    return data;
   }
 };

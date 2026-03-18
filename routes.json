@@ -1,0 +1,49 @@
+{
+  "routes": [
+    {
+      "path": "/",
+      "name": "home",
+      "view": "HomeView"
+    },
+    {
+      "path": "/browse",
+      "name": "browse",
+      "view": "BrowseView"
+    },
+    {
+      "path": "/book/:id",
+      "name": "book",
+      "view": "BookView"
+    },
+    {
+      "path": "/mybooks",
+      "name": "mybooks",
+      "view": "MyBooksView"
+    },
+    {
+      "path": "/add-book",
+      "name": "add-book",
+      "view": "AddBookView"
+    },
+    {
+      "path": "/edit-book/:id",
+      "name": "edit-book",
+      "view": "EditBookView"
+    },
+    {
+      "path": "/login",
+      "name": "login",
+      "view": "LoginView"
+    },
+    {
+      "path": "/sign",
+      "name": "sign",
+      "view": "SignView"
+    },
+    {
+      "path": "/auteur/:id",
+      "name": "AuthorDetails",
+      "view": "AuthorView"
+    }
+  ]
+}

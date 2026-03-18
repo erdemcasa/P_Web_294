@@ -1,13 +1,20 @@
 import api from './api';
 
 export const userService = {
-  getAll() {
-    return api.get('/utilisateurs').then(res => res.data);
+  async getAll() {
+    const { data } = await api.get('/utilisateurs');
+    return data;
   },
-  getByEmail(email) {
-    return api.get(`/utilisateurs?email=${email}`).then(res => res.data);
+  async login(email, password) {
+    const { data } = await api.get(`/utilisateurs?email=${email}&password=${password}`);
+    return data[0] || null;
   },
-  register(userData) {
-    return api.post('/utilisateurs', userData).then(res => res.data);
+  async getByEmail(email) {
+    const { data } = await api.get(`/utilisateurs?email=${email}`);
+    return data[0];
+  },
+  async register(userData) {
+    const { data } = await api.post('/utilisateurs', userData);
+    return data;
   }
 };

@@ -1,13 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
+
 import HomeView from '../views/HomeView.vue'
-import BrowseView from '../views/BrowseView.vue'
-import BookView from '../views/BookView.vue'
-import MyBooksView from '../views/MyBooksView.vue'
-import AddBookView from '../views/AddBookView.vue'
-import EditBookView from '../views/EditBookView.vue'
-import LoginView from '../views/LoginView.vue'
-import SignView from '../views/SignView.vue'
-import AuthorView from '@/views/AuthorView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,44 +13,58 @@ const router = createRouter({
     {
       path: '/browse',
       name: 'browse',
-      component: BrowseView,
+
+      component: () => import('../views/BrowseView.vue'),
     },
     {
       path: '/book/:id',
       name: 'book',
-      component: BookView,
+      component: () => import('../views/BookView.vue'),
+      props: true,
     },
     {
       path: '/mybooks',
       name: 'mybooks',
-      component: MyBooksView,
+      component: () => import('../views/MyBooksView.vue'),
     },
     {
       path: '/add-book',
       name: 'add-book',
-      component: AddBookView,
+      component: () => import('../views/AddBookView.vue'),
     },
     {
       path: '/edit-book/:id',
       name: 'edit-book',
-      component: EditBookView,
+      component: () => import('../views/EditBookView.vue'),
+      props: true,
     },
     {
       path: '/login',
       name: 'login',
-      component: LoginView,
+      component: () => import('../views/LoginView.vue'),
     },
     {
       path: '/sign',
       name: 'sign',
-      component: SignView,
+      component: () => import('../views/SignView.vue'),
     },
     {
       path: '/auteur/:id',
       name: 'AuthorDetails',
-      component: AuthorView,
+      component: () => import('@/views/AuthorView.vue'),
+      props: true,
+    },
+    // page si l'url est faux ou n'est pas trovée
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: () => import('../views/HomeView.vue'),
     }
   ],
+
+  scrollBehavior(to, from, savedPosition) {
+    return savedPosition || { top: 0 }
+  }
 })
 
 export default router
