@@ -113,7 +113,6 @@ const updateBook = async () => {
   loading.value = true;
   try {
     await api.put(`/ouvrages/${bookId}`, book.value);
-    alert('Modification réussie !');
     router.push('/mybooks');
   } catch (error) {
     console.error("Erreur PUT:", error);
