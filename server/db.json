@@ -177,6 +177,19 @@
       "annee_edition": 2026,
       "image_couverture": "https://m.media-amazon.com/images/I/31rhOdUzykL._SY445_SX342_ML2_.jpg",
       "moyenne_appreciations": 0
+    },
+    {
+      "id": "c5ff",
+      "titre": "sdadasdasd",
+      "categorie": "manga",
+      "nombre_pages": 213,
+      "extrait": "/assets/pdf/step1.pdf",
+      "resume": "Snhean",
+      "auteur_id": 103,
+      "editeur": "asdas",
+      "annee_edition": 2026,
+      "image_couverture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScZuHxEgWOXRiszMoNZIEY-cqxgVQpyF6r343uNEM8ci9VLEyrq8I3M7AlPBcXucK-xbWOpE2HHnwHutLckckZHRBzYS5u3VclY2WLJKAJ&s=10",
+      "moyenne_appreciations": 0
     }
   ],
   "auteurs": [

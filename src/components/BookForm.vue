@@ -23,6 +23,15 @@ const handleSubmit = () => {
   }
   emit('submit', { ...localBook.value })
 }
+
+const handleFileChange = (event) => {
+  const file = event.target.files[0]
+  if (file) {
+    // On simule l'enregistrement en stockant le chemin vers le dossier public
+    // Important : On ne garde que le nom du fichier pour le JSON
+    localBook.value.extrait = `/assets/pdf/${file.name}`
+  }
+}
 </script>
 
 <template>
@@ -75,6 +84,16 @@ const handleSubmit = () => {
     </div>
 
     <div class="form-group full-width">
+      <label>Choisir l'extrait (PDF uniquement)</label>
+      <div class="file-input-wrapper">
+        <input type="file" accept=".pdf" @change="handleFileChange" class="file-input" />
+        <p v-if="localBook.extrait" class="file-name">
+          Fichier sélectionné : {{ localBook.extrait }}
+        </p>
+      </div>
+    </div>
+
+    <div class="form-group full-width">
       <label>URL de la couverture (chemin public/)</label>
       <input v-model="localBook.image_couverture" type="text" placeholder="Ex: Couvertures/1984.jpg" />
     </div>
@@ -104,7 +123,24 @@ const handleSubmit = () => {
   text-align: left;
 }
 
-.full-width { grid-column: span 2; }
+.full-width {
+  grid-column: span 2;
+}
+
+
+.file-input-wrapper {
+  border: 2px dashed #dcdde1;
+  padding: 15px;
+  border-radius: 8px;
+  background: #f8fafc;
+  text-align: center;
+}
+.file-name {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #42b983;
+  font-weight: bold;
+}
 
 label {
   font-weight: bold;
@@ -113,7 +149,9 @@ label {
   font-size: 0.9rem;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   padding: 12px;
   border: 1px solid #dcdde1;
   border-radius: 8px;
@@ -121,7 +159,9 @@ input, select, textarea {
   transition: border-color 0.2s;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
   outline: none;
   border-color: #42b983;
 }

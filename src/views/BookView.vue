@@ -47,12 +47,8 @@ const handleImageError = (event) => {
     <div class="main-content">
       <div class="col-visual">
         <div class="main-image-wrapper">
-          <img
-            :src="formatImageUrl(ouvrage.image_couverture)"
-            alt="Couverture"
-            class="main-img"
-            @error="handleImageError"
-          />
+          <img :src="formatImageUrl(ouvrage.image_couverture)" alt="Couverture" class="main-img"
+            @error="handleImageError" />
         </div>
       </div>
 
@@ -90,6 +86,16 @@ const handleImageError = (event) => {
             </div>
           </div>
         </section>
+
+        <section v-if="ouvrage.extrait" class="info-block excerpt-container">
+          <div class="block-header">
+            <a :href="ouvrage.extrait" :download="ouvrage.titre + '-extrait.pdf'" class="btn-download">
+              Télécharger l'extrait
+            </a>
+          </div>
+
+        </section>
+
       </div>
     </div>
   </div>
@@ -98,6 +104,32 @@ const handleImageError = (event) => {
 </template>
 
 <style scoped>
+
+.excerpt-container {
+  margin-top: 30px;
+}
+
+.btn-download {
+  background-color: #2c3e50;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+}
+
+.btn-download:hover {
+  opacity: 0.8;
+}
+
+.pdf-viewer {
+  margin-top: 15px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
 .page-container {
   max-width: 1200px;
   margin: 30px auto;
@@ -238,6 +270,7 @@ const handleImageError = (event) => {
   color: #2980b9;
   text-decoration: underline;
 }
+
 .rating-summary {
   display: flex;
   align-items: center;
@@ -251,10 +284,12 @@ const handleImageError = (event) => {
   align-items: baseline;
   gap: 4px;
 }
+
 .rating-summary .label {
   display: flex;
   align-items: center;
 }
+
 .star-icon {
   color: #f39c12;
   font-size: 1.4rem;
