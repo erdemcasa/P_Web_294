@@ -368,46 +368,6 @@
   ],
   "commentaires": [
     {
-      "id": "1",
-      "ouvrage_id": "1",
-      "utilisateur_pseudo": "BookWorm99",
-      "note": 5,
-      "texte": "Un chef-d'œuvre absolu de la SF.",
-      "date": "2024-02-20"
-    },
-    {
-      "id": "2",
-      "ouvrage_id": "3",
-      "utilisateur_pseudo": "LecteurAnonyme",
-      "note": 5,
-      "texte": "Le pilier de la fantasy, indispensable.",
-      "date": "2024-02-22"
-    },
-    {
-      "id": "3",
-      "ouvrage_id": "5",
-      "utilisateur_pseudo": "BookWorm99",
-      "note": 4,
-      "texte": "Toujours aussi actuel et terrifiant.",
-      "date": "2024-02-23"
-    },
-    {
-      "id": "4",
-      "ouvrage_id": "2",
-      "utilisateur_pseudo": "MangaKing",
-      "note": 5,
-      "texte": "Otomo a révolutionné le manga. Précision époustouflante.",
-      "date": "2024-03-10"
-    },
-    {
-      "id": "5",
-      "ouvrage_id": "10",
-      "utilisateur_pseudo": "MangaKing",
-      "note": 5,
-      "texte": "Berserk est sombre et magnifique. Miura était un génie.",
-      "date": "2024-03-12"
-    },
-    {
       "id": "6",
       "ouvrage_id": "6",
       "utilisateur_pseudo": "FantasyQueen",
@@ -416,12 +376,20 @@
       "date": "2024-03-20"
     },
     {
-      "id": "7",
-      "ouvrage_id": "3",
-      "utilisateur_pseudo": "FantasyQueen",
+      "id": "6b",
+      "ouvrage_id": "6",
+      "utilisateur_pseudo": "SciFiNerd",
       "note": 5,
-      "texte": "Tolkien a inventé un monde entier. Incomparable.",
-      "date": "2024-03-22"
+      "texte": "Un monument de la science-fiction. Herbert a créé un univers d'une richesse incroyable.",
+      "date": "2024-04-01"
+    },
+    {
+      "id": "6c",
+      "ouvrage_id": "6",
+      "utilisateur_pseudo": "BookWorm99",
+      "note": 4,
+      "texte": "Dense et complexe, mais absolument fascinant. À lire absolument.",
+      "date": "2024-05-10"
     },
     {
       "id": "8",
@@ -432,28 +400,20 @@
       "date": "2024-04-25"
     },
     {
-      "id": "9",
-      "ouvrage_id": "4",
-      "utilisateur_pseudo": "BDPassionné",
+      "id": "8b",
+      "ouvrage_id": "7",
+      "utilisateur_pseudo": "ClassiqueAddict",
       "note": 4,
-      "texte": "Toujours hilarant. Goscinny était un immense auteur.",
-      "date": "2024-04-27"
+      "texte": "Une BD mature et sombre. Le genre superhéros ne sera plus jamais pareil après ça.",
+      "date": "2024-05-15"
     },
     {
-      "id": "10",
-      "ouvrage_id": "9",
-      "utilisateur_pseudo": "NocturnalReader",
+      "id": "8c",
+      "ouvrage_id": "7",
+      "utilisateur_pseudo": "OtakuZone",
       "note": 5,
-      "texte": "Simple et profond. Un livre qu'on ne finit jamais vraiment.",
-      "date": "2024-04-08"
-    },
-    {
-      "id": "11",
-      "ouvrage_id": "12",
-      "utilisateur_pseudo": "BookWorm99",
-      "note": 4,
-      "texte": "Avertissement sur la censure. À lire avec 1984.",
-      "date": "2024-05-01"
+      "texte": "Chef-d'œuvre absolu. La narration est d'une maîtrise rare.",
+      "date": "2024-06-02"
     },
     {
       "id": "12",
@@ -464,12 +424,92 @@
       "date": "2024-05-03"
     },
     {
-      "id": "13",
-      "ouvrage_id": "11",
-      "utilisateur_pseudo": "BDPassionné",
+      "id": "12b",
+      "ouvrage_id": "8",
+      "utilisateur_pseudo": "OtakuZone",
+      "note": 4,
+      "texte": "Naruto reste un classique incontournable malgré quelques longueurs.",
+      "date": "2024-05-20"
+    },
+    {
+      "id": "12c",
+      "ouvrage_id": "8",
+      "utilisateur_pseudo": "SenshiManga",
+      "note": 3,
+      "texte": "Bon manga mais certains arcs traînent vraiment en longueur.",
+      "date": "2024-06-05"
+    },
+    {
+      "id": "10",
+      "ouvrage_id": "9",
+      "utilisateur_pseudo": "NocturnalReader",
       "note": 5,
-      "texte": "Le meilleur Tintin. Hergé y met toute son humanité.",
-      "date": "2024-05-05"
+      "texte": "Simple et profond. Un livre qu'on ne finit jamais vraiment.",
+      "date": "2024-04-08"
+    },
+    {
+      "id": "10b",
+      "ouvrage_id": "9",
+      "utilisateur_pseudo": "ClassiqueAddict",
+      "note": 5,
+      "texte": "Un petit bijou de poésie et de philosophie. Intemporel.",
+      "date": "2024-04-20"
+    },
+    {
+      "id": "10c",
+      "ouvrage_id": "9",
+      "utilisateur_pseudo": "FantasyQueen",
+      "note": 4,
+      "texte": "Touchant et poétique. Un livre qu'on offre à tout le monde.",
+      "date": "2024-05-01"
+    },
+    {
+      "id": "5",
+      "ouvrage_id": "10",
+      "utilisateur_pseudo": "MangaKing",
+      "note": 5,
+      "texte": "Berserk est sombre et magnifique. Miura était un génie.",
+      "date": "2024-03-12"
+    },
+    {
+      "id": "5b",
+      "ouvrage_id": "10",
+      "utilisateur_pseudo": "SciFiNerd",
+      "note": 5,
+      "texte": "Le meilleur manga de dark fantasy jamais créé. Un hommage à Miura s'impose.",
+      "date": "2024-04-15"
+    },
+    {
+      "id": "5c",
+      "ouvrage_id": "10",
+      "utilisateur_pseudo": "SenshiManga",
+      "note": 4,
+      "texte": "Violent mais d'une profondeur humaine rare. Indispensable.",
+      "date": "2024-05-08"
+    },
+    {
+      "id": "11",
+      "ouvrage_id": "12",
+      "utilisateur_pseudo": "BookWorm99",
+      "note": 4,
+      "texte": "Avertissement sur la censure. À lire avec 1984.",
+      "date": "2024-05-01"
+    },
+    {
+      "id": "11b",
+      "ouvrage_id": "12",
+      "utilisateur_pseudo": "SciFiNerd",
+      "note": 5,
+      "texte": "Bradbury visionnaire. Ce livre résonne encore plus fort aujourd'hui.",
+      "date": "2024-05-18"
+    },
+    {
+      "id": "11c",
+      "ouvrage_id": "12",
+      "utilisateur_pseudo": "LecteurAnonyme",
+      "note": 4,
+      "texte": "Court mais percutant. Une dystopie essentielle.",
+      "date": "2024-06-03"
     },
     {
       "id": "14",
@@ -480,12 +520,68 @@
       "date": "2024-05-12"
     },
     {
+      "id": "14b",
+      "ouvrage_id": "13",
+      "utilisateur_pseudo": "MangaKing",
+      "note": 5,
+      "texte": "One Piece c'est une aventure sans fin pleine d'émotions. Oda est un génie.",
+      "date": "2024-05-25"
+    },
+    {
+      "id": "14c",
+      "ouvrage_id": "13",
+      "utilisateur_pseudo": "SenshiManga",
+      "note": 4,
+      "texte": "Très long mais chaque arc vaut le détour. Un investissement qui en vaut la peine.",
+      "date": "2024-06-08"
+    },
+    {
+      "id": "15",
+      "ouvrage_id": "14",
+      "utilisateur_pseudo": "SenshiManga",
+      "note": 4,
+      "texte": "Dragon Ball, une saga fondatrice du manga moderne.",
+      "date": "2024-06-01"
+    },
+    {
+      "id": "15b",
+      "ouvrage_id": "14",
+      "utilisateur_pseudo": "OtakuZone",
+      "note": 5,
+      "texte": "L'œuvre fondatrice de Toriyama. Impossible de ne pas l'aimer.",
+      "date": "2024-06-12"
+    },
+    {
+      "id": "15c",
+      "ouvrage_id": "14",
+      "utilisateur_pseudo": "MangaKing",
+      "note": 4,
+      "texte": "Une nostalgie immense. Dragon Ball a défini tout un genre.",
+      "date": "2024-06-15"
+    },
+    {
       "id": "18",
       "ouvrage_id": "15",
       "utilisateur_pseudo": "OtakuZone",
       "note": 5,
       "texte": "FMA est parfait. L'histoire de rédemption la mieux construite.",
       "date": "2024-06-10"
+    },
+    {
+      "id": "18b",
+      "ouvrage_id": "15",
+      "utilisateur_pseudo": "SciFiNerd",
+      "note": 5,
+      "texte": "Arakawa a livré une œuvre complète : action, émotion, philosophie. Un 10/10.",
+      "date": "2024-06-18"
+    },
+    {
+      "id": "18c",
+      "ouvrage_id": "15",
+      "utilisateur_pseudo": "BookWorm99",
+      "note": 5,
+      "texte": "Le meilleur shonen selon moi. Aucun personnage n'est inutile.",
+      "date": "2024-06-20"
     }
   ]
 }

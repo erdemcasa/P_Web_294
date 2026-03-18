@@ -27,8 +27,6 @@ const handleSubmit = () => {
 const handleFileChange = (event) => {
   const file = event.target.files[0]
   if (file) {
-    // On simule l'enregistrement en stockant le chemin vers le dossier public
-    // Important : On ne garde que le nom du fichier pour le JSON
     localBook.value.extrait = `/assets/pdf/${file.name}`
   }
 }

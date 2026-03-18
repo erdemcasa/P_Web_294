@@ -19,7 +19,7 @@ onMounted(async () => {
     const [dataAuteurs, dataUsers, dataComms] = await Promise.all([
       authorService.getAll(),
       userService.getAll(),
-      commentService.getByBookId(props.ouvrage.id)
+      commentService.getAll() 
     ])
 
     auteurs.value = dataAuteurs
@@ -30,21 +30,32 @@ onMounted(async () => {
   }
 })
 
-const moyenne = computed(() => {
-  if (!commentaires.value.length) return 0
-  const somme = commentaires.value.reduce((acc, c) => acc + c.note, 0)
-  return (somme / commentaires.value.length).toFixed(1)
+const avisOuvrage = computed(() =>
+  commentaires.value.filter(c => String(c.ouvrage_id) === String(props.ouvrage.id))
+)
+
+const moyenneDynamique = computed(() => {
+  if (avisOuvrage.value.length === 0) return 0
+  const somme = avisOuvrage.value.reduce((acc, c) => acc + c.note, 0)
+  return (somme / avisOuvrage.value.length).toFixed(1)
 })
 
-const nbEtoiles = computed(() => Math.round(Number(moyenne.value)))
+const nbEtoiles = computed(() => Math.round(Number(moyenneDynamique.value)))
+const totalAvis = computed(() => avisOuvrage.value.length)
+
+const formatPath = (path) => {
+  if (!path) return 'https://placehold.co/200x300?text=Pas+d+image'
+  if (path.startsWith('http')) return path
+  return path.replace(/^public\//, '/')
+}
 
 const getAuthorName = (id) => {
-  const a = auteurs.value.find(item => item.id == id)
-  return a ? `${a.prenom} ${a.nom}` : 'Chargement...'
+  const a = auteurs.value.find(item => String(item.id) === String(id))
+  return a ? `${a.prenom} ${a.nom}` : 'Auteur inconnu'
 }
 
 const getUserPseudo = (id) => {
-  const u = users.value.find(item => item.id == id || item.id == `u${id}`)
+  const u = users.value.find(item => String(item.id) === String(id) || String(item.id) === `u${id}`)
   return u ? u.pseudo : 'Anonyme'
 }
 
@@ -53,7 +64,7 @@ const goTo = (path) => router.push(path)
 
 <template>
   <div class="event-card" @click="goTo(`/book/${ouvrage.id}`)">
-    <img :src="ouvrage.image_couverture" alt="Couverture" class="cover-img" loading="lazy" />
+    <img :src="formatPath(ouvrage.image_couverture)" alt="Couverture" class="cover-img" loading="lazy" />
 
     <div class="info">
       <span class="category">{{ ouvrage.categorie }}</span>
@@ -66,9 +77,7 @@ const goTo = (path) => router.push(path)
       </p>
 
       <p class="posted-by">
-        Par : <span class="user-link">
-          {{ getUserPseudo(ouvrage.user_id) }}
-        </span>
+        Par : <span class="user-link">{{ getUserPseudo(ouvrage.user_id) }}</span>
       </p>
 
       <div class="rating">
@@ -77,9 +86,14 @@ const goTo = (path) => router.push(path)
             {{ n <= nbEtoiles ? '⭐' : '☆' }}
           </span>
           <span class="note-text">
-             ({{ moyenne > 0 ? moyenne + '/5' : 'Aucun avis' }})
+            <strong>{{ moyenneDynamique > 0 ? moyenneDynamique + '/5' : 'Aucun avis' }}</strong>
+            <span class="count">({{ totalAvis }} {{ totalAvis > 1 ? 'avis' : 'avis' }})</span>
           </span>
         </div>
+      </div>
+
+      <div v-if="avisOuvrage.length > 0" class="last-comm">
+        "{{ avisOuvrage[0].texte.substring(0, 40) }}..."
       </div>
     </div>
   </div>
@@ -87,88 +101,98 @@ const goTo = (path) => router.push(path)
 
 <style scoped>
 .event-card {
-  padding: 0;
-  width: 220px;
+  width: 240px;
   cursor: pointer;
-  border: 1px solid #39495c;
-  margin-bottom: 18px;
-  transition: all 0.2s ease;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
   overflow: hidden;
   background: white;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 .cover-img {
   width: 100%;
-  height: 250px;
+  height: 280px;
   object-fit: cover;
-  display: block;
 }
 
 .info {
-  padding: 12px;
+  padding: 15px;
 }
 
 .category {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
   color: #42b983;
-  font-weight: bold;
+  font-weight: 800;
+  letter-spacing: 0.5px;
 }
 
 .title {
   margin: 5px 0;
   font-size: 1.1rem;
-  color: #2c3e50;
+  color: #1e293b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .author {
   font-size: 0.9rem;
-  margin: 2px 0;
-  color: #555;
+  color: #64748b;
 }
+
 .author-link {
-  color: #2c3e50;
-  font-weight: bold;
-  cursor: pointer;
+  font-weight: 600;
+  color: #334155;
 }
 
 .author-link:hover {
   color: #42b983;
-  text-decoration: underline;
-}
-.posted-by {
-  font-size: 0.85rem;
-  margin: 5px 0;
-  color: #777;
 }
 
-.user-link {
-  color: #42b983;
-  text-decoration: underline;
-  cursor: pointer;
-  font-weight: bold;
+.posted-by {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-top: 4px;
 }
 
 .rating {
-  margin-top: 8px;
-  border-top: 1px solid #eee;
-  padding-top: 5px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #f1f5f9;
 }
 
 .star {
   color: #f1c40f;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .note-text {
-  font-size: 0.8rem;
-  color: #999;
-  margin-left: 5px;
+  font-size: 0.85rem;
+  margin-left: 8px;
+  color: #1e293b;
+}
+
+.count {
+  color: #94a3b8;
+  font-weight: normal;
+  margin-left: 4px;
+}
+
+.last-comm {
+  font-size: 0.75rem;
+  font-style: italic;
+  color: #64748b;
+  margin-top: 8px;
+  background: #f8fafc;
+  padding: 5px;
+  border-radius: 4px;
 }
 
 .event-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 </style>
