@@ -3,6 +3,7 @@ import { ref, onMounted, computed } from 'vue'
 import { useRoute } from 'vue-router'
 import { bookService } from '@/services/bookService'
 import { commentService } from '@/services/commentService'
+import { authorService } from '@/services/authorService'
 
 const newComment = ref({
   utilisateur_pseudo: '',
@@ -18,6 +19,7 @@ const ouvrage = ref(null)
 const commentaires = ref([])
 const loading = ref(true)
 const bookId = route.params.id
+const auteurs = ref([])
 
 const submitComment = async () => {
   if (!newComment.value.utilisateur_pseudo || !newComment.value.texte || newComment.value.note === 0) {
@@ -52,12 +54,15 @@ const submitComment = async () => {
 const fetchData = async () => {
   try {
     loading.value = true
-    const [dataBook, dataComments] = await Promise.all([
+    const [dataBook, dataComments, dataAuteurs] = await Promise.all([
       bookService.getById(bookId),
-      commentService.getAll()
+      commentService.getAll(),
+      authorService.getAll()
     ])
 
     ouvrage.value = dataBook
+    auteurs.value = dataAuteurs
+
     commentaires.value = dataComments.filter(
       c => String(c.ouvrage_id) === String(bookId)
     )
@@ -89,70 +94,10 @@ const handleImageError = (event) => {
   event.target.src = 'https://placehold.co/380x500?text=Image+introuvable'
 }
 
-const downloadExtractAsPdf = () => {
-  const content = ouvrage.value.extrait_texte
-  const titre = ouvrage.value.titre
-
-  const printWindow = window.open('', '_blank')
-  printWindow.document.write(`
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="UTF-8">
-        <title>Extrait - ${titre}</title>
-        <style>
-          body {
-            font-family: Georgia, serif;
-            max-width: 700px;
-            margin: 60px auto;
-            line-height: 1.9;
-            color: #333;
-            padding: 0 40px;
-          }
-          h1 {
-            font-size: 1.8rem;
-            color: #2c3e50;
-            border-bottom: 2px solid #42b983;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-          }
-          .label {
-            font-size: 0.85rem;
-            color: #999;
-            margin-bottom: 30px;
-            font-style: italic;
-          }
-          p {
-            font-size: 1.05rem;
-            text-align: justify;
-            white-space: pre-line;
-          }
-          footer {
-            margin-top: 60px;
-            font-size: 0.8rem;
-            color: #aaa;
-            text-align: center;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
-          }
-        </style>
-      </head>
-      <body>
-        <h1>Extrait — ${titre}</h1>
-        <div class="label">Extrait de l'ouvrage</div>
-        <p>${content}</p>
-        <footer>Généré depuis Passion Lecture</footer>
-      </body>
-    </html>
-  `)
-  printWindow.document.close()
-  printWindow.focus()
-  setTimeout(() => {
-    printWindow.print()
-    printWindow.close()
-  }, 500)
+const getAuthorName = (id) => {
+  const a = auteurs.value.find(item => String(item.id) === String(id))
+  return a ? `${a.prenom} ${a.nom}` : 'Auteur inconnu'
 }
-
 
 </script>
 
@@ -191,6 +136,14 @@ const downloadExtractAsPdf = () => {
             <div class="spec-row">
               <span class="label">Date de parution</span>
               <span class="value">{{ ouvrage.annee_edition }}</span>
+            </div>
+            <div class="spec-row">
+              <span class="label">Auteur</span>
+              <span class="value">
+                <router-link :to="`/auteur/${ouvrage.auteur_id}`" class="author-link">
+                  {{ getAuthorName(ouvrage.auteur_id) }}
+                </router-link>
+              </span>
             </div>
             <div class="spec-row">
               <span class="label">Éditeur</span>
@@ -559,7 +512,10 @@ const downloadExtractAsPdf = () => {
   animation: spin 1s linear infinite;
   margin: 0 auto 20px;
 }
-
+.author-link { 
+  color: #42b983; 
+  text-decoration: none; 
+}
 @keyframes spin {
   0% {
     transform: rotate(0deg);
